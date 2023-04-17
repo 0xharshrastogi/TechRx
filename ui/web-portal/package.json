@@ -4,9 +4,9 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build",
+		"build": "rm -rf dist && ng build",
 		"watch": "ng build --watch --configuration development",
-		"lint": "eslint . --cache --cache-location temp/.eslintcache -o temp/eslint.log --format compact",
+		"lint": "rm -rf temp/eslint.log && eslint . --cache --cache-location temp/.eslintcache -o temp/eslint.log --format compact",
 		"test": "ng test"
 	},
 	"private": true,
