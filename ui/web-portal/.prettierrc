@@ -5,5 +5,5 @@
 	"singleQuote": true,
 	"useTabs": true,
 	"trailingComma": "es5",
-  "editorconfig": true
+	"editorconfig": true
 }
