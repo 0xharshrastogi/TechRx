@@ -1,0 +1,36 @@
+@import '../../../styles//variable';
+
+@mixin reset-btn {
+	border: none;
+	text-decoration: none;
+}
+
+:host {
+	@include reset-btn();
+
+	outline-color: $btn-primary-base;
+	outline-offset: 2px;
+	font-size: 0.85rem;
+	padding: 0.5rem;
+	color: $btn-primary-color;
+	background-color: $btn-primary-base;
+	border-radius: $border-radius-sm;
+	transition: background-color 100ms ease;
+	cursor: pointer;
+
+	&:is(:hover, :focus, :active):not(:disabled) {
+		background-color: darken($btn-primary-base, 5%);
+	}
+
+	&:is(:active) {
+		box-shadow: none;
+	}
+
+	&:is(:focus) {
+		outline-style: dashed;
+	}
+
+	&:disabled {
+		background-color: grayscale($btn-primary-base);
+	}
+}
