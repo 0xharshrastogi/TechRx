@@ -1,8 +1,10 @@
-/*#region Colors*/
-$base-background: #eee;
-$base-background-color: #111;
+$primary: #0e7aa2;
 
-$btn-primary-base: #3b82f6;
+/*#region Colors*/
+$base-background: #f7f6f6;
+$base-background-color: #111111;
+
+$btn-primary-base: #0e7aa2;
 $btn-primary-color: white;
 /*#endregion*/
 
@@ -12,4 +14,11 @@ $base-font-size: 1rem;
 
 /*#region Border Size*/
 $border-radius-sm: 4px;
+/*#endregion*/
+
+/*#region Border Screen Width*/
+$screen-sm: 480px;
+$screen-md: 576px;
+$screen-lg: 720px;
+$screen-xl: 1024;
 /*#endregion*/
