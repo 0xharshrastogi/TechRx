@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/variable';
+@import './styles/reset.scss';
+
+html,
+body {
+	background-color: $base-background;
+	color: $base-background-color;
+	font-size: $base-font-size;
+	font-family: sans-serif;
+}
