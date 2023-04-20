@@ -18,6 +18,10 @@
 	transition: background-color 100ms ease;
 	cursor: pointer;
 
+	&:is(.full) {
+		width: 100%;
+	}
+
 	&:is(:hover, :focus, :active):not(:disabled) {
 		background-color: darken($btn-primary-base, 5%);
 	}
