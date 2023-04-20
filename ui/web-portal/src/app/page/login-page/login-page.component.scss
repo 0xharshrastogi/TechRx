@@ -1,0 +1,68 @@
+@import '../../../styles/variable';
+
+:host {
+	margin-top: 1rem;
+	display: block;
+	padding: 1rem;
+	min-height: fit-content;
+	background-color: white;
+	height: calc(100vh - 60px - 2rem);
+	margin: 1rem 1rem 0 1rem;
+
+	.form-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		.image-wrapper {
+			overflow: hidden;
+			height: 200px;
+			border-radius: 0.5rem;
+			position: relative;
+
+			img {
+				width: 100%;
+			}
+
+			span {
+				left: 0;
+				bottom: 0;
+				padding: 0 0 1rem 1rem;
+				font-size: 2rem;
+				font-weight: 800;
+				color: white;
+				text-shadow: -1px 2px 5px #0000008f;
+				position: absolute;
+			}
+		}
+	}
+}
+
+// reest css
+input {
+	border: none;
+}
+
+.form {
+	header {
+		font-weight: 700;
+		font-size: 2rem;
+		color: $btn-primary-base;
+	}
+
+	fieldset {
+		border: none;
+		margin-top: 2rem;
+
+		> * + * {
+			margin-top: 1rem;
+		}
+	}
+
+	&-footer {
+		margin-top: 1rem;
+		button {
+			width: 100%;
+		}
+	}
+}

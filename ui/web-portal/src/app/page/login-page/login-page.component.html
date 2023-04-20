@@ -1,3 +1,26 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis consectetur voluptatibus natus
-similique porro reiciendis excepturi iste dolorum eligendi cumque saepe labore, qui voluptatem
-veritatis, dolor cum modi suscipit doloribus.
+<div class="form-container">
+	<section class="image-wrapper">
+		<img [src]="image" alt="form-image" />
+		<span>Create Account</span>
+	</section>
+
+	<section>
+		<form class="form">
+			<fieldset name="credentials">
+				<app-form-field for="email">
+					<app-form-label>Email</app-form-label>
+					<input app-form-input type="text" placeholder="Enter your email here..." />
+				</app-form-field>
+
+				<app-form-field for="password">
+					<app-form-label>Password</app-form-label>
+					<input app-form-input type="password" placeholder="Enter your password here" />
+				</app-form-field>
+			</fieldset>
+
+			<div class="form-footer">
+				<button app-button>Submit</button>
+			</div>
+		</form>
+	</section>
+</div>
