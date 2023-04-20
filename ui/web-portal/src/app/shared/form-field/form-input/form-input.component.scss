@@ -1,0 +1,10 @@
+@import '../../../../styles/variable';
+
+:host {
+	outline-color: $primary;
+	width: 100%;
+	background-color: rgb(241, 241, 241);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+}
