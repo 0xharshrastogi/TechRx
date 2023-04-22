@@ -1,8 +1,9 @@
+@import '../../../styles/fonts';
 @import '../../../styles/variable';
 
 :host {
 	display: block;
-	font-size: $poppins;
+	font-size: map-get($fonts, primary);
 	font-weight: 600;
 	line-height: 1.25;
 	margin-bottom: 2rem;

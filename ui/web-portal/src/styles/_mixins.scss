@@ -1,0 +1,5 @@
+@mixin glassmorphism() {
+	backdrop-filter: blur(16px);
+	border: 0.1px solid #ffffff3b;
+	background-color: rgba(255, 255, 255, 0.1);
+}

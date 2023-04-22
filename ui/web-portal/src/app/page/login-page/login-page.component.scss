@@ -1,3 +1,5 @@
+@use '../../../styles/mixins';
+@import '../../../styles/fonts';
 @import '../../../styles/variable';
 
 :host {
@@ -39,14 +41,11 @@
 	}
 
 	footer {
+		@include mixins.glassmorphism;
 		padding: 1rem;
 		margin-top: auto;
-		background-color: #1c18e3;
 		border-radius: 1rem;
 		font-size: 0.8rem;
-		backdrop-filter: blur(16px);
-		border: 0.1px solid #ffffff3b;
-		background-color: rgba(255, 255, 255, 0.1);
 	}
 
 	@media (min-width: $screen-md) {
@@ -67,7 +66,7 @@
 
 .form-container header {
 	.title {
-		font-family: $poppins;
+		font-family: map-get($fonts, primary);
 		font-size: 1.5rem;
 		font-weight: 500;
 	}
