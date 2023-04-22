@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  webportal:
+    image: webportal
+    build:
+      context: ui/web-portal
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:80
