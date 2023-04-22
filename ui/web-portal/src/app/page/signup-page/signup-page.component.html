@@ -1,0 +1,61 @@
+<section class="intro-container">
+	<header>
+		<h3>Pharma Connect</h3>
+	</header>
+
+	<div class="content">
+		<!-- <h1>Start your journey with us.</h1> -->
+		<app-title size="md">Start your journey with us.</app-title>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi laudantium aut!</p>
+	</div>
+
+	<footer>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic explicabo possimus quia odit ipsum
+		eveniet quam reiciendis, nam aspernatur modi.
+	</footer>
+</section>
+
+<section class="form-container">
+	<header>
+		<h1 class="title">Signup</h1>
+		<p class="subtitle">Have An Account? <a routerLink="/login">Login Here</a></p>
+	</header>
+
+	<form class="form-wrapper">
+		<div class="fields">
+			<app-form-field for="firstName">
+				<app-form-label>First Name</app-form-label>
+				<input app-form-input type="text" placeholder="Enter your first name" />
+			</app-form-field>
+
+			<app-form-field for="lastName">
+				<app-form-label>Last Name</app-form-label>
+				<input app-form-input type="text" placeholder="Enter your last name" />
+			</app-form-field>
+		</div>
+
+		<div class="fields">
+			<app-form-field for="gender">
+				<app-form-label>Gender</app-form-label>
+				<label>
+					<span>Male</span>
+					<input app-form-input type="radio" name="gender" id="female" />
+				</label>
+			</app-form-field>
+		</div>
+
+		<app-form-field for="email">
+			<app-form-label>Email</app-form-label>
+			<input app-form-input type="email" placeholder="Enter your email" />
+		</app-form-field>
+
+		<app-form-field for="password">
+			<app-form-label>Password</app-form-label>
+			<input app-form-input type="password" placeholder="Enter your password" />
+		</app-form-field>
+
+		<footer>
+			<button app-button [full]="true">Login</button>
+		</footer>
+	</form>
+</section>
