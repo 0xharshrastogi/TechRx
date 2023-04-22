@@ -89,6 +89,30 @@
 			}
 		}
 	}
+
+	.radio-container {
+		border: 1px solid #a1a1a1;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem;
+		border-radius: 0.25rem;
+		&:has(input:checked) {
+			outline: 2px $primary;
+			background-color: rgba($primary, 0.15);
+			// border-color: $primary;
+		}
+		&:hover {
+			background-color: rgba(161, 161, 161, 0.117);
+		}
+		cursor: pointer;
+		label {
+			font-size: 0.75rem;
+		}
+		input {
+			width: auto;
+		}
+	}
 }
 
 .form-container footer {

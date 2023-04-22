@@ -15,6 +15,7 @@
 	</footer>
 </section>
 
+<!-- right section -->
 <section class="form-container">
 	<header>
 		<h1 class="title">Signup</h1>
@@ -37,10 +38,16 @@
 		<div class="fields">
 			<app-form-field for="gender">
 				<app-form-label>Gender</app-form-label>
-				<label>
-					<span>Male</span>
-					<input app-form-input type="radio" name="gender" id="female" />
-				</label>
+				<div class="fields">
+					<div
+						*ngFor="let gender of genders"
+						class="radio-container"
+						(click)="input.checked = true"
+					>
+						<input type="radio" name="gender" [value]="gender.id" [id]="gender.id" #input />
+						<label [for]="gender.id">{{ gender.label }}</label>
+					</div>
+				</div>
 			</app-form-field>
 		</div>
 
