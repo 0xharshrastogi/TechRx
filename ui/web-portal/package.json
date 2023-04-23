@@ -1,6 +1,19 @@
 {
 	"name": "web-portal",
-	"version": "0.0.0",
+	"version": "1.0.0",
+	"engines": {
+		"node": "20.0.0",
+		"npm": "9.6.4"
+	},
+	"contributors": [
+		{
+			"name": "Harsh Rastogi",
+			"email": "rastogiharsh04@gmail.com"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/harshrastogiexe/TechRx/issues"
+	},
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
