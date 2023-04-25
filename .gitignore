@@ -111,3 +111,6 @@ package-lock.json
 
 # temp
 temp/
+
+#env files
+env/**.env
