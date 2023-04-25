@@ -7,3 +7,6 @@ finstall:
 fstart:
 	@echo starting application
 	cd $(UI_DIR) && npm start
+
+start-portal:
+	docker compose up -d webportal

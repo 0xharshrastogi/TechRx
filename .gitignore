@@ -108,3 +108,9 @@ package-lock.json
 
 # .vscode
 .vscode/settings.json
+
+# temp
+temp/
+
+#env files
+env/**.env

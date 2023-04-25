@@ -1,0 +1,83 @@
+@use '../../../styles/mixins';
+@import '../../../styles/fonts';
+@import '../../../styles/variable';
+
+:host {
+	display: block;
+	height: 100vh;
+	padding: 1rem;
+
+	@media (min-width: $screen-md) {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		gap: 1rem;
+	}
+
+	@media (min-width: $screen-lg) {
+		gap: 10vw;
+	}
+}
+
+.intro-container {
+	display: none;
+	padding: 2rem 2.5rem;
+	color: white;
+	background-image: linear-gradient(193deg, #1915b8, rgb(3 66 168));
+	border-radius: 0.5rem;
+
+	header h3 {
+		font-weight: 400;
+		font-size: 0.95rem;
+	}
+
+	.content {
+		margin-top: 25vh;
+
+		p {
+			font-size: 0.95rem;
+			font-weight: 200;
+			line-height: 200%;
+		}
+	}
+
+	footer {
+		@include mixins.glassmorphism;
+		padding: 1rem;
+		margin-top: auto;
+		border-radius: 1rem;
+		font-size: 0.8rem;
+	}
+
+	@media (min-width: $screen-md) {
+		display: grid;
+		grid-template-rows: min-content auto auto;
+	}
+}
+
+.form-container {
+	padding: 0.5rem;
+	display: grid;
+	gap: 3rem;
+
+	@media (min-width: $screen-md) {
+		align-content: center;
+	}
+}
+
+.form-container header {
+	.subtitle {
+		margin-top: 1rem;
+		font-size: 0.75rem;
+	}
+}
+
+.form-container form {
+	max-width: 500px;
+	> * + * {
+		margin-top: 1rem;
+	}
+}
+
+.form-container footer {
+	text-align: center;
+}

@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  webportal:
+    image: webportal
+    build:
+      context: ui/web-portal
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 80:80
