@@ -1,0 +1,38 @@
+<div class="select-btn" tabindex="0" (focus)="open()">
+	<span class="btn-text">Select Languages</span>
+	<span
+		class="arrow-down"
+		[ngClass]="{
+		active : active,
+	}"
+		>🔽</span
+	>
+</div>
+
+<ul
+	class="list-item"
+	[ngClass]="{
+		active : active,
+	}"
+>
+	<li class="item" (click)="select('Hindi')">
+		<input type="checkbox" value="Hindi" />
+		<span class="item-text">Hindi</span>
+	</li>
+	<li class="item">
+		<input type="checkbox" />
+		<span class="item-text">Hindi</span>
+	</li>
+	<li class="item">
+		<input type="checkbox" />
+		<span class="item-text">Hindi</span>
+	</li>
+	<li class="item">
+		<input type="checkbox" />
+		<span class="item-text">Hindi</span>
+	</li>
+	<li class="item">
+		<input type="checkbox" />
+		<span class="item-text">Hindi</span>
+	</li>
+</ul>
