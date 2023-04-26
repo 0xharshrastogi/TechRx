@@ -9,6 +9,7 @@ import { MultiSelectItemComponent } from './multiple-select/multi-select-item/mu
 import { MultipleSelectComponent } from './multiple-select/multiple-select.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TitleComponent } from './title/title.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { TitleComponent } from './title/title.component';
 		TitleComponent,
 		MultipleSelectComponent,
 		MultiSelectItemComponent,
+  IconComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [
