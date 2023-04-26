@@ -16,9 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from TechRxApp.urls import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(index)),
+    path('api/', include("TechRxApp.urls")),
 ]
