@@ -114,3 +114,5 @@ temp/
 
 #env files
 env/**.env
+
+TechRx-env/
