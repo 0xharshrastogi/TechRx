@@ -5,11 +5,11 @@ import { ButtonComponent } from './button/button.component';
 import { FormFieldComponent } from './form-field/form-field.component';
 import { FormInputComponent } from './form-field/form-input/form-input.component';
 import { FormLabelComponent } from './form-field/form-label/form-label.component';
-import { MultiSelectItemComponent } from './multiple-select/multi-select-item/multi-select-item.component';
-import { MultipleSelectComponent } from './multiple-select/multiple-select.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { TitleComponent } from './title/title.component';
 import { IconComponent } from './icon/icon.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SelectItemComponent } from './select/select-item/select-item.component';
+import { SelectComponent } from './select/select.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
 	declarations: [
@@ -19,9 +19,9 @@ import { IconComponent } from './icon/icon.component';
 		FormLabelComponent,
 		FormInputComponent,
 		TitleComponent,
-		MultipleSelectComponent,
-		MultiSelectItemComponent,
-  IconComponent,
+		SelectComponent,
+		SelectItemComponent,
+		IconComponent,
 	],
 	imports: [CommonModule, RouterModule],
 	exports: [
@@ -31,8 +31,8 @@ import { IconComponent } from './icon/icon.component';
 		FormLabelComponent,
 		FormInputComponent,
 		TitleComponent,
-		MultipleSelectComponent,
-		MultiSelectItemComponent,
+		SelectComponent,
+		SelectItemComponent,
 	],
 })
 export class SharedModule {}

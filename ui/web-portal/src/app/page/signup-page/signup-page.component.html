@@ -23,46 +23,80 @@
 	</header>
 
 	<form class="form-wrapper">
-		<div class="fields">
-			<app-form-field for="firstName">
-				<app-form-label>First Name</app-form-label>
-				<input app-form-input type="text" placeholder="Enter your first name" />
-			</app-form-field>
+		<ng-container *ngIf="step === 0">
+			<div class="fields">
+				<app-form-field for="firstName">
+					<app-form-label>First Name</app-form-label>
+					<input app-form-input type="text" placeholder="Enter your first name" />
+				</app-form-field>
 
-			<app-form-field for="lastName">
-				<app-form-label>Last Name</app-form-label>
-				<input app-form-input type="text" placeholder="Enter your last name" />
-			</app-form-field>
-		</div>
+				<app-form-field for="lastName">
+					<app-form-label>Last Name</app-form-label>
+					<input app-form-input type="text" placeholder="Enter your last name" />
+				</app-form-field>
+			</div>
 
-		<div class="fields">
-			<app-form-field for="gender">
-				<app-form-label>Gender</app-form-label>
-				<div class="fields">
-					<div
-						*ngFor="let gender of genders"
-						class="radio-container"
-						(click)="input.checked = true"
-					>
-						<input type="radio" name="gender" [value]="gender.id" [id]="gender.id" #input />
-						<label [for]="gender.id">{{ gender.label }}</label>
+			<div class="fields">
+				<app-form-field for="gender">
+					<app-form-label>Gender</app-form-label>
+					<div class="fields">
+						<div
+							*ngFor="let gender of genders"
+							class="radio-container"
+							(click)="input.checked = true"
+						>
+							<input type="radio" name="gender" [value]="gender.id" [id]="gender.id" #input />
+							<label [for]="gender.id">{{ gender.label }}</label>
+						</div>
 					</div>
-				</div>
+				</app-form-field>
+			</div>
+
+			<app-form-field for="email">
+				<app-form-label>Email</app-form-label>
+				<input app-form-input type="email" placeholder="Enter your email" />
 			</app-form-field>
-		</div>
 
-		<app-form-field for="email">
-			<app-form-label>Email</app-form-label>
-			<input app-form-input type="email" placeholder="Enter your email" />
-		</app-form-field>
+			<app-form-field for="password">
+				<app-form-label>Password</app-form-label>
+				<input app-form-input type="password" placeholder="Enter your password" />
+			</app-form-field>
 
-		<app-form-field for="password">
-			<app-form-label>Password</app-form-label>
-			<input app-form-input type="password" placeholder="Enter your password" />
-		</app-form-field>
+			<app-form-field for="email">
+				<app-form-label>Languages</app-form-label>
+				<app-select [name]="selectedToString()" (select)="onSelectHandler($event)">
+					<app-select-item
+						*ngFor="let language of languages"
+						[value]="language"
+						[selected]="isSelected(language)"
+						>{{ language.label }}</app-select-item
+					>
+				</app-select>
+			</app-form-field>
+		</ng-container>
 
-		<footer>
-			<button app-button [full]="true">Login</button>
+		<ng-container *ngIf="step == 1">
+			<app-form-field for="email">
+				<app-form-label>Languages</app-form-label>
+				<app-select [name]="selectedToString()" (select)="onSelectHandler($event)">
+					<app-select-item
+						*ngFor="let language of languages"
+						[value]="language"
+						[selected]="isSelected(language)"
+						>{{ language.label }}</app-select-item
+					>
+				</app-select>
+			</app-form-field>
+		</ng-container>
+
+		<footer style="display: flex; justify-content: flex-end; gap: 1rem">
+			<ng-container *ngIf="!isLastStep; else submitBtn">
+				<button type="button" app-button (click)="nextStep()">Prev</button>
+				<button type="button" app-button (click)="nextStep()">Next</button>
+			</ng-container>
+			<ng-template #submitBtn>
+				<button type="submit" app-button [full]="true">Submit</button>
+			</ng-template>
 		</footer>
 	</form>
 </section>

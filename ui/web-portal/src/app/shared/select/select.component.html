@@ -1,17 +1,18 @@
 <div class="select-btn" tabindex="0" (focus)="open()">
-	<span class="btn-text">Select Languages</span>
+	<span class="btn-text">{{ name }}</span>
 	<span class="arrow-down">
 		<app-icon name="chevron-right" [rotate]="active ? 90 : 0"></app-icon>
 	</span>
 </div>
 
-<ul
+<div
 	class="list-item"
 	[ngClass]="{
 		active : active,
 	}"
 >
-	<li class="item" (click)="select('Hindi')">
+	<ng-content select="app-multi-select-item"></ng-content>
+	<!-- <li class="item" (click)="select('Hindi')">
 		<input type="checkbox" value="Hindi" />
 		<span class="item-text">Hindi</span>
 	</li>
@@ -30,5 +31,5 @@
 	<li class="item">
 		<input type="checkbox" />
 		<span class="item-text">Hindi</span>
-	</li>
-</ul>
+	</li> -->
+</div>
