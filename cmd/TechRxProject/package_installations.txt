@@ -1,0 +1,16 @@
+pandas
+spacy
+torch
+transformers
+openpyxl
+jupyter
+selenium
+webdriver_manager
+nltk
+django
+djangorestframework
+drf-yasg
+
+
+
+
