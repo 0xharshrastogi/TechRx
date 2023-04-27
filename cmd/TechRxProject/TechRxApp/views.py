@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from .serializer import UserSerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .models import User
+from .models import Users
 import jwt, datetime
 
 class RegisterView(APIView):
@@ -12,7 +12,7 @@ class RegisterView(APIView):
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response('MESSAGE')
+        return Response(serializer.data)
 
 
 class LoginView(APIView):
@@ -20,7 +20,7 @@ class LoginView(APIView):
         email = request.data['email']
         password = request.data['password']
 
-        user = User.objects.filter(email=email).first()
+        user = Users.objects.filter(email=email).first()
 
         if user is None:
             raise AuthenticationFailed('User not found!')
@@ -41,7 +41,7 @@ class LoginView(APIView):
         response.data = {
             'jwt': token
         }
-        return token
+        return response
 
 class UserView(APIView):
     def get(self, request):
@@ -55,7 +55,7 @@ class UserView(APIView):
         except jwt.ExpiredSignatureError:
             raise AuthenticationFailed('Unauthenticated')
 
-        user = User.objects.filter(id=payload['id']).first()
+        user = Users.objects.filter(id=payload['id']).first()
         serializer = UserSerializer(user)
 
         return Response(serializer.data)
