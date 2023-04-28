@@ -1,24 +1,8 @@
 import { Component } from '@angular/core';
 import { Gender } from '../../../constants/genders';
+import { languages } from './languages';
 
-const languages = [
-	{ label: 'Hindi', value: 'in/hn' },
-	{ label: 'Punjabi', value: 'in/pb' },
-	{ label: 'Telugu', value: 'in/tl' },
-	{ label: 'Tamil', value: 'in/tm' },
-	{ label: 'Hindi', value: 'in/hn' },
-	{ label: 'Punjabi', value: 'in/pb' },
-	{ label: 'Telugu', value: 'in/tl' },
-	{ label: 'Tamil', value: 'in/tm' },
-	{ label: 'Hindi', value: 'in/hn' },
-	{ label: 'Punjabi', value: 'in/pb' },
-	{ label: 'Telugu', value: 'in/tl' },
-	{ label: 'Tamil', value: 'in/tm' },
-	{ label: 'Hindi', value: 'in/hn' },
-	{ label: 'Punjabi', value: 'in/pb' },
-	{ label: 'Telugu', value: 'in/tl' },
-	{ label: 'Tamil', value: 'in/tm' },
-];
+type Language = typeof languages extends Array<infer R> ? R : never;
 
 @Component({
 	selector: 'app-signup-page',
@@ -28,19 +12,18 @@ const languages = [
 export class SignupPageComponent {
 	public readonly genders = Gender.values;
 
-	private readonly selected = new Set<(typeof languages)[0]>();
+	public isExpanded = false;
+
+	private readonly selected = new Set<Language>();
 
 	public readonly languages = languages;
 
 	public step = 0;
 
 	public selectedToString() {
-		return this.selected.size === 0
-			? 'Please select language'
-			: [...this.selected.values()]
-					.map((v) => v.label)
-					.sort((a, b) => a.localeCompare(b))
-					.join(', ');
+		return Array.from(this.selected)
+			.map((lang) => lang.name)
+			.join(', ');
 	}
 
 	public get isFirstStep() {
@@ -61,11 +44,11 @@ export class SignupPageComponent {
 		this.step -= 1;
 	}
 
-	public isSelected(value: any) {
+	public isSelected(value: Language) {
 		return this.selected.has(value);
 	}
 
-	public onSelectHandler(value: any) {
+	public onSelectHandler(value: Language) {
 		if (this.isSelected(value)) {
 			this.selected.delete(value);
 			return;

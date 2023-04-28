@@ -62,15 +62,18 @@
 				<input app-form-input type="password" placeholder="Enter your password" />
 			</app-form-field>
 
-			<app-form-field for="email">
+			<app-form-field for="Languages">
 				<app-form-label>Languages</app-form-label>
-				<app-select [name]="selectedToString()" (select)="onSelectHandler($event)">
-					<app-select-item
-						*ngFor="let language of languages"
-						[value]="language"
-						[selected]="isSelected(language)"
-						>{{ language.label }}</app-select-item
-					>
+				<app-select
+					placeholder="select month of birth"
+					[(expand)]="isExpanded"
+					(select)="onSelectHandler($event)"
+					[value]="selectedToString()"
+				>
+					<app-select-item *ngFor="let language of languages" [value]="language">
+						<input type="checkbox" [checked]="isSelected(language)" />
+						<span style="font-size: 0.75rem"> {{ language.name }}</span>
+					</app-select-item>
 				</app-select>
 			</app-form-field>
 		</ng-container>
@@ -78,14 +81,6 @@
 		<ng-container *ngIf="step == 1">
 			<app-form-field for="email">
 				<app-form-label>Languages</app-form-label>
-				<app-select [name]="selectedToString()" (select)="onSelectHandler($event)">
-					<app-select-item
-						*ngFor="let language of languages"
-						[value]="language"
-						[selected]="isSelected(language)"
-						>{{ language.label }}</app-select-item
-					>
-				</app-select>
 			</app-form-field>
 		</ng-container>
 
