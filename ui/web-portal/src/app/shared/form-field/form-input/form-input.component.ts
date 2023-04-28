@@ -3,7 +3,7 @@ import { IFormFieldService } from '../../types/IFormFieldService';
 import { FormFieldService } from '../form-field.service';
 
 @Component({
-	selector: 'input[app-form-input]',
+	selector: 'app-select[app-form-input], input[app-form-input]',
 	templateUrl: './form-input.component.html',
 	styleUrls: ['./form-input.component.scss'],
 })

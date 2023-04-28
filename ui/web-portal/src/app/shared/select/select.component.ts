@@ -2,74 +2,100 @@ import {
 	Component,
 	ElementRef,
 	EventEmitter,
+	HostBinding,
 	HostListener,
 	Input,
-	OnInit,
+	OnDestroy,
 	Output,
+	ViewChild,
 } from '@angular/core';
-import { tap } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { SelectState } from './SelectState';
 import { SelectService } from './select.service';
 
+/**
+ * select menu
+ */
 @Component({
 	selector: 'app-select',
 	templateUrl: './select.component.html',
 	styleUrls: ['./select.component.scss'],
 	providers: [SelectService],
 })
-export class SelectComponent<T> implements OnInit {
-	@Input()
-	public name!: string;
+export class SelectComponent implements OnDestroy {
+	private readonly selector: SelectService;
 
-	public active = false;
+	private readonly subscriptions: Subscription[] = [];
+
+	@ViewChild('listContElm')
+	private readonly listElmRef?: ElementRef<HTMLElement>;
+
+	private readonly hostElmRef: ElementRef<SelectComponent & HTMLElement>;
+
+	@HostBinding('attr.tabIndex')
+	public readonly tabIndex = 0;
+
+	@Input()
+	public placeholder = '<no name provided>';
+
+	@Input()
+	public value?: string;
 
 	@Output('select')
-	public readonly selectEventEmitter = new EventEmitter<T>();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	public selectEventEmitter = new EventEmitter<any>();
 
-	private readonly selectService: SelectService<T>;
+	@Input('expand')
+	public isExpanded = false;
 
-	private readonly hostElmRef: ElementRef<SelectComponent<T> & HTMLElement>;
+	@Output('expandChange')
+	public expandEventEmitter = new EventEmitter<boolean>();
 
-	public constructor(elementRef: ElementRef, selectService: SelectService) {
-		this.hostElmRef = elementRef;
-		this.selectService = selectService;
+	public constructor(selector: SelectService, hostElmRef: ElementRef) {
+		this.selector = selector;
+		this.hostElmRef = hostElmRef;
+
+		const sub = this.selector.select$.subscribe(this.selectEventEmitter);
+		this.subscriptions.push(sub);
 	}
 
 	/**
 	 * closes the select dropdown
 	 */
-	public close() {
-		this.active = false;
+	private close() {
+		this.isExpanded = SelectState.CLOSED;
+		this.expandEventEmitter.emit(SelectState.CLOSED);
 	}
 
 	/**
 	 * opens the select dropdown
 	 */
-	public open() {
-		this.active = true;
+	private open() {
+		this.isExpanded = SelectState.OPEN;
+		this.expandEventEmitter.emit(SelectState.OPEN);
 	}
 
-	/**
-	 * append the value to selected items
-	 * @param value
-	 */
-	public select(value: T) {
-		this.selectService.select(value);
+	private unsubscribe() {
+		this.subscriptions.forEach((sub) => sub.unsubscribe());
 	}
 
-	public ngOnInit(): void {
-		this.selectService.select$
-			.pipe(tap((value) => this.selectEventEmitter.emit(value)))
-			.subscribe();
+	public ngOnDestroy(): void {
+		this.unsubscribe();
 	}
 
-	/**
-	 * closes the dropdown when cursor is click outside of host
-	 * @param target html element on which mouse is pressed
-	 */
 	@HostListener('document:click', ['$event.target'])
-	public onOutSideClick(target: HTMLElement) {
-		const isClickedInsideHost = this.hostElmRef.nativeElement.contains(target);
-		if (isClickedInsideHost) return;
+	public onDocumentClickHandler(targetElm: HTMLElement) {
+		if (this.hostElmRef.nativeElement.contains(targetElm) || !this.isExpanded) return;
 		this.close();
+	}
+
+	@HostListener('click', ['$event.target'])
+	public onHostClickHandler(targetElm: HTMLElement) {
+		if (this.isExpanded) {
+			if (this.listElmRef?.nativeElement.contains(targetElm)) return;
+			this.close();
+			return;
+		}
+		this.open();
 	}
 }

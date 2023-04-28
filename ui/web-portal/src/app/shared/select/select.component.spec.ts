@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SelectItemComponent } from './select-item/select-item.component';
+import { SelectComponent } from './select.component';
 
 describe('MultipleSelectComponent', () => {
-	let component: SelectItemComponent;
-	let fixture: ComponentFixture<SelectItemComponent>;
+	let component: SelectComponent;
+	let fixture: ComponentFixture<SelectComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [SelectItemComponent],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(SelectItemComponent);
+		fixture = TestBed.createComponent(SelectComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

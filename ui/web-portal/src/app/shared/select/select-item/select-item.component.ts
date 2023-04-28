@@ -6,21 +6,18 @@ import { SelectService } from '../select.service';
 	templateUrl: './select-item.component.html',
 	styleUrls: ['./select-item.component.scss'],
 })
-export class SelectItemComponent<T> {
-	@Input()
-	public value!: T;
+export class SelectItemComponent {
+	private readonly selector: SelectService;
 
 	@Input()
-	public selected = false;
-
-	private readonly selectService: SelectService<T>;
+	public value!: unknown;
 
 	public constructor(selectService: SelectService) {
-		this.selectService = selectService;
+		this.selector = selectService;
 	}
 
 	@HostListener('click')
 	public onClickHandler() {
-		this.selectService.select(this.value);
+		this.selector.select(this.value);
 	}
 }

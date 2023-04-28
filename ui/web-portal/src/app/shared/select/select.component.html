@@ -1,35 +1,22 @@
-<div class="select-btn" tabindex="0" (focus)="open()">
-	<span class="btn-text">{{ name }}</span>
+<div class="select-btn">
+	<span
+		class="btn-text"
+		[ngClass]="{
+			value: !!value
+		}"
+		>{{ value || placeholder }}</span
+	>
 	<span class="arrow-down">
-		<app-icon name="chevron-right" [rotate]="active ? 90 : 0"></app-icon>
+		<app-icon name="chevron-right" [rotate]="isExpanded ? 90 : 0"></app-icon>
 	</span>
 </div>
 
 <div
 	class="list-item"
 	[ngClass]="{
-		active : active,
+		active : isExpanded,
 	}"
+	#listContElm
 >
-	<ng-content select="app-multi-select-item"></ng-content>
-	<!-- <li class="item" (click)="select('Hindi')">
-		<input type="checkbox" value="Hindi" />
-		<span class="item-text">Hindi</span>
-	</li>
-	<li class="item">
-		<input type="checkbox" />
-		<span class="item-text">Hindi</span>
-	</li>
-	<li class="item">
-		<input type="checkbox" />
-		<span class="item-text">Hindi</span>
-	</li>
-	<li class="item">
-		<input type="checkbox" />
-		<span class="item-text">Hindi</span>
-	</li>
-	<li class="item">
-		<input type="checkbox" />
-		<span class="item-text">Hindi</span>
-	</li> -->
+	<ng-content></ng-content>
 </div>
