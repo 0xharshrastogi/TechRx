@@ -40,15 +40,24 @@
 				<app-form-field for="gender">
 					<app-form-label>Gender</app-form-label>
 					<div class="fields">
-						<div
-							*ngFor="let gender of genders"
-							class="radio-container"
-							(click)="input.checked = true"
-						>
-							<input type="radio" name="gender" [value]="gender.id" [id]="gender.id" #input />
+						<app-form-radio [value]="gender.id" *ngFor="let gender of genders">{{
+							gender.label
+						}}</app-form-radio>
+					</div>
+					<!-- <div class="fields">
+						<div *ngFor="let gender of genders" class="radio-container" tabindex="0">
+							<input
+								app-form-input
+								type="radio"
+								name="gender"
+								[value]="gender.id"
+								[id]="gender.id"
+								tabindex="-1"
+								#input
+							/>
 							<label [for]="gender.id">{{ gender.label }}</label>
 						</div>
-					</div>
+					</div> -->
 				</app-form-field>
 			</div>
 
