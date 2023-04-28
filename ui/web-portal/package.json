@@ -20,7 +20,8 @@
 		"build": "rm -rf dist && ng build",
 		"watch": "ng build --watch --configuration development",
 		"lint": "rm -rf temp/eslint.log && eslint . --cache --cache-location temp/.eslintcache -o temp/eslint.log --format compact",
-		"test": "ng test"
+		"test": "ng test",
+		"kill": "kill -9 $(lsof -ti:4200)"
 	},
 	"private": true,
 	"dependencies": {
