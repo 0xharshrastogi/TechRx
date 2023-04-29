@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import * as EndPoint from '../../constants/endpoints';
-import type { IAuth, SignupInfo } from './common';
+import type { Credential, IAuth, SignupInfo } from './common';
 
 @Injectable({
 	providedIn: 'root',
@@ -17,5 +17,9 @@ export class AuthService implements IAuth {
 
 	public signup(data: SignupInfo): Observable<object> {
 		return this.http.post(EndPoint.SIGNUP, data);
+	}
+
+	public login(credential: Credential): Observable<object> {
+		return this.http.post(EndPoint.LOGIN, credential);
 	}
 }
