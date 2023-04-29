@@ -1,3 +1,5 @@
+export type Language = typeof languages extends Array<infer R> ? R : never;
+
 export const languages = [
 	{ code: 'ab', name: 'Abkhazian' },
 	{ code: 'aa', name: 'Afar' },

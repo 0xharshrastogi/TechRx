@@ -22,17 +22,27 @@
 		<p class="subtitle">Have An Account? <a routerLink="/login">Login Here</a></p>
 	</header>
 
-	<form class="form-wrapper">
-		<ng-container *ngIf="step === 0">
+	<form class="form-wrapper" [formGroup]="signupFG" (ngSubmit)="onSubmit()">
+		<ng-container *ngIf="step === 0" hidden>
 			<div class="fields">
 				<app-form-field for="firstName">
 					<app-form-label>First Name</app-form-label>
-					<input app-form-input type="text" placeholder="Enter your first name" />
+					<input
+						app-form-input
+						type="text"
+						placeholder="Enter your first name"
+						formControlName="firstName"
+					/>
 				</app-form-field>
 
 				<app-form-field for="lastName">
 					<app-form-label>Last Name</app-form-label>
-					<input app-form-input type="text" placeholder="Enter your last name" />
+					<input
+						app-form-input
+						type="text"
+						placeholder="Enter your last name"
+						formControlName="lastName"
+					/>
 				</app-form-field>
 			</div>
 
@@ -44,31 +54,22 @@
 							gender.label
 						}}</app-form-radio>
 					</div>
-					<!-- <div class="fields">
-						<div *ngFor="let gender of genders" class="radio-container" tabindex="0">
-							<input
-								app-form-input
-								type="radio"
-								name="gender"
-								[value]="gender.id"
-								[id]="gender.id"
-								tabindex="-1"
-								#input
-							/>
-							<label [for]="gender.id">{{ gender.label }}</label>
-						</div>
-					</div> -->
 				</app-form-field>
 			</div>
 
 			<app-form-field for="email">
 				<app-form-label>Email</app-form-label>
-				<input app-form-input type="email" placeholder="Enter your email" />
+				<input app-form-input type="email" placeholder="Enter your email" formControlName="email" />
 			</app-form-field>
 
 			<app-form-field for="password">
 				<app-form-label>Password</app-form-label>
-				<input app-form-input type="password" placeholder="Enter your password" />
+				<input
+					app-form-input
+					type="password"
+					placeholder="Enter your password"
+					formControlName="password"
+				/>
 			</app-form-field>
 
 			<app-form-field for="Languages">
@@ -87,19 +88,48 @@
 			</app-form-field>
 		</ng-container>
 
-		<ng-container *ngIf="step == 1">
-			<app-form-field for="email">
-				<app-form-label>Languages</app-form-label>
+		<ng-container *ngIf="step == 1" formGroupName="address">
+			<div class="fields">
+				<app-form-field for="city">
+					<app-form-label>City</app-form-label>
+					<input type="text" app-form-input placeholder="Noida" formControlName="city" />
+				</app-form-field>
+				<app-form-field for="state">
+					<app-form-label>State</app-form-label>
+					<input type="text" app-form-input placeholder="Uttar Pradesh" formControlName="state" />
+				</app-form-field>
+			</div>
+			<div class="fields">
+				<app-form-field for="country">
+					<app-form-label>Country</app-form-label>
+					<input type="text" app-form-input placeholder="India" formControlName="country" />
+				</app-form-field>
+				<app-form-field for="zipcode">
+					<app-form-label>Zip Code</app-form-label>
+					<input type="text" app-form-input placeholder="0XYZ00" formControlName="zipcode" />
+				</app-form-field>
+			</div>
+
+			<app-form-field for="landmark">
+				<app-form-label>Landmark</app-form-label>
+				<textarea
+					app-form-input
+					cols="30"
+					rows="5"
+					placeholder="Near ..."
+					[style.resize]="'none'"
+					formControlName="landmark"
+				></textarea>
 			</app-form-field>
 		</ng-container>
 
 		<footer style="display: flex; justify-content: flex-end; gap: 1rem">
+			<button type="button" app-button (click)="prevStep()">Prev</button>
 			<ng-container *ngIf="!isLastStep; else submitBtn">
-				<button type="button" app-button (click)="nextStep()">Prev</button>
 				<button type="button" app-button (click)="nextStep()">Next</button>
 			</ng-container>
 			<ng-template #submitBtn>
-				<button type="submit" app-button [full]="true">Submit</button>
+				<button type="submit" app-button>Submit</button>
 			</ng-template>
 		</footer>
 	</form>

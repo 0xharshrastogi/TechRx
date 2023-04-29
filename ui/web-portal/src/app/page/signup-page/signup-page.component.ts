@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Gender } from '../../../constants/genders';
-import { languages } from './languages';
-
-type Language = typeof languages extends Array<infer R> ? R : never;
+import { AuthService } from '../../services/auth.service';
+import { IAuth } from '../../services/common';
+import { SignupForm } from './helpers/form';
+import { languages, type Language } from './languages';
 
 @Component({
 	selector: 'app-signup-page',
@@ -10,6 +11,8 @@ type Language = typeof languages extends Array<infer R> ? R : never;
 	styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupPageComponent {
+	private readonly auth: IAuth;
+
 	public readonly genders = Gender.values;
 
 	public isExpanded = false;
@@ -18,12 +21,12 @@ export class SignupPageComponent {
 
 	public readonly languages = languages;
 
+	public readonly signupFG = SignupForm.create();
+
 	public step = 0;
 
-	public selectedToString() {
-		return Array.from(this.selected)
-			.map((lang) => lang.name)
-			.join(', ');
+	public constructor(auth: AuthService) {
+		this.auth = auth;
 	}
 
 	public get isFirstStep() {
@@ -32,6 +35,12 @@ export class SignupPageComponent {
 
 	public get isLastStep() {
 		return this.step === SignupPageComponent.TotalSteps - 1;
+	}
+
+	public selectedToString() {
+		return Array.from(this.selected)
+			.map((lang) => lang.name)
+			.join(', ');
 	}
 
 	public nextStep() {
@@ -49,11 +58,24 @@ export class SignupPageComponent {
 	}
 
 	public onSelectHandler(value: Language) {
-		if (this.isSelected(value)) {
-			this.selected.delete(value);
-			return;
+		// eslint-disable-next-line default-case
+		switch (this.isSelected(value)) {
+			case true:
+				this.selected.delete(value);
+				break;
+			case false:
+				this.selected.add(value);
+				break;
 		}
-		this.selected.add(value);
+		this.signupFG.get('languages')?.patchValue(Array.from(this.selected));
+	}
+
+	public onSubmit() {
+		const { value } = this.signupFG;
+
+		this.auth.signup(<any>value).subscribe({
+			error: (err: Error) => alert(`failed to signup: ${err.message}`),
+		});
 	}
 
 	private static TotalSteps = 2;
