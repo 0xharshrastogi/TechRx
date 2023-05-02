@@ -21,19 +21,24 @@
 		<p class="subtitle">Don't Have A Account? <a routerLink="/signup">Signup</a></p>
 	</header>
 
-	<form class="form-wrapper">
+	<form class="form-wrapper" [formGroup]="loginFG" (ngSubmit)="onFormSubmit()">
 		<app-form-field for="email">
 			<app-form-label>Email</app-form-label>
-			<input app-form-input type="email" placeholder="Enter your email" />
+			<input app-form-input type="email" placeholder="Enter your email" formControlName="email" />
 		</app-form-field>
 
 		<app-form-field for="password">
 			<app-form-label>Password</app-form-label>
-			<input app-form-input type="password" placeholder="Enter your password" />
+			<input
+				app-form-input
+				type="password"
+				placeholder="Enter your password"
+				formControlName="password"
+			/>
 		</app-form-field>
 
 		<footer>
-			<button app-button [full]="true">Login</button>
+			<button type="submit" app-button [full]="true" [disabled]="!loginFG.valid">Login</button>
 		</footer>
 	</form>
 </section>

@@ -6,14 +6,12 @@ services:
     image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
       - ACCEPT_EULA=Y
-      # - MSSQL_SA_PASSWORD=yourStrong(!)Password
     env_file:
       - "env/development.env"
     ports:
       - 1433:1433
     volumes:
       - ./temp/mssqldata:/var/opt/mssql
-    # platform: linux/amd64
 
   webportal:
     image: webportal

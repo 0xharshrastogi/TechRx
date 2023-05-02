@@ -1,0 +1,22 @@
+<div class="select-btn">
+	<span
+		class="btn-text"
+		[ngClass]="{
+			value: !!value
+		}"
+		>{{ value || placeholder }}</span
+	>
+	<span class="arrow-down">
+		<app-icon name="chevron-right" [rotate]="isExpanded ? 90 : 0"></app-icon>
+	</span>
+</div>
+
+<div
+	class="list-item"
+	[ngClass]="{
+		active : isExpanded,
+	}"
+	#listContElm
+>
+	<ng-content></ng-content>
+</div>

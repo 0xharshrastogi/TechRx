@@ -1,25 +1,27 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { IFormFieldService } from '../../types/IFormFieldService';
 import { FormFieldService } from '../form-field.service';
 
 @Component({
-	selector: 'input[app-form-input]',
+	selector: 'input[app-form-input], textarea[app-form-input]',
 	templateUrl: './form-input.component.html',
 	styleUrls: ['./form-input.component.scss'],
 })
 export class FormInputComponent implements OnInit {
 	private readonly formFieldService: IFormFieldService;
 
-	private readonly elementRef: ElementRef<HTMLInputElement>;
+	@HostBinding('attr.name')
+	public nameAttribute?: string;
 
-	public constructor(formFieldService: FormFieldService, elementRef: ElementRef) {
+	@HostBinding('attr.id')
+	public idAttribute?: string;
+
+	public constructor(formFieldService: FormFieldService) {
 		this.formFieldService = formFieldService;
-		this.elementRef = elementRef;
 	}
 
 	public ngOnInit(): void {
-		const { nativeElement: elm } = this.elementRef;
-		elm.name = this.formFieldService.getFormFieldName();
-		elm.id = this.formFieldService.getFormFieldName();
+		this.nameAttribute = this.formFieldService.getFormFieldName();
+		this.idAttribute = this.formFieldService.getFormFieldName();
 	}
 }

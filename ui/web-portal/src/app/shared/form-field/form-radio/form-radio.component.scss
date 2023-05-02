@@ -1,0 +1,25 @@
+@import '../../../../styles/variable';
+
+:host {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: 0.75rem;
+	padding: 0.75rem;
+	border: 1px solid $secondary;
+	border-radius: 0.25rem;
+	color: $secondary;
+	&:focus-within {
+		outline: 2px solid #3c37ff;
+		border-color: transparent;
+	}
+	&:has(input:checked) {
+		background-color: transparentize($primary, 0.9);
+		color: black;
+	}
+
+	input[type='radio'] {
+		outline: transparent;
+		width: 0.6rem;
+	}
+}
