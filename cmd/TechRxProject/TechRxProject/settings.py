@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TechRxApp',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+  	'django_extensions',
 ]
 
 # REST_FRAMEWORK = {
@@ -133,7 +134,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'statics')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'TechRxApp.User'
+AUTH_USER_MODEL = 'TechRxApp.Users'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
