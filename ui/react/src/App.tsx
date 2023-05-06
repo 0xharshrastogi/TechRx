@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { type ReactNode } from 'react';
 
-export const App = (): JSX.Element => {
-	const [count] = useState(0);
-	return <h1>{count}</h1>;
+export const App = (): ReactNode => {
+	return null;
 };

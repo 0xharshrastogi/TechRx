@@ -1,0 +1,14 @@
+@import './styles/styles';
+
+:root {
+	font-size: 16px;
+	font-family: Poppins, sans-serif;
+}
+
+a {
+	color: #1915b8;
+	font-weight: 500;
+	&:hover {
+		color: #110f89;
+	}
+}

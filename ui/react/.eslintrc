@@ -25,8 +25,8 @@
 	},
 	"rules": {
 		"react-refresh/only-export-components": "warn",
-		"indent": ["error", "tab"],
-		"@typescript-eslint/indent": ["error", "tab"],
+		"indent": ["off", "tab"],
+		"@typescript-eslint/indent": ["off", "tab"],
 		"react/react-in-jsx-scope": 0,
 		"react/jsx-uses-react": 0
 	}
