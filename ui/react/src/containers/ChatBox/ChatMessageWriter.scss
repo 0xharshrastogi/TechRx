@@ -1,0 +1,24 @@
+.chat-message-writer form {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	.input {
+		border: none;
+		padding: 0.75rem 0.5rem;
+		font-family: 'Poppins';
+		font-size: 0.75rem;
+		font-weight: 500;
+
+		&:focus,
+		&:active {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	.send-icon {
+		background-color: red;
+		padding: 0.75rem;
+		border-radius: 100%;
+	}
+}

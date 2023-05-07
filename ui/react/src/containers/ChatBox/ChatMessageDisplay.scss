@@ -1,0 +1,27 @@
+.chat-message {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5rem;
+	overflow-y: auto;
+
+	&-text {
+		color: rgb(22, 22, 22);
+		padding: 0.5rem 0.5rem;
+		font-family: 'Poppins';
+		max-width: 80%;
+		line-height: 1.5;
+
+		&:is([data-message='emit']) {
+			align-self: flex-end;
+			background-color: #dbdbdb;
+			border-radius: 0.55rem 0 0.55rem 0.55rem;
+		}
+
+		&:is([data-message='received']) {
+			align-self: flex-start;
+			background-color: white;
+			border-radius: 0 0.55rem 0.55rem 0.55rem;
+		}
+	}
+}
