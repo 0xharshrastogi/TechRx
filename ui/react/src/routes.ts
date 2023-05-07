@@ -1,5 +1,5 @@
 import { type RouteObject } from 'react-router-dom';
-import Login from './containers/login';
+import { Login, Signup } from './features';
 
 type Routes = RouteObject[];
 
@@ -11,7 +11,7 @@ export const SIGNUP = BASE + 'signup';
 
 const routes: Routes = [
 	{ path: LOGIN, Component: Login },
-	{ path: SIGNUP, element: 'Signup' },
+	{ path: SIGNUP, Component: Signup },
 ];
 
 export default routes;

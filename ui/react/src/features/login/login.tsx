@@ -1,34 +1,18 @@
-import { Col, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import { AuthenticationBanner } from '../../containers';
+import { useTitle } from '../../hooks';
 import { SIGNUP } from '../../routes';
 import './login.scss';
 import { LoginForm } from './loginForm';
 
-const { Title } = Typography;
-
-const TITLE_TEXT = 'Pharma Connect';
-
 export const Login: React.FC = () => {
+	useTitle('Login');
+
 	return (
 		<Row className="login-container">
 			<Col xs={24} lg={13} className="login-container-left">
-				<Title level={3} className="title">
-					{TITLE_TEXT}
-				</Title>
-
-				<div className="content">
-					<div>
-						<h3>Start your journey with us.</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor modi laudantium aut!
-						</p>
-					</div>
-				</div>
-
-				<footer>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic explicabo possimus quia odit
-					ipsum eveniet quam reiciendis, nam aspernatur modi.
-				</footer>
+				<AuthenticationBanner />
 			</Col>
 
 			<Col xs={24} lg={11} className="login-container-right">
