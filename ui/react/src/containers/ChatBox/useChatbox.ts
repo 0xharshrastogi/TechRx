@@ -10,22 +10,23 @@ interface IChatbotAPI<T> {
 	send: (message: T) => void;
 }
 
+const useChatbotHandler = <T extends IMessage>(): ChatboxHandler<T> =>
+	useContext<ChatboxHandler<T>>(ChatBoxCtx);
+
 export const useChatbot = <T extends IMessage>(config?: IChatbotConfig<T>): IChatbotAPI<T> => {
-	const ctx = useContext<ChatboxHandler<T>>(ChatBoxCtx);
+	const handler = useChatbotHandler<T>();
 
 	useEffect(() => {
-		if (config?.onMessage == null) return;
-
-		const unsubscribe = ctx.subscribe(config.onMessage);
-
+		const { onMessage } = config ?? {};
+		const unsubscribe = onMessage != null ? handler.subscribe(onMessage) : undefined;
 		return () => {
-			unsubscribe();
+			unsubscribe?.();
 		};
-	}, [ctx, config]);
+	}, [handler, config]);
 
 	return {
 		send: (message) => {
-			ctx.send(message);
+			handler.send(message);
 		},
 	};
 };
