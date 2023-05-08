@@ -116,3 +116,4 @@ temp/
 env/**.env
 
 TechRx-env/
+cmd/TechRxProject/db.sqlite3
