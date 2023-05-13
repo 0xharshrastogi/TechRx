@@ -1,24 +1,18 @@
-.chat-message-writer form {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	.input {
-		border: none;
-		padding: 0.75rem 0.5rem;
-		font-family: 'Poppins';
-		font-size: 0.75rem;
-		font-weight: 500;
-
-		&:focus,
-		&:active {
-			box-shadow: none;
-			outline: none;
-		}
+.chat-message-writer {
+	form {
+		display: flex;
 	}
+	padding: 0.5rem 1rem;
+	.form-item {
+		flex-grow: 1;
+		margin-bottom: 0;
+	}
+	.form-input {
+		margin-bottom: 0;
+		border: none;
 
-	.send-icon {
-		background-color: red;
-		padding: 0.75rem;
-		border-radius: 100%;
+		&:focus {
+			box-shadow: none;
+		}
 	}
 }

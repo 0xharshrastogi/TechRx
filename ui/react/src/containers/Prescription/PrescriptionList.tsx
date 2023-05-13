@@ -11,8 +11,8 @@ export const PrescriptionList: FC<PrescriptionListProps> = (props) => {
 	const { items } = props;
 	return (
 		<section className="prescription-list">
-			{items.map((item) => (
-				<PrescriptionItem key={item.id} value={item} />
+			{items.map((item, i) => (
+				<PrescriptionItem key={i} value={item} />
 			))}
 		</section>
 	);

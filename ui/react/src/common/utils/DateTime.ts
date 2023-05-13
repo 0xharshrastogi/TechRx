@@ -26,4 +26,34 @@ export class DateTimeUtils {
 		const year = value.getFullYear();
 		return `${value.getDate()} ${month}, ${year}`;
 	}
+
+	/**
+	 * converts the date into human readable format hh:mm AM
+	 *
+	 * eg: 12:45 PM
+	 */
+	static convertTo12Hour(time: Date): string {
+		const hours = time.getHours();
+		const minutes = time.getMinutes();
+
+		let formattedTime = '';
+
+		let hour = hours;
+		const suffix = hour >= 12 ? 'PM' : 'AM';
+
+		if (hour === 0) {
+			formattedTime = `12:${padZero(minutes)} ${suffix}`;
+		} else if (hour > 12) {
+			hour -= 12;
+			formattedTime = `${hour}:${padZero(minutes)} ${suffix}`;
+		} else {
+			formattedTime = `${hour}:${padZero(minutes)} ${suffix}`;
+		}
+
+		return formattedTime;
+	}
+}
+
+function padZero(num: number): string {
+	return num.toString().padStart(2, '0');
 }
