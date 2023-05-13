@@ -1,0 +1,25 @@
+.prescription-item {
+	background-color: #f2f2f7;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	overflow: hidden;
+
+	span {
+		display: inline-block;
+		width: 100%;
+	}
+	&-name {
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+	.date {
+		font-size: 0.75rem;
+		word-wrap: nowrap;
+		text-overflow: ellipsis;
+		color: rgb(100, 100, 100);
+	}
+
+	&:hover {
+		background-color: #bcbfff54;
+	}
+}
