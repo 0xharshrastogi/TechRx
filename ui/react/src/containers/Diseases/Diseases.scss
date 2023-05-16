@@ -1,0 +1,30 @@
+.diseases-container {
+	height: calc(100% - 1rem);
+	margin-bottom: 2rem;
+	margin-right: 1rem;
+	box-shadow: 0 2px 10px 0 #bbbbbb54;
+	background: white;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	.disease-list {
+		flex-grow: 1;
+		padding: 1rem;
+		overflow: auto;
+
+		> * + * {
+			margin-top: 1rem;
+		}
+	}
+
+	.title {
+		font-family: Poppins, sans-serif;
+		font-weight: 600;
+		color: #494949;
+		font-size: 1.25rem;
+		padding: 1rem;
+		margin: 0;
+	}
+}

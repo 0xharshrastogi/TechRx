@@ -1,7 +1,7 @@
 import { Layout, Space } from 'antd';
 import { type FC } from 'react';
 import { type IUser } from '../../common/types';
-import { Chatbox, Navbar, Prescription, UserProfileView } from '../../containers';
+import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
 import './dashboard.scss';
 
 const user: IUser = {
@@ -19,6 +19,7 @@ export const Dashboard: FC = () => {
 			<Navbar />
 			<Layout.Content className="dashboard-content">
 				<div className="dashboard-content-left">
+					{/* Column 1 */}
 					<div className="user-profile-wrapper">
 						<UserProfileView user={user} />
 					</div>
@@ -27,10 +28,16 @@ export const Dashboard: FC = () => {
 						<Prescription />
 					</div>
 				</div>
+
+				{/* Column 2 */}
 				<div>
 					<Chatbox />
 				</div>
-				<div></div>
+
+				{/* Column 3 */}
+				<div className="dashboard-content-right">
+					<Diseases />
+				</div>
 			</Layout.Content>
 		</Space>
 	);

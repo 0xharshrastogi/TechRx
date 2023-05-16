@@ -1,0 +1,15 @@
+.disease-item {
+	background-color: #f2f2f7;
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	overflow: hidden;
+
+	&-title {
+		color: #494949;
+		font-weight: 600;
+	}
+
+	.doctor-list {
+		margin-top: 0.5rem;
+	}
+}
