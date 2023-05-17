@@ -2,7 +2,7 @@ import { Layout, Space } from 'antd';
 import { type FC } from 'react';
 import { type IUser } from '../../common/types';
 import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
-import './dashboard.scss';
+import './Dashboard.scss';
 
 const user: IUser = {
 	name: 'Andre Sebastian',
