@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -84,13 +85,40 @@ WSGI_APPLICATION = 'TechRxProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+		'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': 'db.sqlite3', 
+		}
 }
+
+
+# DATABASES = {
+#     'default': {
+# 				'ENGINE': 'mssql',
+# 				'HOST': 'tcp:pharma-connect-db-server1.database.windows.net',
+# 				'PORT': '1433',
+# 				'NAME': 'pharma-connect-db1',
+# 				'USER': os.environ.get('USER'),
+# 				'PASSWORD': os.environ.get('PASSWORD'),
+# 				'OPTIONS': {
+# 						'driver': 'ODBC Driver 18 for SQL Server',
+#
+# 				}
+        # 'ENGINE': 'mssql',
+				# 'HOST': 'tcp:pharma-connect-db-server.database.windows.net',
+				# 'PORT': '1433',
+        # 'NAME': 'pharma-connect-db',
+				# 'Uid': '2115978',
+				# 'Encrypt': 'yes',
+				# 'TrustServerCertificate': 'no',
+				# 'ConnectionTimeout': 30,
+				# 'AUTHENTICATION': 'ActiveDirectoryPassword',
+				# 'OPTIONS': {
+        #      'driver': 'ODBC Driver 18 for SQL Server',
+				# }
+    # }
+# }
 
 
 # Password validation
@@ -129,6 +157,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'statics')]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

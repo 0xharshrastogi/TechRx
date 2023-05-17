@@ -1,11 +1,15 @@
 # from django.shortcuts import render
 # from rest_framework.authtoken.models import Token
+# from django.core.files.storage import FileSystemStorage
 from rest_framework.views import APIView
 from .serializer import UserSerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .models import Users
-import jwt, datetime
+from .models import  SavePrescription  # Users,
+import jwt 
+import datetime
+from connect_try1 import Users
+
 
 class RegisterView(APIView):
     def post(self, request):
@@ -43,6 +47,7 @@ class LoginView(APIView):
         }
         return response
 
+
 class UserView(APIView):
     def get(self, request):
         token = request.COOKIES.get('jwt')
@@ -61,15 +66,26 @@ class UserView(APIView):
         return Response(serializer.data)
 
 
+def UploadImage(request):
+		if request.method == 'POST' and request.FILES['upload']:
+				user = request.GET.get['userid']
+				image_file = request.FILES['upload']
+				try:
+						temp = SavePrescription(user=user, image=image_file)
+						temp.save()
+						return Response('200 ')
+				except Exception as e:
+					return Response(f'{e} so failed to upload')
+
+
 class LogoutView(APIView):
-    def post(self, request):
-        response = Response()
-        response.delete_cookie('jwt')
-        response.data = {
+		def post(self, request):
+				response = Response()
+				response.delete_cookie('jwt')
+				response.data = {
             'message': 'success'
         }
-
-        return response
+				return response
 
 # Create your views here.
 # def index(request):
