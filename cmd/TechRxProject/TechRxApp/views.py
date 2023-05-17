@@ -5,10 +5,10 @@ from rest_framework.views import APIView
 from .serializer import UserSerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .models import  SavePrescription  # Users,
-import jwt 
+from .models import SavePrescription, Users
+import jwt
 import datetime
-from connect_try1 import Users
+from .connect_try1 import connectionAzure
 
 
 class RegisterView(APIView):
