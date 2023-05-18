@@ -1,59 +1,28 @@
 import pyodbc
 import os
-from azure.identity import DefaultAzureCredential
+from Connection_making import connectionAzure
 
 
-def createTable():
-		# Azure AD credentials
-		credential = DefaultAzureCredential()
+def createTable(table_name, **kwargs):
+		print('in createTable')
+		conn, cursor = connectionAzure('Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433; Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 
-		# Azure ODBC connection string
-		conn_str = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;' \
-							 'Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+		# cursor.execute(f"DROP TABLE {table_name}")
+		sql_command = ''
+		for i, j in kwargs.items():
+				sql_command += i + j + ','
+		sql_command = sql_command[:-1]
+		print(sql_command)
+		cursor.execute(f"CREATE TABLE {table_name} ({sql_command})")
 
-		# Establish the connection
-		conn = pyodbc.connect(conn_str, auth=credential)
-
-		cursor = conn.cursor()
-		print(cursor)
-
-		cursor.execute("""CREATE TABLE users (
-				id INT PRIMARY KEY IDENTITY(1,1),
-				name VARCHAR(255),
-				gender INT,
-				languages VARCHAR(50),
-				address NVARCHAR(MAX),
-				email VARCHAR(255) UNIQUE,
-				password VARCHAR(255)
-		);
-
-		""")
 		cursor.commit()
 
-# createTable()
+
+createTable(table_name='users', id=' INT PRIMARY KEY IDENTITY(1,1)', name=' VARCHAR(255)', gender=' INT', languages=' VARCHAR(50)',
+						address=' NVARCHAR(MAX)', email=' VARCHAR(255) UNIQUE', password=' VARCHAR(255)')
 
 
-def connectionAzure():
-		# Azure AD credentials
-		credential = DefaultAzureCredential()
-
-		# Azure ODBC connection string
-		conn_str = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;' \
-							 'Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
-
-		# Establish the connection
-		conn = pyodbc.connect(conn_str, auth=credential)
-
-		cursor = conn.cursor()
-		print(cursor)
-		# cursor.execute("""
-		#     INSERT INTO Users (name, gender, LANGUAGES, address, email, password)
-		#     VALUES (?, ?, ?, ?, ?, ?)
-		#     """,
-		# 							 ("Manpreet", 0, "English", "abc", "manpreet.lawane@gmail.com", "12345")
-		# 							 )
-		# cursor.commit()
-		# # Fetch all rows
+def fetchData():
 		cursor.execute("""SELECT * FROM Users""")
 		rows = cursor.fetchall()
 
@@ -62,4 +31,3 @@ def connectionAzure():
 		for row in rows:
 				print(row)
 
-connectionAzure()

@@ -1,7 +1,7 @@
 import pyodbc
 import os
 from azure.identity import DefaultAzureCredential
-from models import Users
+# from models import Users
 #
 # from django.db import models
 # from django.contrib.auth.models import AbstractUser
@@ -47,15 +47,17 @@ def connectionAzure():
 
 		cursor = conn.cursor()
 		print(cursor)
-		cursor.execute("""INSERT INTO Users (name, gender, LANGUAGES, address, email, password) VALUES(Manpreet, 0, English,
-		{"city": "Mohali, "state": "Punjab", "country": "India"}, manpreet.lawane@gmail.com, 12345)""")
-		conn.commit()
-		# Fetch all rows
-		rows = cursor.fetchall()
-
-		# Process the rows
-
-		for row in rows:
-				print(row)
+		# cursor.execute(f"DROP TABLE users")
+		# conn.commit()
+		# cursor.execute("""INSERT INTO Users (name, gender, LANGUAGES, address, email, password) VALUES(Manpreet, 0, English,
+		# {"city": "Mohali, "state": "Punjab", "country": "India"}, manpreet.lawane@gmail.com, 12345)""")
+		# conn.commit()
+		# # Fetch all rows
+		# rows = cursor.fetchall()
+		#
+		# # Process the rows
+		#
+		# for row in rows:
+		# 		print(row)
 
 connectionAzure()
