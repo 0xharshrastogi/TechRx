@@ -39,9 +39,7 @@ def connectionAzure():
 		credential = DefaultAzureCredential()
 
 		# Azure ODBC connection string
-		conn_str = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;' \
-							 'Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
-
+		conn_str = os.environ.get('ConnectionString')
 		# Establish the connection
 		conn = pyodbc.connect(conn_str, auth=credential)
 

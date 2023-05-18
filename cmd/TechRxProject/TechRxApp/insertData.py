@@ -2,7 +2,7 @@ from Connection_making import connectionAzure
 
 def addData(table_name, **kwargs):
 		print('in addData')
-		conn, cursor = connectionAzure('Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433; Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+		conn, cursor = connectionAzure(os.environ.get('ConnectionString'))
 		columns = ''
 		values = []
 		values_str = ''
@@ -20,6 +20,3 @@ def addData(table_name, **kwargs):
 
 		cursor.commit()
 
-
-addData(table_name='users', name="Manpreet", gender=0, languages='["Hindi", "English"]',
-				address='{"city": "mohali", "state": "punjab","country":"india"}', email="a@a.com", password='a')

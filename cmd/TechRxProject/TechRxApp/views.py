@@ -9,6 +9,7 @@ from .models import SavePrescription, Users
 import jwt
 import datetime
 from .connect_try1 import connectionAzure
+from login_fetch_user import fetchUser
 
 
 class RegisterView(APIView):
@@ -23,8 +24,8 @@ class LoginView(APIView):
     def post(self, request):
         email = request.data['email']
         password = request.data['password']
-
-        user = Users.objects.filter(email=email).first()
+				user = fetchUser(table_name='users', email='a@a.com')
+        # user = Users.objects.filter(email=email).first()
 
         if user is None:
             raise AuthenticationFailed('User not found!')

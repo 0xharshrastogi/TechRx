@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/login_fetch_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/TechRx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechRx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/insertData.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/insertData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -34,9 +40,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Python__MSSQL__connect"
+  }
+}]]></component>
   <component name="RunManager" selected="Python.connect_try1">
     <configuration name="connect_try1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TechRx" />
@@ -116,6 +124,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

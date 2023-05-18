@@ -5,7 +5,7 @@ from Connection_making import connectionAzure
 
 def createTable(table_name, **kwargs):
 		print('in createTable')
-		conn, cursor = connectionAzure('Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433; Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+		conn, cursor = connectionAzure(os.environ.get('ConnectionString'))
 
 		# cursor.execute(f"DROP TABLE {table_name}")
 		sql_command = ''
