@@ -1,6 +1,6 @@
 import pyodbc
 import os
-from Connection_making import connectionAzure
+from TechRxApp.Connection_making import connectionAzure
 
 
 def createTable(table_name, **kwargs):

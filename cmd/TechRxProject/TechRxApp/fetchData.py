@@ -1,4 +1,5 @@
-from Connection_making import connectionAzure
+from TechRxApp.Connection_making import connectionAzure
+import os
 
 
 def addData(table_name):

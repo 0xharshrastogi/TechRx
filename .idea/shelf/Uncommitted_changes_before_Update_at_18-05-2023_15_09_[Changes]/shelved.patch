@@ -1,0 +1,76 @@
+Index: cmd/TechRxProject/package_installations.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>pandas\r\nspacy\r\ntorch\r\ntransformers\r\nopenpyxl\r\njupyter\r\nselenium\r\nwebdriver_manager\r\nnltk\r\ndjango\r\ndjangorestframework\r\ndrf-yasg\r\ndjango\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cmd/TechRxProject/package_installations.txt b/cmd/TechRxProject/package_installations.txt
+--- a/cmd/TechRxProject/package_installations.txt	(revision 41c8996153c47865307ab7ec8e6b68baf320164e)
++++ b/cmd/TechRxProject/package_installations.txt	(date 1684402564111)
+@@ -10,4 +10,12 @@
+ django
+ djangorestframework
+ drf-yasg
+-django
++django-cors-headers
++PyJWT
++pyodbc
++mssql-django
++django_extensions
++Pillow
++
++rasa==3.5.6
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5\" name=\"Changes\" comment=\"Changes\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/TechRx.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/TechRx.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Django_MSSQL_connect\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2P0AD5Gd6YO3hZYG7A8Y83K011d\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.connect_try1\">\r\n    <configuration name=\"connect_try1 (1)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"TechRx\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"connect_try1\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"TechRx\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n        <env name=\"USER\" value=\"TechRx\" />\r\n        <env name=\"PASSWORD\" value=\"Cognizant@7\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/connect_odbc_azure\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Python.connect_try1\" />\r\n      <item itemvalue=\"Python.connect_try1 (1)\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.connect_try1 (1)\" />\r\n        <item itemvalue=\"Python.connect_try1\" />\r\n        <item itemvalue=\"Python.connect_try1 (1)\" />\r\n        <item itemvalue=\"Python.connect_try1\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5\" name=\"Changes\" comment=\"\" />\r\n      <created>1682583503293</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682583503293</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 41c8996153c47865307ab7ec8e6b68baf320164e)
++++ b/.idea/workspace.xml	(date 1684402727286)
+@@ -5,13 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5" name="Changes" comment="Changes">
+-      <change beforePath="$PROJECT_DIR$/.idea/TechRx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechRx.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/connect_try1.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/serializer.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/package_installations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/package_installations.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,7 +16,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="Django_MSSQL_connect" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -83,8 +78,8 @@
+       <method v="2" />
+     </configuration>
+     <list>
+-      <item itemvalue="Python.connect_try1" />
+       <item itemvalue="Python.connect_try1 (1)" />
++      <item itemvalue="Python.connect_try1" />
+     </list>
+     <recent_temporary>
+       <list>
+@@ -92,6 +87,7 @@
+         <item itemvalue="Python.connect_try1" />
+         <item itemvalue="Python.connect_try1 (1)" />
+         <item itemvalue="Python.connect_try1" />
++        <item itemvalue="Python.connect_try1 (1)" />
+       </list>
+     </recent_temporary>
+   </component>

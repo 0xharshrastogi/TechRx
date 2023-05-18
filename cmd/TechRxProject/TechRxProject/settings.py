@@ -85,28 +85,28 @@ WSGI_APPLICATION = 'TechRxProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# DATABASES = {
-# 		'default': {
-# 		'ENGINE': 'django.db.backends.sqlite3',
-# 		'NAME': 'db.sqlite3', 
-# 		}
-# }
-
-
 DATABASES = {
-    'default': {
-				'ENGINE': 'mssql',
-				'HOST': 'tcp:pharma-connect-db-server1.database.windows.net',
-				'PORT': '1433',
-				'NAME': 'pharma-connect-db1',
-				'USER': os.environ.get('USER'),
-				'PASSWORD': os.environ.get('PASSWORD'),
-				'OPTIONS': {
-						'driver': 'ODBC Driver 18 for SQL Server',
-
-				}
+		'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': 'db.sqlite3', 
 		}
 }
+
+
+# DATABASES = {
+#     'default': {
+# 				'ENGINE': 'mssql',
+# 				'HOST': 'tcp:pharma-connect-db-server1.database.windows.net',
+# 				'PORT': '1433',
+# 				'NAME': 'pharma-connect-db1',
+# 				'USER': os.environ.get('USER'),
+# 				'PASSWORD': os.environ.get('PASSWORD'),
+# 				'OPTIONS': {
+# 						'driver': 'ODBC Driver 18 for SQL Server',
+# 
+# 				}
+# 		}
+# }
         # 'ENGINE': 'mssql',
 				# 'HOST': 'tcp:pharma-connect-db-server.database.windows.net',
 				# 'PORT': '1433',
@@ -167,7 +167,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'TechRxApp.Users'
+# AUTH_USER_MODEL = 'TechRxApp.Users'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True

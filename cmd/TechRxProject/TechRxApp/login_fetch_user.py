@@ -1,11 +1,14 @@
-from Connection_making import connectionAzure
+from TechRxApp.Connection_making import connectionAzure
+import os
 
 
-def fetchUser(table_name, email):
-	print('in addData')
-	conn, cursor = connectionAzure(
-		os.environ.get('ConnectionString'))
-	cursor.execute(f"SELECT username, password FROM {table_name} where email={email}")
+def fetchUser(table_name, email_id, password):
+	print('in fetchUser', email_id)
+	conn, cursor = connectionAzure('Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
+	sql_query = f"""SELECT email, password FROM {table_name} WHERE email={email_id}"""
+	print(sql_query)
+	cursor.execute(sql_query)
+	
 	result = cursor.fetchone()
 	print(result)
 	return result
