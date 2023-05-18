@@ -10,3 +10,4 @@ nltk
 django
 djangorestframework
 drf-yasg
+django
