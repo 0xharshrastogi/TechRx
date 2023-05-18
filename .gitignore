@@ -117,3 +117,4 @@ env/**.env
 
 TechRx-env/
 cmd/TechRxProject/db.sqlite3
+cmd/TechRxProject/TechRxApp/creds.json
