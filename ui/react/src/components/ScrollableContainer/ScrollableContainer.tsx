@@ -5,7 +5,7 @@ import './ScrollableContainer.scss';
 type ElementProps<T> = DetailedHTMLProps<React.HTMLAttributes<T>, T>;
 
 interface ScrollableContainerProps {
-	title?: string;
+	heading?: JSX.Element;
 
 	children: ReactNode;
 }
@@ -13,7 +13,7 @@ interface ScrollableContainerProps {
 export const ScrollableContainer: FC<ScrollableContainerProps & ElementProps<HTMLDivElement>> = (
 	props
 ) => {
-	const { title, className, children, ...rest } = props;
+	const { heading: title, className, children, ...rest } = props;
 
 	return (
 		<div className={classNames('scrollable-container-wrapper', className)} {...rest}>

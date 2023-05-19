@@ -1,6 +1,7 @@
 import { InboxOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import { Button, Modal, Skeleton, Upload } from 'antd';
+import { Button, Modal, Skeleton, Tooltip, Upload } from 'antd';
 import { useEffect, useState, type FC } from 'react';
+import { ScrollableContainer } from '../../components';
 import { type IPrescription } from './IPrescription';
 import './Prescription.scss';
 import { PrescriptionList } from './PrescriptionList';
@@ -59,27 +60,61 @@ export const Prescription: FC = () => {
 	}, [prescriptions]);
 
 	return (
-		<section className="prescription">
-			<Skeleton active loading={loading} />
-			<Skeleton active loading={loading} />
+		<>
+			<ScrollableContainer
+				heading={
+					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+						<span>Prescription</span>
+						<div>
+							<Tooltip title="Add Prescription">
+								<Button
+									shape="circle"
+									type="ghost"
+									icon={<PlusCircleOutlined color="inherit" />}
+									onClick={modal.open}
+								/>
+							</Tooltip>
+						</div>
+					</div>
+				}
+				className="prescription"
+				style={{
+					height: 400,
+					flexGrow: '1',
+				}}
+			>
+				<Skeleton active loading={loading} />
+				<Skeleton active loading={loading} />
+				<PrescriptionList items={prescriptions} />
+			</ScrollableContainer>
+
+			<Modal centered width={800} open={isVisible} onOk={modal.close} onCancel={modal.close}>
+				<div>
+					<Upload.Dragger name="prescription">
+						<p className="ant-upload-drag-icon">
+							<InboxOutlined />
+						</p>
+						<p className="ant-upload-text">Click or drag file to this area to upload</p>
+						<p className="ant-upload-hint">
+							Support for a single or bulk upload. Strictly prohibited from uploading company data
+							or other banned files.
+						</p>
+					</Upload.Dragger>
+				</div>
+			</Modal>
+		</>
+	);
+};
+
+// {
+/* <section className="prescription">
+
+			<ScrollableContainer title="Prescriptions"></ScrollableContainer>
+
 			<PrescriptionList items={prescriptions} />
 			<span className="modal-button">
 				<Button type="primary" icon={<PlusCircleOutlined />} onClick={modal.open} />
-				<Modal centered width={800} open={isVisible} onOk={modal.close} onCancel={modal.close}>
-					<div>
-						<Upload.Dragger name="prescription">
-							<p className="ant-upload-drag-icon">
-								<InboxOutlined />
-							</p>
-							<p className="ant-upload-text">Click or drag file to this area to upload</p>
-							<p className="ant-upload-hint">
-								Support for a single or bulk upload. Strictly prohibited from uploading company data
-								or other banned files.
-							</p>
-						</Upload.Dragger>
-					</div>
-				</Modal>
+
 			</span>
-		</section>
-	);
-};
+		</section> */
+// }

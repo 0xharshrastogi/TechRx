@@ -17,7 +17,7 @@ export const UserProfileView: FC<UserProfileViewProps> = (props) => {
 			<header
 				className="user-profile-view-header"
 				style={{
-					height: AVATAR_SIZE,
+					height: AVATAR_SIZE + 30,
 					backgroundImage: `url(${headerSrc})`,
 					marginBottom: `calc(0.75rem + ${AVATAR_SIZE / 2}px)`,
 				}}
@@ -26,7 +26,7 @@ export const UserProfileView: FC<UserProfileViewProps> = (props) => {
 					<Avatar src={imageSrc} size={AVATAR_SIZE} />
 				</div>
 			</header>
-			<section className="user-profile-view-body user">
+			<section className="user-profile-view-body user" title={name}>
 				<h4 className="name">{name}</h4>
 				<span className="email">{email}</span>
 			</section>
