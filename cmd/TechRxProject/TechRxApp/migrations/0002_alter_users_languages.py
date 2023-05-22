@@ -4,29 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ("TechRxApp", "0001_initial"),
-    ]
+	dependencies = [
+		("TechRxApp", "0001_initial"),
+	]
 
-    operations = [
-        migrations.AlterField(
-            model_name="users",
-            name="LANGUAGES",
-            field=models.CharField(
-                choices=[
-                    ("English", "English"),
-                    ("Hindi", "Hindi"),
-                    ("Punjabi", "Punjabi"),
-                    ("Telugu", "Telugu"),
-                    ("Tamil", "Tamil"),
-                    ("Kannada", "Kannada"),
-                    ("Malayalam", "Malayalam"),
-                    ("Marathi", "Marathi"),
-                    ("French", "French"),
-                    ("Japanese", "Japanese"),
-                ],
-                default="English",
-                max_length=50,
-            ),
-        ),
-    ]
+	operations = [
+		migrations.AlterField(
+			model_name="users",
+			name="LANGUAGES",
+			field=models.CharField(
+				choices=[
+					("English", "English"),
+					("Hindi", "Hindi"),
+					("Punjabi", "Punjabi"),
+					("Telugu", "Telugu"),
+					("Tamil", "Tamil"),
+					("Kannada", "Kannada"),
+					("Malayalam", "Malayalam"),
+					("Marathi", "Marathi"),
+					("French", "French"),
+					("Japanese", "Japanese"),
+				],
+				default="English",
+				max_length=50,
+			),
+		),
+	]

@@ -1,0 +1,6 @@
+Congential heart disease
+peripheral vascular disease
+Hepatitis
+Asthma
+Pneumonia
+Lupus
