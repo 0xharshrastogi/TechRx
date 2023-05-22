@@ -57,13 +57,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Python__MSSQL__connect",
-    "last_opened_file_path": "E:/Manpreet's/2023/TechRx/cmd/TechRxProject",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;Python__MSSQL__connect&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Manpreet's/2023/TechRx/cmd/TechRxProject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="Python_MSSQL_connect" />
