@@ -117,3 +117,8 @@ env/**.env
 
 TechRx-env/
 cmd/TechRxProject/db.sqlite3
+cmd/TechRxProject/TechRxApp/creds.json
+*.pyc
+__pycache__/
+.idea/
+.vscode/
