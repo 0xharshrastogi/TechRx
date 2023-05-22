@@ -1,7 +1,7 @@
-from Connection_making import connectionAzure
+from .Connection_making import connectionAzure
+import os
 
-
-def addData(table_name):
+def FetchData(table_name):
 	print('in addData')
 	conn, cursor = connectionAzure(
 		os.environ.get('ConnectionString'))
@@ -10,5 +10,3 @@ def addData(table_name):
 	for i in results:
 		print(i)
 
-
-addData(table_name='users')

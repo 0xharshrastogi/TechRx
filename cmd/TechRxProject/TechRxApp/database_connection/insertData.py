@@ -1,26 +1,14 @@
 # from TechRxApp.Connection_making import connectionAzure
+import json
 import os
-import os
+from .Connection_making import connectionAzure
 import pandas as pd
-import pyodbc
-from azure.identity import DefaultAzureCredential
 
 
-def connectionAzure(conn_str):
-	print('in connectionAzure')
-	# Azure AD credentials
-	credential = DefaultAzureCredential()
-
-	# Establish the connection
-	conn = pyodbc.connect(conn_str, auth=credential)
-
-	cursor = conn.cursor()
-	return conn, cursor
-
-
-def addData(table_name, hashed_password, **kwargs):
+def addUserData(conn_string, table_name, hashed_password, **kwargs):
 	print('in addData')
-	conn, cursor = connectionAzure(os.environ.get(os.environ.get('ConnectionString')))
+	print(conn_string)
+	conn, cursor = connectionAzure(conn_string)
 	columns, values_str, values = '', '', []
 
 	for col_name, data in kwargs.items():
@@ -42,9 +30,9 @@ def addData(table_name, hashed_password, **kwargs):
 	cursor.commit()
 
 
-def addDiseaseData(file):
+def addDiseaseData(conn_string, file):
 	print('in addDiseaseData')
-	conn, cursor = connectionAzure(os.environ.get('ConnectionString'))
+	conn, cursor = connectionAzure(conn_string)
 
 	df = pd.read_excel(file)
 	for row in df.itertuples(index=False):
@@ -61,4 +49,15 @@ def addDiseaseData(file):
 	conn.close()
 
 
-addDiseaseData('diseases.xlsx')
+def savePrescription(email, filename):
+	print('in savePrescription')
+	with open('TechRxApp/creds.json') as file:
+		json_content = file.read()
+	conn_string = (json.loads(json_content))['ConnectionString']
+	conn, cursor = connectionAzure(conn_string)
+	cursor.execute(f"INSERT INTO SavePrescription (email, prescription) VALUES (?, ?)", email, filename)
+	conn.commit()
+
+
+
+

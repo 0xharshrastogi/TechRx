@@ -1,28 +1,14 @@
-# from TechRxApp.Connection_making import connectionAzure
+from .Connection_making import connectionAzure
 import os
-import pandas as pd
-import pyodbc
-from azure.identity import DefaultAzureCredential
 
 
-def connectionAzure(conn_str):
-	print('in connectionAzure')
-	# Azure AD credentials
-	credential = DefaultAzureCredential()
+def DropTable(table_name):
+	conn, cursor = connectionAzure(os.environ.get('ConnectionString'))
 
-	# Establish the connection
-	conn = pyodbc.connect(conn_str, auth=credential)
-
+	alter_query = f"DROP TABLE {table_name}"
 	cursor = conn.cursor()
-	return conn, cursor
+	cursor.execute(alter_query)
+	conn.commit()
 
-
-conn, cursor = connectionAzure(os.environ.get('ConnectionString'))
-
-alter_query = f"DROP TABLE diseases"
-cursor = conn.cursor()
-cursor.execute(alter_query)
-conn.commit()
-
-# Close the database connection
-conn.close()
+	# Close the database connection
+	conn.close()

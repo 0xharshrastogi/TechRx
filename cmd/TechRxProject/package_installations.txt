@@ -13,10 +13,10 @@ drf-yasg
 django-cors-headers
 PyJWT
 pyodbc
-mssql-django
 django_extensions
 Pillow
 bcrypt
+azure-identity
 
 rasa==3.5.6
 

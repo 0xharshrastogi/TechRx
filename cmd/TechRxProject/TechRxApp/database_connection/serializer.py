@@ -1,39 +1,43 @@
 import bcrypt
-import pyodbc
-from TechRxApp.login_fetch_user import fetchUser
-
-from .insertData import addData
+from .login_fetch_user import fetchUser
+from .insertData import addUserData
+import json
+from rest_framework.exceptions import AuthenticationFailed
 
 
 class UserSerializer():
+	print('in user serializer')
 	def __init__(self):
-		self.connection_string = connection_string
-
-	@classmethod
-	def create_user(cls, **kwargs):
+		with open('TechRxApp/creds.json') as file:
+			json_content = file.read()
+		self.conn_string = (json.loads(json_content))['ConnectionString']
+	def create_user(self, **kwargs):
 		print('in create_user')
-		# Hash the password
 
+		# Hash the password
 		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
 		hashed_password = bcrypt.hashpw(kwargs['password'].encode('utf-8'), salt)
-		addData(table_name='users', hashed_password=hashed_password, **kwargs)
+		addUserData(self.conn_string, table_name='users', hashed_password=hashed_password, **kwargs)
 		print("User created successfully!")
-		return
 
-	@classmethod
-	def check_password(cls, table_name, email_id, password):
+	def check_password(self, table_name, email_id, password):
 		print('in check_password')
 
 		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
 		fetched_password = bcrypt.hashpw(password.encode('utf-8'), salt)
-		row = fetchUser(table_name, f'{email_id}', password)
-
+		row = fetchUser(self.conn_string, table_name, f'{email_id}', password)
+		print(email_id, row[0])
 		if row:
 			hashed_password = row[1]
-			print(fetched_password, hashed_password)
-			if bcrypt.checkpw(fetched_password, hashed_password.encode('utf-8')):
+			print(fetched_password, hashed_password.encode('utf-8'))
+			if fetched_password == hashed_password.encode('utf-8'):
 				print('found')
-				return True
+				return row[0]
+			else:
+				raise AuthenticationFailed('Incorrect password!')
+		else:
+			raise AuthenticationFailed('User not found!')
+
 
 # from rest_framework import serializers
 # import json
