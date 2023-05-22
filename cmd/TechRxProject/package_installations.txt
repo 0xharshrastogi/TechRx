@@ -10,4 +10,13 @@ nltk
 django
 djangorestframework
 drf-yasg
-django
+django-cors-headers
+PyJWT
+pyodbc
+mssql-django
+django_extensions
+Pillow
+bcrypt
+
+rasa==3.5.6
+

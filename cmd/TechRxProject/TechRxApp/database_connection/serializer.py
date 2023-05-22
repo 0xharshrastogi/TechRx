@@ -1,38 +1,39 @@
 import bcrypt
 import pyodbc
-from insertData import addData
-from login_fetch_user import fetchUser
+from TechRxApp.login_fetch_user import fetchUser
 
-class UserSerializer:
+from .insertData import addData
+
+
+class UserSerializer():
 	def __init__(self):
 		self.connection_string = connection_string
 
-	def create_user(self, name, gender, languages, address, email, password):
+	@classmethod
+	def create_user(cls, **kwargs):
+		print('in create_user')
 		# Hash the password
-		hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-		addData(table_name='users', name=name, gender=gender, languages=languages,address=address, email=email, password=hashed_password)
-		print("User created successfully!")
 
-	def check_password(self, table_name, email, password):
-		row = fetchUser('users', 'a@a.com')
+		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
+		hashed_password = bcrypt.hashpw(kwargs['password'].encode('utf-8'), salt)
+		addData(table_name='users', hashed_password=hashed_password, **kwargs)
+		print("User created successfully!")
+		return
+
+	@classmethod
+	def check_password(cls, table_name, email_id, password):
+		print('in check_password')
+
+		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
+		fetched_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+		row = fetchUser(table_name, f'{email_id}', password)
+
 		if row:
 			hashed_password = row[1]
-			if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
+			print(fetched_password, hashed_password)
+			if bcrypt.checkpw(fetched_password, hashed_password.encode('utf-8')):
+				print('found')
 				return True
-			else:
-				return False
-		else:
-			return ('Could not check password')
-
-
-
-
-
-
-
-
-
-
 
 # from rest_framework import serializers
 # import json
