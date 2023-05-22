@@ -4,20 +4,25 @@ from insertData import addData
 from login_fetch_user import fetchUser
 
 class UserSerializer:
-    def __init__(self):
-        self.connection_string = connection_string
+	def __init__(self):
+		self.connection_string = connection_string
 
-    def create_user(self, name, gender, languages, address, email, password):
-        # Hash the password
-        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-				addData(table_name='users', name=name, gender=gender, languages=languages,address=address, email=email, password=hashed_password)
-				print("User created successfully!")
-		def check_password(self):
-				row = fetchUser('users', 'a@a.com')
-				if row:
-            hashed_password = row[0]
-            if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
-                return True
+	def create_user(self, name, gender, languages, address, email, password):
+		# Hash the password
+		hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+		addData(table_name='users', name=name, gender=gender, languages=languages,address=address, email=email, password=hashed_password)
+		print("User created successfully!")
+
+	def check_password(self, table_name, email, password):
+		row = fetchUser('users', 'a@a.com')
+		if row:
+			hashed_password = row[1]
+			if bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8')):
+				return True
+			else:
+				return False
+		else:
+			return ('Could not check password')
 
 
 

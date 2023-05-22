@@ -13,40 +13,45 @@ from login_fetch_user import fetchUser
 
 
 class RegisterView(APIView):
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
+	def post(self, request):
+		serializer = UserSerializer.create_user('users', data=request.data)
+		# serializer.is_valid(raise_exception=True)
+		# serializer.save()
+		if serializer:
+			return Response('Account created')
+		else:
+			return Response('Account could not be created')
 
 
 class LoginView(APIView):
-    def post(self, request):
-        email = request.data['email']
-        password = request.data['password']
-				user = fetchUser(table_name='users', email='a@a.com')
-        # user = Users.objects.filter(email=email).first()
 
-        if user is None:
-            raise AuthenticationFailed('User not found!')
+	def post(self, request):
+		email = request.data['email']
+		password = request.data['password']
+		user = UserSerializer.check_password('users', email, password)
+		# fetchUser(table_name='users', email='a@a.com')
+		# user = Users.objects.filter(email=email).first()
 
-        if not user.check_password(password):
-            raise AuthenticationFailed('Incorrect password!')
+		if user is None:
+				raise AuthenticationFailed('User not found!')
 
-        payload = {
-            'id': user.id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
-            'iat': datetime.datetime.utcnow()
-        }
+		if not user.check_password(password):
+				raise AuthenticationFailed('Incorrect password!')
 
-        token = jwt.encode(payload, 'secret', algorithm='HS256')    # .decode('utf-8')
+		payload = {
+				'id': user.id,
+				'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
+				'iat': datetime.datetime.utcnow()
+		}
 
-        response = Response()
-        response.set_cookie(key='jwt', value=token, httponly=True)
-        response.data = {
-            'jwt': token
-        }
-        return response
+		token = jwt.encode(payload, 'secret', algorithm='HS256')    # .decode('utf-8')
+
+		response = Response()
+		response.set_cookie(key='jwt', value=token, httponly=True)
+		response.data = {
+				'jwt': token
+		}
+		return response
 
 
 class UserView(APIView):
