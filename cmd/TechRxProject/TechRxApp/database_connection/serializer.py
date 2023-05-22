@@ -12,18 +12,26 @@ class UserSerializer():
 	def create_user(cls, **kwargs):
 		print('in create_user')
 		# Hash the password
-		hashed_password = bcrypt.hashpw(kwargs['password'].encode('utf-8'), bcrypt.gensalt())
+
+		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
+		hashed_password = bcrypt.hashpw(kwargs['password'].encode('utf-8'), salt)
 		addData(table_name='users', hashed_password=hashed_password, **kwargs)
 		print("User created successfully!")
 		return
-	
+
 	@classmethod
 	def check_password(cls, table_name, email_id, password):
 		print('in check_password')
+
+		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
+		fetched_password = bcrypt.hashpw(password.encode('utf-8'), salt)
 		row = fetchUser(table_name, f'{email_id}', password)
+
 		if row:
-			hashed_password = row[0]
-			if bcrypt.checkpw(password.encode('utf-8'), hashed_password):
+			hashed_password = row[1]
+			print(fetched_password, hashed_password)
+			if bcrypt.checkpw(fetched_password, hashed_password.encode('utf-8')):
+				print('found')
 				return True
 
 
