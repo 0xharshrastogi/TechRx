@@ -13,20 +13,23 @@ export const UserProfileView: FC<UserProfileViewProps> = (props) => {
 	const { name, headerSrc, imageSrc, email } = props.user;
 
 	return (
-		<div className="user-profile-view">
-			<header className="user-profile-view-header" style={{ backgroundImage: `url(${headerSrc})` }}>
+		<section className="user-profile-view">
+			<header
+				className="user-profile-view-header"
+				style={{
+					height: AVATAR_SIZE + 30,
+					backgroundImage: `url(${headerSrc})`,
+					marginBottom: `calc(0.75rem + ${AVATAR_SIZE / 2}px)`,
+				}}
+			>
 				<div className="avatar-wrapper">
 					<Avatar src={imageSrc} size={AVATAR_SIZE} />
 				</div>
 			</header>
-
-			<section
-				className="user-profile-view-body user"
-				style={{ marginTop: `calc(0.75rem + ${AVATAR_SIZE / 2}px)` }}
-			>
+			<section className="user-profile-view-body user" title={name}>
 				<h4 className="name">{name}</h4>
 				<span className="email">{email}</span>
 			</section>
-		</div>
+		</section>
 	);
 };

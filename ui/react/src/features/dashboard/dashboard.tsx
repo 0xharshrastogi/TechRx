@@ -1,8 +1,8 @@
 import { Layout, Space } from 'antd';
 import { type FC } from 'react';
 import { type IUser } from '../../common/types';
-import { Chatbox, Navbar, Prescription, UserProfileView } from '../../containers';
-import './dashboard.scss';
+import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
+import './Dashboard.scss';
 
 const user: IUser = {
 	name: 'Andre Sebastian',
@@ -19,18 +19,24 @@ export const Dashboard: FC = () => {
 			<Navbar />
 			<Layout.Content className="dashboard-content">
 				<div className="dashboard-content-left">
+					{/* Column 1 */}
 					<div className="user-profile-wrapper">
 						<UserProfileView user={user} />
 					</div>
 					<div className="prescription-wrapper">
-						<span className="title">Prescriptions</span>
 						<Prescription />
 					</div>
 				</div>
+
+				{/* Column 2 */}
 				<div>
 					<Chatbox />
 				</div>
-				<div></div>
+
+				{/* Column 3 */}
+				<div className="dashboard-content-right">
+					<Diseases />
+				</div>
 			</Layout.Content>
 		</Space>
 	);

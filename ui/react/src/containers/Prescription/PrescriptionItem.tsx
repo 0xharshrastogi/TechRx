@@ -13,7 +13,7 @@ export const PrescriptionItem: FC<TPrescriptionItemProps> = (props) => {
 	return (
 		<div className="prescription-item">
 			<span className="prescription-item-name">{name}</span>
-			<span className="date">Prescribed on {DateTimeUtils.toHumanDate(createdOn)}</span>
+			<span className="date">{DateTimeUtils.toHumanDate(createdOn)}</span>
 		</div>
 	);
 };

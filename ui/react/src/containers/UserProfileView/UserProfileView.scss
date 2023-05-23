@@ -1,47 +1,38 @@
 .user-profile-view {
-	--header-height: 70px;
 	background-color: white;
 	box-shadow: 0 2px 10px 0 #bbbbbb54;
-	border-radius: 0.5rem;
 	overflow: hidden;
+	border-radius: 0.5rem;
 
 	&-header {
-		background-color: red;
-		height: var(--header-height);
+		background-color: rgb(226, 226, 226);
 		background-size: cover;
+		background-position: center;
 		position: relative;
 
-		img {
-			width: 100%;
-			object-fit: cover;
-			object-position: top center;
-		}
 		.avatar-wrapper {
 			position: absolute;
 			bottom: 0;
-			transform: translateY(50%);
+			translate: 1rem 50%;
 			background-color: white;
 			border-radius: 100%;
-			padding: 0.125rem;
-			margin-left: 1rem;
 			box-shadow: 0px 4px 4px 0 #bbbbbb54;
+			padding: 0.125rem;
 		}
 	}
 
 	&-body {
 		padding: 0 1rem 1rem 1rem;
-		&.user {
-			.name {
-				font-family: Poppins, sans-serif;
-				font-weight: 600;
-				color: #494949;
-				font-size: 1.25rem;
-				margin: 0;
-			}
-			.email {
-				font-size: 0.6rem;
-				color: #777777;
-			}
+
+		&.user .name {
+			font-family: Poppins, sans-serif;
+			font-weight: 600;
+			color: #494949;
+			font-size: 1.25rem;
+		}
+		&.user .email {
+			font-size: 0.6rem;
+			color: #777;
 		}
 	}
 }
