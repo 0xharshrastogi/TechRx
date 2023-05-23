@@ -79,7 +79,6 @@ export const Prescription: FC = () => {
 				}
 				className="prescription"
 				style={{
-					height: 400,
 					flexGrow: '1',
 				}}
 			>

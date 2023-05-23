@@ -74,7 +74,6 @@ export const Diseases: FC = () => {
 			className="disease-container"
 			heading={<>Diseases</>}
 			style={{
-				height: 400,
 				flexGrow: 1,
 			}}
 		>
