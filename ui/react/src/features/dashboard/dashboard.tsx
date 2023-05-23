@@ -24,7 +24,6 @@ export const Dashboard: FC = () => {
 						<UserProfileView user={user} />
 					</div>
 					<div className="prescription-wrapper">
-						<span className="title">Prescriptions</span>
 						<Prescription />
 					</div>
 				</div>
