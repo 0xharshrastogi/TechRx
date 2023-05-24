@@ -1,6 +1,7 @@
 import { InboxOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Skeleton, Tooltip, Upload } from 'antd';
 import { useEffect, useState, type FC } from 'react';
+import * as Endpoint from '../../common/endpoints';
 import { ScrollableContainer } from '../../components';
 import { type IPrescription } from './IPrescription';
 import './Prescription.scss';
@@ -36,6 +37,7 @@ const prescriptionList = [
 ];
 
 export const Prescription: FC = () => {
+	const PRESCRIPTION_FIELD_NAME = 'upload';
 	const [prescriptions, setPrescriptions] = useState<IPrescription[]>([]);
 	const [isVisible, setIsVisible] = useState(false);
 	const [loading, setLoading] = useState(true);
@@ -58,6 +60,11 @@ export const Prescription: FC = () => {
 			clearTimeout(timeoutId);
 		};
 	}, [prescriptions]);
+
+	const data = {
+		email: 'john@email.com',
+		filename: 'john@email.com' + ';' + new Date().getTime().toString(),
+	};
 
 	return (
 		<>
@@ -89,7 +96,11 @@ export const Prescription: FC = () => {
 
 			<Modal centered width={800} open={isVisible} onOk={modal.close} onCancel={modal.close}>
 				<div>
-					<Upload.Dragger name="prescription">
+					<Upload.Dragger
+						name={PRESCRIPTION_FIELD_NAME}
+						action={Endpoint.PRESCRIPTION_UPLOAD}
+						data={data}
+					>
 						<p className="ant-upload-drag-icon">
 							<InboxOutlined />
 						</p>
