@@ -1,10 +1,12 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Form, Input, Select, Space, Steps, message, type StepProps } from 'antd';
 import { type FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
 import { type SignupFormSchema } from '../../common/types';
-import { FormRules } from '../../helpers';
+import { AuthUtils, AuthenticationStatus, FormRules } from '../../helpers';
 import { useSteps } from '../../hooks';
+import { SIGNUP } from '../../paths';
 import './signupForm.scss';
 import { useLanguages } from './useLanguages';
 
@@ -26,17 +28,21 @@ export const SignupForm: FC = () => {
 	const [form] = useForm<SignupFormSchema>();
 	const [languages] = useLanguages();
 	const step = useSteps(0, stepItems.length);
+	const navigate = useNavigate();
 
 	const [onNextBtnClick, onPrevBtnClick] = [step.next, step.prev];
 
 	const submitHandler = async (): Promise<void> => {
 		const value = form.getFieldsValue(true);
 		const error = await Authentication.signup(value);
-		if (error == null) {
-			await message.success('Successful', 1);
+		const TIME_SECOND = 1;
+		if (error != null) {
+			await message.error('Signup Failed', TIME_SECOND);
 			return;
 		}
-		await message.error('Signup Failed', 1);
+		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
+		navigate(SIGNUP);
+		await message.success('Successful', TIME_SECOND);
 	};
 
 	return (
