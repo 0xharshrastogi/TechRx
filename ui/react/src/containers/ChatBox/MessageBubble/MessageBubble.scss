@@ -1,0 +1,17 @@
+.message-bubble {
+	padding: 10px;
+	border-radius: 6px;
+	display: flex;
+	.message-text {
+		margin-bottom: 1rem;
+		// padding: 5px;
+	}
+
+	.date-time {
+		display: inline-block;
+		align-self: flex-end;
+		font-size: 0.5rem;
+		flex: 1;
+		white-space: nowrap;
+	}
+}

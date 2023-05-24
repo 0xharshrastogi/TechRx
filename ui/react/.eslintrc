@@ -1,0 +1,33 @@
+{
+	"env": { "browser": true, "es2020": true },
+	"extends": [
+		"standard-with-typescript",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"sourceType": "module",
+		"project": ["tsconfig.json"]
+	},
+	"plugins": ["react", "react-refresh"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
+		"react-refresh/only-export-components": "warn",
+		"indent": ["off", "tab"],
+		"@typescript-eslint/indent": ["off", "tab"],
+		"react/react-in-jsx-scope": 0,
+		"react/jsx-uses-react": 0
+	}
+}

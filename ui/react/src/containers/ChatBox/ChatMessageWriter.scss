@@ -1,0 +1,18 @@
+.chat-message-writer {
+	form {
+		display: flex;
+	}
+	padding: 0.5rem 1rem;
+	.form-item {
+		flex-grow: 1;
+		margin-bottom: 0;
+	}
+	.form-input {
+		margin-bottom: 0;
+		border: none;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}

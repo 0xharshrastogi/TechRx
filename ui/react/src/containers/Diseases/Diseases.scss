@@ -1,0 +1,10 @@
+.disease-container {
+	background-color: white;
+	border-radius: 0.25rem;
+
+	.disease-list-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+}

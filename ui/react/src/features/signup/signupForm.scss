@@ -1,0 +1,14 @@
+.signup-form {
+	margin-top: 2rem;
+
+	.combined-field {
+		width: 100%;
+		> * {
+			flex: 1;
+		}
+	}
+
+	textarea {
+		resize: none;
+	}
+}

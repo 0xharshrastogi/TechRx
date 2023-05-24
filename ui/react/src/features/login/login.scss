@@ -1,0 +1,67 @@
+.login-container {
+	height: 100vh;
+	padding: 1rem;
+
+	&-left,
+	&-right {
+		border-radius: 0.5rem;
+		padding: 1rem;
+	}
+
+	&-left {
+		font-family: 'Poppins';
+		color: white;
+		background-image: linear-gradient(193deg, #1777ff, rgb(31 86 164));
+		display: grid;
+		grid-template-rows: min-content auto min-content;
+		padding: 2rem 2.5rem;
+
+		.title {
+			font-family: inherit;
+			color: inherit;
+			font-size: 1rem;
+		}
+
+		.content {
+			display: grid;
+			place-items: center left;
+			h3 {
+				font-size: 2.25rem;
+				font-weight: 600;
+				line-height: 1.25;
+				margin-bottom: 2rem;
+			}
+			font-size: 0.95rem;
+			font-weight: 200;
+			line-height: 200%;
+		}
+
+		footer {
+			backdrop-filter: blur(16px);
+			border: 0.1px solid #ffffff3b;
+			background-color: rgba(255, 255, 255, 0.1);
+			padding: 1rem;
+			margin-top: auto;
+			border-radius: 1rem;
+			font-size: 0.8rem;
+			line-height: 1.5;
+		}
+	}
+
+	&-right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		h1 {
+			font-weight: 600;
+			font-family: Poppins;
+		}
+		.subtitle {
+			color: rgb(154, 154, 154);
+		}
+
+		.login-form-wrapper {
+			margin-top: 2rem;
+		}
+	}
+}
