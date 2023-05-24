@@ -2,6 +2,7 @@ import { Layout, Space } from 'antd';
 import { type FC } from 'react';
 import { type IUser } from '../../common/types';
 import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
+import { useTitle } from '../../hooks';
 import './Dashboard.scss';
 
 const user: IUser = {
@@ -14,6 +15,8 @@ const user: IUser = {
 };
 
 export const Dashboard: FC = () => {
+	useTitle('Dashboard');
+
 	return (
 		<Space className="dashboard" direction="vertical">
 			<Navbar />

@@ -2,7 +2,7 @@ import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import { AuthenticationBanner } from '../../containers';
 import { useTitle } from '../../hooks';
-import { SIGNUP } from '../../routes';
+import { SIGNUP } from '../../paths';
 import './login.scss';
 import { LoginForm } from './loginForm';
 

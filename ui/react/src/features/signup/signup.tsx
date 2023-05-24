@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthenticationBanner } from '../../containers';
 import { useTitle } from '../../hooks';
-import { LOGIN } from '../../routes';
+import { LOGIN } from '../../paths';
 import './signup.scss';
 import { SignupForm } from './signupForm';
 

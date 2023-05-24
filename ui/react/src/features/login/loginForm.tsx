@@ -1,8 +1,11 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Alert, Button, Form, Input, message } from 'antd';
-import { useEffect, useState, type FC } from 'react';
+import { useState, type FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
 import { type LoginFormSchema } from '../../common/types';
+import { AuthUtils, AuthenticationStatus } from '../../helpers';
+import { DASHBOARD } from '../../paths';
 import { passwordRuleObj, validateEmailRuleObj, validateMessages } from './helper';
 import './loginForm.scss';
 
@@ -12,27 +15,24 @@ const setDisplayIcon = (visible: boolean): JSX.Element =>
 	visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />;
 
 export const LoginForm: FC = () => {
-	const [form] = useForm<LoginFormSchema>();
 	const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
-	const [formData, setFormData] = useState<LoginFormSchema | null>(null);
+	const [form] = useForm<LoginFormSchema>();
 	const [error] = useState<Error | null>(null);
-
-	useEffect(() => {
-		if (formData == null) {
-			return;
-		}
-		console.log(formData);
-	}, [formData]);
+	const navigate = useNavigate();
 
 	const onLoginSubmit = async (): Promise<void> => {
+		const TIME_SECOND = 1;
 		const value = form.getFieldsValue(true);
 		const error = await Authentication.login(value);
-		console.log(error);
-		if (error == null) {
-			await message.success('Successful', 1);
+
+		if (error != null) {
+			await message.error('Login Failed', TIME_SECOND);
 			return;
 		}
-		await message.error('Login Failed', 1);
+
+		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
+		void message.success('Successful', TIME_SECOND);
+		navigate(DASHBOARD);
 	};
 
 	return (

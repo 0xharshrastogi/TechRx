@@ -1,21 +1,21 @@
 import { type RouteObject } from 'react-router-dom';
+import { PrivateRoute } from './components';
 import { Dashboard, Login, Signup } from './features';
+import { BASE, DASHBOARD, LOGIN, SIGNUP } from './paths';
 
 type Routes = RouteObject[];
 
-export const BASE = '/';
-
-export const LOGIN = BASE + 'login';
-
-export const SIGNUP = BASE + 'signup';
-
-export const DASHBOARD = BASE + 'dashboard';
-
 const routes: Routes = [
-	{ path: BASE, Component: Login },
+	{
+		path: BASE,
+		Component: Login,
+	},
 	{ path: LOGIN, Component: Login },
 	{ path: SIGNUP, Component: Signup },
-	{ path: DASHBOARD, Component: Dashboard },
+	{
+		path: DASHBOARD,
+		element: <PrivateRoute element={<Dashboard />} redirect={LOGIN} />,
+	},
 ];
 
 export default routes;
