@@ -32,7 +32,15 @@ export const getCurrentEnvironment = (): Environment => {
 	}
 };
 
-export const environment: EnvironmentConfig = {
+const environment: EnvironmentConfig = {
 	Production: { backend: { host: 'NA' } },
 	Development: { backend: { host: 'http://localhost:8000' } },
 };
+
+/**
+ * Retrieves the environment configuration based on the current environment.
+ * The current environment is obtained using the getCurrentEnvironment function.
+ * The environment configuration is selected from the environment object using the current environment as the key.
+ * @returns The environment configuration object for the current environment.
+ */
+export const getEnvironmentConfig = (): IEnvironment => environment[getCurrentEnvironment()];
