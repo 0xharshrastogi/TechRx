@@ -12,6 +12,7 @@ export const SIGNUP = BASE + 'signup';
 export const DASHBOARD = BASE + 'dashboard';
 
 const routes: Routes = [
+	{ path: BASE, Component: Login },
 	{ path: LOGIN, Component: Login },
 	{ path: SIGNUP, Component: Signup },
 	{ path: DASHBOARD, Component: Dashboard },
