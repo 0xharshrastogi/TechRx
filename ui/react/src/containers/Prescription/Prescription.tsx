@@ -104,16 +104,3 @@ export const Prescription: FC = () => {
 		</>
 	);
 };
-
-// {
-/* <section className="prescription">
-
-			<ScrollableContainer title="Prescriptions"></ScrollableContainer>
-
-			<PrescriptionList items={prescriptions} />
-			<span className="modal-button">
-				<Button type="primary" icon={<PlusCircleOutlined />} onClick={modal.open} />
-
-			</span>
-		</section> */
-// }
