@@ -1,24 +1,12 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Form, Input, Select, Space, Steps, message, type StepProps } from 'antd';
 import { type FC } from 'react';
+import { Authentication } from '../../api/server';
+import { type SignupFormSchema } from '../../common/types';
 import { FormRules } from '../../helpers';
 import { useSteps } from '../../hooks';
 import './signupForm.scss';
 import { useLanguages } from './useLanguages';
-
-interface SignupFormSchema {
-	name: string;
-
-	email: string;
-
-	password: string;
-
-	languages: Array<{ code: string; name: string }>;
-
-	address: {
-		city: string;
-	};
-}
 
 const setDisplayIcon = (visible: boolean): JSX.Element =>
 	visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />;
@@ -43,7 +31,12 @@ export const SignupForm: FC = () => {
 
 	const submitHandler = async (): Promise<void> => {
 		const value = form.getFieldsValue(true);
-		await message.success('Successful', 1);
+		const error = await Authentication.signup(value);
+		if (error == null) {
+			await message.success('Successful', 1);
+			return;
+		}
+		await message.error('Signup Failed', 1);
 	};
 
 	return (

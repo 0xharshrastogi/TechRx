@@ -1,15 +1,12 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Alert, Button, Form, Input } from 'antd';
+import { Alert, Button, Form, Input, message } from 'antd';
 import { useEffect, useState, type FC } from 'react';
+import { Authentication } from '../../api/server';
+import { type LoginFormSchema } from '../../common/types';
 import { passwordRuleObj, validateEmailRuleObj, validateMessages } from './helper';
 import './loginForm.scss';
 
 const { useForm, Item } = Form;
-
-interface LoginFormSchema {
-	email: string;
-	password: string;
-}
 
 const setDisplayIcon = (visible: boolean): JSX.Element =>
 	visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />;
@@ -27,6 +24,17 @@ export const LoginForm: FC = () => {
 		console.log(formData);
 	}, [formData]);
 
+	const onLoginSubmit = async (): Promise<void> => {
+		const value = form.getFieldsValue(true);
+		const error = await Authentication.login(value);
+		console.log(error);
+		if (error == null) {
+			await message.success('Successful', 1);
+			return;
+		}
+		await message.error('Login Failed', 1);
+	};
+
 	return (
 		<>
 			{error != null && (
@@ -38,8 +46,8 @@ export const LoginForm: FC = () => {
 				form={form}
 				layout="vertical"
 				validateMessages={validateMessages}
-				onFinish={(data) => {
-					setFormData(data);
+				onFinish={() => {
+					void onLoginSubmit();
 				}}
 			>
 				<Item name="email" label="Email" required rules={[validateEmailRuleObj]}>
