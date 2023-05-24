@@ -3,13 +3,11 @@
 # from django.core.files.storage import FileSystemStorage
 import datetime
 import json
-
-# from .models import SavePrescription, Users
 import jwt
-# from .connect_try1 import connectionAzure
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser
 
 from TechRxApp.database_connection.insertData import savePrescription
 from TechRxApp.database_connection.serializer import UserSerializer
@@ -70,21 +68,19 @@ class UserView(APIView):
 			payload = jwt.decode(token, 'secret', algorithms=['HS256'])
 		except jwt.ExpiredSignatureError:
 			raise AuthenticationFailed('Unauthenticated')
-
-		# user = 'Users.objects.filter(id=payload['id']).first()
-		# serializer = UserSerializer(user)
-		#
 		return Response(payload)
 
 
-def UploadImage(request):
-	if request.method == 'POST' and request.FILES['upload']:
-		image_file = request.data['upload']
-		try:
-			savePrescription(email=user, filename=image_file)
-			return Response('200 ')
-		except Exception as e:
-			return Response(f'{e} so failed to upload')
+class UploadImg(APIView):
+	parser_classes = [MultiPartParser]
+	def post(self, request):
+		if request.FILES and 'upload' in request.FILES:
+			image_file = request.FILES['upload']
+			email = request.POST.get('email')
+			savePrescription(email=email, filename=image_file)
+			return Response({"status": 200})
+		else:
+			return Response({"status": 400, "message": "No file provided."})
 
 
 class LogoutView(APIView):
@@ -96,11 +92,3 @@ class LogoutView(APIView):
 		}
 		return response
 
-# Create your views here.
-# def index(request):
-#
-#             # username
-#             # password
-#             token = Token.objects.create(user=...)
-#         print(token.key)
-#     return render(request, 'index.html')
