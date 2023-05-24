@@ -20,8 +20,7 @@ export enum Environment {
  * @returns The current environment.
  */
 export const getCurrentEnvironment = (): Environment => {
-	// @ts-expect-error process is node variable
-	const mode = process.env.REACT_APP_MODE?.toLowerCase() ?? '';
+	const mode = 'development';
 
 	switch (mode) {
 		case Environment.Prod.toLowerCase():
