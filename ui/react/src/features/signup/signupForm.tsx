@@ -1,8 +1,9 @@
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Button, Form, Input, Select, Space, Steps, message, type StepProps } from 'antd';
+import { Button, Form, Input, Radio, Select, Space, Steps, message, type StepProps } from 'antd';
 import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
+import { Gender } from '../../common/enums';
 import { type SignupFormSchema } from '../../common/types';
 import { AuthUtils, AuthenticationStatus, FormRules } from '../../helpers';
 import { useSteps } from '../../hooks';
@@ -34,6 +35,7 @@ export const SignupForm: FC = () => {
 
 	const submitHandler = async (): Promise<void> => {
 		const value = form.getFieldsValue(true);
+		console.log(value);
 		const error = await Authentication.signup(value);
 		const TIME_SECOND = 1;
 		if (error != null) {
@@ -70,6 +72,13 @@ export const SignupForm: FC = () => {
 							rules={[FormRules.required, FormRules.email]}
 						>
 							<Input placeholder="enter your email" />
+						</Form.Item>
+
+						<Form.Item required name={'gender'} label="Gender" rules={[FormRules.required]}>
+							<Radio.Group>
+								<Radio value={Gender.Male}>Male</Radio>
+								<Radio value={Gender.Female}>Female</Radio>
+							</Radio.Group>
 						</Form.Item>
 
 						<Form.Item required name={'password'} label="Password" rules={[FormRules.password]}>
