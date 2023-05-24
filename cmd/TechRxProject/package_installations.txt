@@ -1,12 +1,9 @@
 pandas
-spacy
-torch
 transformers
 openpyxl
 jupyter
 selenium
 webdriver_manager
-nltk
 django
 djangorestframework
 drf-yasg
@@ -19,4 +16,3 @@ bcrypt
 azure-identity
 
 rasa==3.5.6
-

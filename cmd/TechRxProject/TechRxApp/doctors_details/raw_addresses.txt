@@ -1,0 +1,1047 @@
+Street:  Rasul Compound, Keshavrao Khadye Marg, Jacob Circle
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02223091444
+
+Zip code:400011
+
+Country calling code: +91
+
+Country:  India
+Street:  1, M P Bldg, Sanatorium Lane, Ghatkopar (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02235138542
+
+Zip code:400086
+
+Country calling code: +91
+
+Country:  India
+Street:  T 42, Corner Market
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 55689529
+
+Zip code:110017
+
+Country calling code: +91
+
+Country:  India
+Street:  23/2, 23/2, Hauddin Road, Ulsoor
+
+City:  Bangalore
+
+State/province/area:   Karnataka
+
+Phone number: 802532199
+
+Zip code:560042
+
+Country calling code: +91
+
+Country:  India
+Street:  27, Heavy Water Colony, Chhani Jakat Naka
+
+City:  Vadodara
+
+State/province/area:   Gujarat
+
+Phone number: 2776360
+
+Zip code:390002
+
+Country calling code: +91
+
+Country:  India
+Street:  Shop No 2, Happy Home Aptmt No 1, Shanti Park, Mira Road
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228111124
+
+Zip code:401107
+
+Country calling code: +91
+
+Country:  India
+Street:  Poortata, Next To Ice Facory, Gokhale Road, Thane (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02225405797
+
+Zip code:400601
+
+Country calling code: +91
+
+Country:  India
+Street:  9 Sec 23, Plot No 9, Krishi Bazaar
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 07627833076
+
+Zip code:400705
+
+Country calling code: +91
+
+Country:  India
+Street:  Shop No 1, New Shanti Bhavan, Stn Road, Nr Railway Crossing, Kandivali (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228085587
+
+Zip code:400067
+
+Country calling code: +91
+
+Country:  India
+Street:  29, Transport Centre, Azadpur
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 2721545
+
+Zip code:110033
+
+Country calling code: +91
+
+Country:  India
+Street:  18/2, 20thmn,btmistage,blr-29, Btm Layout
+
+City:  Bangalore
+
+State/province/area:   Karnataka
+
+Phone number: 26847924
+
+Zip code:560029
+
+Country calling code: +91
+
+Country:  India
+Street:  Wz 58 D, Main Road, Basai Darapur
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 01125157880
+
+Zip code:110015
+
+Country calling code: +91
+
+Country:  India
+Street:  A-68, Anna Nagar East, Anna Nagar East
+
+City:  Chennai
+
+State/province/area:   Tamil Nadu
+
+Phone number: 04426285890
+
+Zip code:600102
+
+Country calling code: +91
+
+Country:  India
+Street:  Shop No.1, Plot No 110/111, Shabi Complex, Sec 12, Vashi, Navi Mumbai
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02227881087
+
+Zip code:400703
+
+Country calling code: +91
+
+Country:  India
+Street:  300, Adarsh Nagar, New Link Rd, Jogeshwari(w)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02226358122
+
+Zip code:400102
+
+Country calling code: +91
+
+Country:  India
+Street:  1 St, Singh Industrial Estate, Ram Mandir Road, Behind Movie Star Cinema, Goregaon (w)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228723473
+
+Zip code:400062
+
+Country calling code: +91
+
+Country:  India
+Street:  22, Menon Indl Estate, S V Road, Goregaon (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228748895
+
+Zip code:400104
+
+Country calling code: +91
+
+Country:  India
+Street:  1b, Dover Lane, Sarat Bose Road
+
+City:  Kolkata
+
+State/province/area:   West Bengal
+
+Phone number: 00332464837
+
+Zip code:700029
+
+Country calling code: +91
+
+Country:  India
+Street:  208/403, B/65, Stanford Plaza, Off New Link Rd, Andheri (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02266920910
+
+Zip code:400053
+
+Country calling code: +91
+
+Country:  India
+Street:  Old 43, New 94, 1st Floor, Semdudoss Street:
+
+City:  Chennai
+
+State/province/area:   Tamil Nadu
+
+Phone number: 04425215345
+
+Zip code:600001
+
+Country calling code: +91
+
+Country:  India
+
+Street:  33, Mehta Chambers, Kalyan Street:, Chinch Bunder
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 226633788
+
+Zip code:400009
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  2/29, Shivaji Market, Double Storey, Tilak Nagar
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 01125438850
+
+Zip code:110018
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  12, 29, J K Indl.estate, Mahakali Caves Road, Andheri(e)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02256916136
+
+Zip code:400093
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  Ap568,h Block,16thmain Road, 18th Street:,annanagar West
+
+City:  Chennai
+
+State/province/area:   Tamil Nadu
+
+Phone number: 04426221010
+
+Zip code:600017
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  36, Grd Flr, Mahavir Complex, Dr Dd Sathe Marg, Grant Road (east)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02223865838
+
+Zip code:400004
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  110, Ring Road Market
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 26887324
+
+Zip code:110023
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  50, 3rd Floor, Tardeo Ac Market, Tardeo Road, Tardeo
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02223525425
+
+Zip code:400034
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  Ground Floor, Modi Chamber, Opera House
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02223822787
+
+Zip code:400004
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  Subodh Kunj, Opp Dena Bank, S V Rd, Kandivali (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228051781
+
+Zip code:400067
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  7b/15, Mukand Hsg Soc, Gavonpada Rd, Mulund(e)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02225612751
+
+Zip code:400081
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  Unit No-262, A-z Indl Estate, Ganpatrao Kadam Marg, Next To Wellspring Healthcare, Lower Parel (west
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02224928641
+
+Zip code:400013
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  4 A Gr Floor, Babu Bhavan, Baluseth Madhukar Marg, Opp Elphiston Stn, Elphinston Road
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02224381677
+
+Zip code:400013
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  11, Uttaradimuttrd,nrnationalcllge, Basavanagudi
+
+City:  Bangalore
+
+State/province/area:   Karnataka
+
+Phone number: 26672225
+
+Zip code:560004
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  20b, Dsidc Shed, Tilak Nagar
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 01125111878
+
+Zip code:110018
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  3-131/1/1, Trade Centre, Balanagar
+
+City:  Hyderabad
+
+State/province/area:   Andhra Pradesh
+
+Phone number: 04023878837
+
+Zip code:500037
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  108-b, Girnar Apts, S V Road, Opp N L High School, Malad (west)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02228014156
+
+Zip code:400064
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  23/1 2nd Floor
+
+City:  Delhi
+
+State/province/area:   Delhi
+
+Phone number: 25734790
+
+Zip code:110008
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  79/3,jmrdblr-2, Jm Road
+
+City:  Bangalore
+
+State/province/area:   Karnataka
+
+Phone number: 22210836
+
+Zip code:560002
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  7, 7,dcknsnrdblr-42, Near Commercial Street:, Dickenson Road
+
+City:  Bangalore
+
+State/province/area:   Karnataka
+
+Phone number: 25587539
+
+Zip code:560042
+
+Country: :calling code:  +91
+
+Country: India $
+Street:  Shop No 3, 1st Floor, Irani Manzil, Senapati Bapat Marg, Above Natraj Traders, Dadar(w)
+
+City:  Mumbai
+
+State/province/area:   Maharashtra
+
+Phone number: 02224311936
+
+Zip code:400028
+
+Country: :calling code:  +91
+
+Country: India $
+
+
+Street:  69 Ridge Road
+
+City: Burgowan
+
+State/province/area:  Queensland
+
+Phone number:  (07) 3755 5363
+
+Zip code:  4659
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  89 Hodgson St
+
+City: North Branch
+
+State/province/area:  Queensland
+
+Phone number:  (07) 4572 5299
+
+Zip code:  4370
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  55 Wollombi Street:
+
+City: Fordwich
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 4985 7852
+
+Zip code:  2330
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  59 Hill Street:
+
+City: Tunnack
+
+State/province/area:  Tasmania
+
+Phone number:  (03) 6276 4459
+
+Zip code:  7120
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  73 Gloucester Avenue
+
+City: Ridleyton
+
+State/province/area:  South Australia
+
+Phone number:  (08) 8355 3426
+
+Zip code:  5008
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  72 West Street:
+
+City: Phillip
+
+State/province/area:  Australian Capital Territory
+
+Phone number:  (02) 6189 5463
+
+Zip code:  2606
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  27 Zipfs Road
+
+City: Booval
+
+State/province/area:  Queensland
+
+Phone number:  (07) 4511 8896
+
+Zip code:  4304
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  15 Parkes Road
+
+City: Kings Park
+
+State/province/area:  Victoria
+
+Phone number:  (03) 9207 5136
+
+Zip code:  3021
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  42 Davenport Street:
+
+City: North Albury
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 6122 5560
+
+Zip code:  2640
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  98 Clifton Street:
+
+City: Beverford
+
+State/province/area:  Victoria
+
+Phone number:  (03) 5385 3628
+
+Zip code:  3590
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  62 Berambing Crescent
+
+City: Lethbridge Park
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 4771 7829
+
+Zip code:  2770
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  79 Aquatic Road
+
+City: Failford
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 4954 6890
+
+Zip code:  2430
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  86 Barker Street:
+
+City: Wansbrough
+
+State/province/area:  Western Australia
+
+Phone number:  (08) 9093 8289
+
+Zip code:  6320
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  98 Cassinia Street:
+
+City: Tuppal
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 6134 0677
+
+Zip code:  2714
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  60 Shirley Street:
+
+City: Edens Landing
+
+State/province/area:  Queensland
+
+Phone number:  (07) 3630 2651
+
+Zip code:  4207
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  37 Frencham Street:
+
+City: Coreen
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 6196 4178
+
+Zip code:  2646
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  73 South Street:
+
+City: Bonnet Hill
+
+State/province/area:  Tasmania
+
+Phone number:  (03) 6270 4035
+
+Zip code:  7053
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  22 Loris Way
+
+City: Toolibin
+
+State/province/area:  Western Australia
+
+Phone number:  (08) 9016 9781
+
+Zip code:  6312
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  29 Dalgarno Street:
+
+City: Marys Mount
+
+State/province/area:  New South Wales
+
+Phone number:  (02) 6711 7316
+
+Zip code:  2380
+
+Country:  calling code  +61
+
+Country:   Australia
+Street:  36 Quayside Vista
+
+City: Acton
+
+State/province/area:  Australian Capital Territory
+
+Phone number:  (02) 6126 0738
+
+Zip code:  2601
+
+Country:  calling code  +61
+
+Country:   Australia
+
+Street:  519 Perine Street:
+
+City: Alexandria
+
+State/province/area:  Virginia
+
+Phone number:  703-774-3655
+
+Zip code:  22304
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  4602 Rosebud Avenue
+
+City: Cove
+
+State/province/area:  Arkansas
+
+Phone number:  870-387-7236
+
+Zip code:  71937
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  1397 White Oak Drive
+
+City: Stewartsville
+
+State/province/area:  Missouri
+
+Phone number:  356-669-7135
+
+Zip code:  64490
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  2457 Sycamore Street:
+
+City: Santa Clara
+
+State/province/area:  California
+
+Phone number:  408-896-6294
+
+Zip code:  95054
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  1521 Marshville Road
+
+City: Andes
+
+State/province/area:  New York
+
+Phone number:  845-676-4956
+
+Zip code:  13731
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  3438 Allison Avenue
+
+City: Norfolk
+
+State/province/area:  Virginia
+
+Phone number:  757-535-6473
+
+Zip code:  23502
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  1334 Oakridge Farm Lane
+
+City: Sturtevant
+
+State/province/area:  Wisconsin
+
+Phone number:  262-321-3346
+
+Zip code:  53177
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  1881 Riverside Drive
+
+City: Chattanooga
+
+State/province/area:  Georgia
+
+Phone number:  706-820-0748
+
+Zip code:  37409
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  4277 Glendale Avenue
+
+City: Pomona
+
+State/province/area:  California
+
+Phone number:  818-724-9497
+
+Zip code:  91766
+
+Country:  calling code  +1
+
+Country:   United States
+Street:  4983 Roosevelt Wilson Lane
+
+City: Los Angeles
+
+State/province/area:  California
+
+Phone number:  909-843-0665
+
+Zip code:  90017
+
+Country:  calling code  +1
+
+Country:   United States
+
+Street:  Schönhauser Allee 87
+
+City: St Blasien
+
+State/province/area:  Baden-Württemberg
+
+Phone number:  07672 44 35 80
+
+Zip code:  79837
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Frankfurter Allee 4
+
+City: Karlsruhe Neureut
+
+State/province/area:  Baden-Württemberg
+
+Phone number:  0721 31 96 50
+
+Zip code:  76149
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Brandenburgische Str. 63
+
+City: Engstingen
+
+State/province/area:  Baden-Württemberg
+
+Phone number:  07129 77 66 81
+
+Zip code:  72829
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Paul-Nevermann-Platz 86
+
+City: Riedenberg
+
+State/province/area:  Freistaat Bayern
+
+Phone number:  09749 35 50 15
+
+Zip code:  97792
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Kurfürstenstraße 1
+
+City: Dürnau
+
+State/province/area:  Baden-Württemberg
+
+Phone number:  07164 45 92 56
+
+Zip code:  88422
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Eichendorffstr. 53
+
+City: Konstanz Industriegebiet
+
+State/province/area:  Baden-Württemberg
+
+Phone number:  07531 53 53 12
+
+Zip code:  78467
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Neuer Jungfernstieg 26
+
+City: Landshut
+
+State/province/area:  Freistaat Bayern
+
+Phone number:  08707 64 17 41
+
+Zip code:  84004
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Bleibtreustrasse 59
+
+City: Gütersloh Isselhorst
+
+State/province/area:  Nordrhein-Westfalen
+
+Phone number:  05241 47 93 16
+
+Zip code:  33334
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Holstenwall 46
+
+City: Mansfeld
+
+State/province/area:  Sachsen-Anhalt
+
+Phone number:  034782 54 60
+
+Zip code:  06338
+
+Country:  calling code  +49
+
+Country:   Germany
+Street:  Grolmanstraße 70
+
+City: Bremen Kattenturm
+
+State/province/area:  Freie Hansestadt Bremen
+
+Phone number:  0421 88 04 51
+
+Zip code:  28279
+
+Country:  calling code  +49
+
+Country:   Germany
+
+

@@ -55,9 +55,9 @@ def savePrescription(email, filename):
 		json_content = file.read()
 	conn_string = (json.loads(json_content))['ConnectionString']
 	conn, cursor = connectionAzure(conn_string)
-	cursor.execute(f"INSERT INTO SavePrescription (email, prescription) VALUES (?, ?)", email, filename)
+	binary_data = filename.read()
+	# Encode the binary data as base64
+	encoded_data = base64.b64encode(binary_data)
+	cursor.execute(f"INSERT INTO SavePrescription (email, prescription) VALUES (?, ?)", email, encoded_data)
 	conn.commit()
-
-
-
-
+	
