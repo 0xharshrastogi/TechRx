@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Dr. Alok Sharma",
+    "speciality": "Congenital Heart Disease",
+    "address": "XYZ Hospital, Mumbai, Maharashtra",
+    "qualification": "MBBS, MD (Cardiology)",
+    "experience": "15 years"
+  },
+  {
+    "name": "Dr. Neha Patel",
+    "speciality": "Peripheral Vascular Disease",
+    "address": "ABC Clinic, Ahmedabad, Gujarat",
+    "qualification": "MBBS, DNB (Vascular Surgery)",
+    "experience": "10 years"
+  },
+  {
+    "name": "Dr. Ravi Singh",
+    "speciality": "Hepatitis",
+    "address": "PQR Hospital, Delhi, NCR",
+    "qualification": "MBBS, MD (Gastroenterology)",
+    "experience": "12 years"
+  },
+  {
+    "name": "Dr. Shalini Gupta",
+    "speciality": "Cirrhosis",
+    "address": "MNO Hospital, Kolkata, West Bengal",
+    "qualification": "MBBS, DM (Hepatology)",
+    "experience": "8 years"
+  },
+  {
+    "name": "Dr. Rahul Verma",
+    "speciality": "Polycystic Kidney Disease",
+    "address": "XYZ Hospital, Jaipur, Rajasthan",
+    "qualification": "MBBS, MS (Nephrology)",
+    "experience": "9 years"
+  },
+  {
+    "name": "Dr. Anika Choudhary",
+    "speciality": "Brain Aneurysm",
+    "address": "ABC Clinic, Bengaluru, Karnataka",
+    "qualification": "MBBS, MCh (Neurosurgery)",
+    "experience": "11 years"
+  },
+  {
+    "name": "Dr. Sameer Kapoor",
+    "speciality": "Schizophrenia",
+    "address": "PQR Hospital, Hyderabad, Telangana",
+    "qualification": "MBBS, MD (Psychiatry)",
+    "experience": "14 years"
+  },
+  {
+    "name": "Dr. Meera Joshi",
+    "speciality": "Gastroenteritis",
+    "address": "MNO Hospital, Pune, Maharashtra",
+    "qualification": "MBBS, MD (Gastroenterology)",
+    "experience": "7 years"
+  },
+  {
+    "name": "Dr. Rajesh Kumar",
+    "speciality": "Asthma",
+    "address": "XYZ Hospital, Chandigarh, Punjab",
+    "qualification": "MBBS, MD (Pulmonary Medicine)",
+    "experience": "13 years"
+  },
+  {
+    "name": "Dr. Divya Sharma",
+    "speciality": "Pneumonia",
+    "address": "ABC Clinic, Lucknow, Uttar Pradesh",
+    "qualification": "MBBS, MD (Internal Medicine)",
+    "experience": "6 years"
+  },
+  {
+    "name": "Dr. Deepak Mishra",
+    "speciality": "Tuberculosis",
+    "address": "PQR Hospital, Bhopal, Madhya Pradesh",
+    "qualification": "MBBS, MD (Pulmonary Medicine)",
+    "experience": "10 years"
+  },
+  {
+    "name": "Dr. Priya Gupta",
+    "speciality": "Glaucoma",
+    "address": "MNO Hospital, Indore, Madhya Pradesh",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience": "8 years"
+  },
+  {
+    "name": "Dr. Anil Singhania",
+    "speciality": "Hyperopia or Farsightedness",
+    "address": "XYZ Hospital, Nagpur, Maharashtra",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience": "12 years"
+  },
+  {
+    "name": "Dr. Swati Kapoor",
+    "speciality": "Thyroid Disease",
+    "address": "ABC Clinic, Chennai, Tamil Nadu",
+    "qualification": "MBBS, MD (Endocrinology)",
+    "experience": "11 years"
+  },
+  {
+    "name": "Dr. Vikram Sharma",
+    "speciality": "Diabetic Neuropathy",
+    "address": "PQR Hospital, Gurugram, Haryana",
+    "qualification": "MBBS, MD (Diabetology)",
+    "experience": "9 years"
+  },
+  {
+    "name": "Dr. Suman Das",
+    "speciality": "Sciatica",
+    "address": "MNO Hospital, Guwahati, Assam",
+    "qualification": "MBBS, MS (Orthopedics)",
+    "experience": "13 years"
+  },
+  {
+    "name": "Dr. Rahul Mehra",
+    "speciality": "Aneurysm",
+    "address": "XYZ Hospital, Jaipur, Rajasthan",
+    "qualification": "MBBS, MCh (Vascular Surgery)",
+    "experience": "10 years"
+  },
+  {
+    "name": "Dr. Priya Agarwal",
+    "speciality": "Osteomyelitis",
+    "address": "ABC Clinic, Lucknow, Uttar Pradesh",
+    "qualification": "MBBS, MS (Orthopedics)",
+    "experience": "7 years"
+  },
+  {
+    "name": "Dr. Rakesh Verma",
+    "speciality": "Atopic Dermatitis",
+    "address": "PQR Hospital, Mumbai, Maharashtra",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience": "12 years"
+  },
+  {
+    "name": "Dr. Nisha Singh",
+    "speciality": "Eczema",
+    "address": "MNO Hospital, Delhi, NCR",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience": "8 years"
+  },
+  {
+    "name": "Dr. Gaurav Malhotra",
+    "speciality": "Gum Disease",
+    "address": "XYZ Hospital, Bengaluru, Karnataka",
+    "qualification": "BDS, MDS (Periodontology)",
+    "experience": "11 years"
+  },
+  {
+    "name": "Dr. Ritu Gupta",
+    "speciality": "Breast Cancer",
+    "address": "ABC Clinic, Kolkata, West Bengal",
+    "qualification": "MBBS, MD (Oncology)",
+    "experience": "14 years"
+  },
+  {
+    "name": "Dr. Priyanka Sharma",
+    "speciality": "Ovarian Cancer",
+    "address": "PQR Hospital, Ahmedabad, Gujarat",
+    "qualification": "MBBS, MD (Oncology)",
+    "experience": "10 years"
+  },
+  {
+    "name": "Dr. Sanjay Singh",
+    "speciality": "Lupus",
+    "address": "MNO Hospital, Chennai, Tamil Nadu",
+    "qualification": "MBBS, MD (Rheumatology)",
+    "experience": "9 years"
+  },
+  {
+    "name": "Dr. Ramesh Kumar",
+    "speciality": "Celiac Disease",
+    "address": "XYZ Hospital, Hyderabad, Telangana",
+    "qualification": "MBBS, MD (Gastroenterology)",
+    "experience": "12 years"
+  },
+  {
+    "name": "Dr. Rani Verma",
+    "speciality": "Ankylosing Spondylitis",
+    "address": "ABC Clinic, Jaipur, Rajasthan",
+    "qualification": "MBBS, MD (Rheumatology)",
+    "experience": "11 years"
+  },
+  {
+    "name": "Dr. Karan Sharma",
+    "speciality": "Multiple Sclerosis",
+    "address": "PQR Hospital, Gurugram, Haryana",
+    "qualification": "MBBS, MD (Neurology)",
+    "experience": "13 years"
+  },
+  {
+    "name": "Dr. Nidhi Singh",
+    "speciality": "UTIs",
+    "address": "MNO Hospital, Bhopal, Madhya Pradesh",
+    "qualification": "MBBS, MD (Nephrology)",
+    "experience": "10 years"
+  },
+  {
+    "name": "Dr. Ajay Mehta",
+    "speciality": "Ovarian Cysts",
+    "address": "XYZ Hospital, Pune, Maharashtra",
+    "qualification": "MBBS, MD (Obstetrics and Gynecology)",
+    "experience": "8 years"
+  },
+  {
+    "name": "Dr. Sangeeta Gupta",
+    "speciality": "Rabies",
+    "address": "ABC Clinic, Chandigarh, Punjab",
+    "qualification": "MBBS, MD (Infectious Diseases)",
+    "experience": "11 years"
+  },
+	{
+		"name": "Dr. John Smith",
+		"specialty": "Congenital Heart Disease",
+		"address": "123 Main Street, Cityville, USA",
+		"qualification": "MD, Cardiology",
+		"experience": "15 years"
+	},
+	{
+		"name": "Dr. Emily Johnson",
+		"specialty": "Peripheral Vascular Disease",
+		"address": "456 Elm Street, Townsville, USA",
+		"qualification": "DO, Vascular Surgery",
+		"experience": "10 years"
+	},
+	{
+		"name": "Dr. Sarah Williams",
+		"specialty": "Hepatitis",
+		"address": "789 Oak Street, Villageland, USA",
+		"qualification": "MD, Gastroenterology",
+		"experience": "12 years"
+	},
+	{
+		"name": "Dr. Michael Davis",
+		"specialty": "Cirrhosis",
+		"address": "321 Pine Street, Hamletown, USA",
+		"qualification": "MD, Hepatology",
+		"experience": "8 years"
+	},
+	{
+		"name": "Dr. Jessica Martinez",
+		"specialty": "Polycystic Kidney Disease",
+		"address": "555 Maple Street, Riverside, USA",
+		"qualification": "MD, Nephrology",
+		"experience": "6 years"
+	},
+	{
+		"name": "Dr. Andrew Thompson",
+		"specialty": "Brain Aneurysm",
+		"address": "222 Cedar Street, Mountainview, USA",
+		"qualification": "MD, Neurosurgery",
+		"experience": "14 years"
+	},
+	{
+		"name": "Dr. Elizabeth Hall",
+		"specialty": "Schizophrenia",
+		"address": "777 Oak Street, Seaside, USA",
+		"qualification": "MD, Psychiatry",
+		"experience": "10 years"
+	},
+	{
+		"name": "Dr. Benjamin Rodriguez",
+		"specialty": "Gastroenteritis",
+		"address": "444 Elm Street, Lakeside, USA",
+		"qualification": "DO, Gastroenterology",
+		"experience": "9 years"
+	},
+	{
+		"name": "Dr. Amanda Lee",
+		"specialty": "Asthma",
+		"address": "888 Pine Street, Beachtown, USA",
+		"qualification": "MD, Pulmonology",
+		"experience": "7 years"
+	},
+	{
+		"name": "Dr. Christopher Turner",
+		"specialty": "Pneumonia",
+		"address": "999 Maple Street, Hillside, USA",
+		"qualification": "MD, Internal Medicine",
+		"experience": "11 years"
+	},
+	{
+		"name": "Dr. Rachel Scott",
+		"specialty": "Tuberculosis",
+		"address": "101 Oak Street, Valleyville, USA",
+		"qualification": "MD, Infectious Diseases",
+		"experience": "13 years"
+	},
+	{
+		"name": "Dr. Samantha Reed",
+		"specialty": "Glaucoma",
+		"address": "111 Elm Street, Meadowville, USA",
+		"qualification": "MD, Ophthalmology",
+		"experience": "5 years"
+	},
+	{
+		"name": "Dr. Daniel Turner",
+		"specialty": "Hyperopia or Farsightedness",
+		"address": "222 Maple Street, Countryside, USA",
+		"qualification": "OD, Optometry",
+		"experience": "8 years"
+	},
+	{
+		"name": "Dr. Olivia Baker",
+		"specialty": "Thyroid Disease",
+		"address": "333 Pine Street, Lakeshore, USA",
+		"qualification": "MD, Endocrinology",
+		"experience": "9 years"
+	},
+	{
+		"name": "Dr. William Collins",
+		"specialty": "Diabetic Neuropathy",
+		"address": "444 Elm Street, Riverside, USA",
+		"qualification": "MD, Neurology",
+		"experience": "14 years"
+	},
+	{
+		"name": "Dr. Victoria Turner",
+		"specialty": "Sciatica",
+		"address": "555 Maple Street, Hillcrest, USA",
+		"qualification": "DO, Physical Medicine and Rehabilitation",
+		"experience": "6 years"
+	},
+	{
+		"name": "Dr. Matthew Adams",
+		"specialty": "Aneurysm",
+		"address": "666 Oak Street, Woodland, USA",
+		"qualification": "MD, Vascular Surgery",
+		"experience": "12 years"
+	},
+	{
+		"name": "Dr. Sophia Wilson",
+		"specialty": "Osteomyelitis",
+		"address": "777 Pine Street, Sunnyville, USA",
+		"qualification": "MD, Orthopedic Surgery",
+		"experience": "10 years"
+	},
+	{
+		"name": "Dr. Ethan Turner",
+		"specialty": "Atopic Dermatitis",
+		"address": "888 Elm Street, Oceanview, USA",
+		"qualification": "MD, Dermatology",
+		"experience": "7 years"
+	},
+	{
+		"name": "Dr. Isabella Clark",
+		"specialty": "Eczema",
+		"address": "999 Maple Street, Lakeside, USA",
+		"qualification": "MD, Dermatology",
+		"experience": "9 years"
+	},
+	{
+		"name": "Dr. Samuel Allen",
+		"specialty": "Gum Disease",
+		"address": "101 Oak Street, Riverfront, USA",
+		"qualification": "DDS, Periodontics",
+		"experience": "11 years"
+	},
+	{
+		"name": "Dr. John Smith",
+		"speciality": "Congenital Heart Disease",
+		"address": "123 Main Street, London",
+		"qualification": "MBBS, MD",
+		"experience": "15 years"
+	},
+	{
+		"name": "Dr. Emily Johnson",
+		"speciality": "Peripheral Vascular Disease",
+		"address": "456 Park Avenue, Manchester",
+		"qualification": "MBChB, MRCP",
+		"experience": "10 years"
+	},
+	{
+		"name": "Dr. Sarah Thompson",
+		"speciality": "Hepatitis",
+		"address": "789 Elm Road, Birmingham",
+		"qualification": "MBBS, MSc",
+		"experience": "8 years"
+	},
+	{
+		"name": "Dr. Michael Roberts",
+		"speciality": "Cirrhosis",
+		"address": "321 Oak Lane, Glasgow",
+		"qualification": "MD, PhD",
+		"experience": "12 years"
+	},
+	{
+		"name": "Dr. Elizabeth Davis",
+		"speciality": "Polycystic Kidney Disease",
+		"address": "555 High Street, Edinburgh",
+		"qualification": "MBChB, FRCP",
+		"experience": "14 years"
+	},
+	{
+		"name": "Dr. Thomas Wilson",
+		"speciality": "Brain Aneurysm",
+		"address": "999 Broad Street, London",
+		"qualification": "MBBS, FRCSC",
+		"experience": "20 years"
+	},
+	{
+		"name": "Dr. Jennifer Clark",
+		"speciality": "Schizophrenia",
+		"address": "777 Elm Avenue, Manchester",
+		"qualification": "MD, MRCPsych",
+		"experience": "9 years"
+	},
+	{
+		"name": "Dr. David Green",
+		"speciality": "Gastroenteritis",
+		"address": "222 Park Road, Birmingham",
+		"qualification": "MBChB, FRCP",
+		"experience": "11 years"
+	},
+	{
+		"name": "Dr. Laura Roberts",
+		"speciality": "Asthma",
+		"address": "444 Oak Avenue, Glasgow",
+		"qualification": "MBBS, MSc",
+		"experience": "7 years"
+	},
+	{
+		"name": "Dr. Daniel Brown",
+		"speciality": "Pneumonia",
+		"address": "888 High Road, Edinburgh",
+		"qualification": "MD, FRCP",
+		"experience": "13 years"
+	},
+	{
+		"name": "Dr. Rebecca Harris",
+		"speciality": "Tuberculosis",
+		"address": "111 Main Lane, London",
+		"qualification": "MBBS, MRCP",
+		"experience": "10 years"
+	},
+	{
+		"name": "Dr. Jessica Wilson",
+		"speciality": "Glaucoma",
+		"address": "333 Park Lane, Manchester",
+		"qualification": "MBChB, FRCOphth",
+		"experience": "15 years"
+	},
+	{
+		"name": "Dr. Andrew Thompson",
+		"speciality": "Hyperopia or Farsightedness",
+		"address": "666 Elm Street, Birmingham",
+		"qualification": "MBBS, MD",
+		"experience": "8 years"
+	},
+	{
+		"name": "Dr. Rachel Davis",
+		"speciality": "Thyroid Disease",
+		"address": "777 Oak Road, Glasgow",
+		"qualification": "MD, FRCP",
+		"experience": "12 years"
+	},
+	{
+		"name": "Dr. Matthew Green",
+		"speciality": "Diabetic Neuropathy",
+		"address": "222 High Street, Edinburgh",
+		"qualification": "MBBS, MRCP",
+		"experience": "14 years"
+	},
+	{
+		"name": "Dr. Victoria Roberts",
+		"speciality": "Sciatica",
+		"address": "555 Broad Avenue, London",
+		"qualification": "MBChB, MD",
+		"experience": "20 years"
+	},
+	{
+		"name": "Dr. Christopher Clark",
+		"speciality": "Aneurysm",
+		"address": "888 Park Road, Manchester",
+		"qualification": "MBBS, FRCSC",
+		"experience": "9 years"
+	},
+	{
+		"name": "Dr. Lauren Brown",
+		"speciality": "Osteomyelitis",
+		"address": "111 Oak Lane, Birmingham",
+		"qualification": "MD, FRCS",
+		"experience": "11 years"
+	},
+	{
+		"name": "Dr. Benjamin Harris",
+		"speciality": "Atopic Dermatitis",
+		"address": "333 High Street, Glasgow",
+		"qualification": "MBBS, MRCP",
+		"experience": "7 years"
+	},
+	{
+		"name": "Dr. Samantha Wilson",
+		"speciality": "Eczema",
+		"address": "666 Broad Road, Edinburgh",
+		"qualification": "MBChB, MD",
+		"experience": "13 years"
+	},
+	{
+		"name": "Dr. Jonathan Thompson",
+		"speciality": "Gum Disease",
+		"address": "999 Elm Lane, London",
+		"qualification": "MBBS, FRCD(C)",
+		"experience": "10 years"
+	}
+]
