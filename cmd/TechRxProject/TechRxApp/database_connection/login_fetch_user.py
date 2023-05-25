@@ -8,4 +8,5 @@ def fetchUser(conn_string, table_name, email_id, password):
 	cursor.execute(sql_query)
 
 	result = cursor.fetchone()
+	print(result)
 	return result
