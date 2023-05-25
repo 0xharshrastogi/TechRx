@@ -7,10 +7,12 @@ from rest_framework.exceptions import AuthenticationFailed
 
 class UserSerializer():
 	print('in user serializer')
+
 	def __init__(self):
-		with open('TechRxApp/creds.json') as file:
+		with open('./TechRxApp/database_connection/creds.json') as file:
 			json_content = file.read()
 		self.conn_string = (json.loads(json_content))['ConnectionString']
+
 	def create_user(self, **kwargs):
 		print('in create_user')
 
