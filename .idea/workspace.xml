@@ -5,11 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/disease_category.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/diseases.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/doctor_details.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/scrape_disease_data.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/update_missing_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TechRx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechRx.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/insertData.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/insertData.py" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/fetchData.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/fetchData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/package_installations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/package_installations.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/creds.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/creds.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/fetchData.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/fetchData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/doctors_details/dummy_addresses.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/database_connection/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/doctors_details/generate_adsresses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/doctors_details/raw_addresses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot/actions/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot/actions/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot/bot_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot/bot_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot/scripts/logics.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot/scripts/logics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/chatbot/scripts/odbc_connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/chatbot/scripts/odbc_connect.py" afterDir="false" />
+>>>>>>> 9f192ba44d7d42e64b980c24ecced0842d06893d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,30 +63,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/TechRxProject/manage.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;E:/Manpreet's/2023/AI_Chatbot/TechRx/TechRx-env/Scripts/python.exe&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Manpreet's\2023\TechRx\cmd\TechRxProject\TechRxApp\disease_data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Manpreet's\2023\TechRx\cmd\TechRxProject\TechRxApp\database_connection" />
       <recent name="C:\Users\2115978\PycharmProjects\pythonProject1\TechRx\cmd\TechRxProject\TechRxApp\database_connection" />
       <recent name="C:\Users\2115978\PycharmProjects\pythonProject1\TechRx\cmd\TechRxProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_adsresses">
-    <configuration name="aa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.update_missing_data">
+    <configuration name="DiseaseData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TechRx" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\2115978\PycharmProjects\pythonProject\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="C:\Users\2115978\PycharmProjects\pythonProject1\TechRx\cmd\TechRxProject\aa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/DiseaseData.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,27 +114,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/asd.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/dd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,18 +144,20 @@
       <method v="2" />
     </configuration>
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="TechRx" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="ConnectionString" value="Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;" />
+        <env name="PYTHONPATH" value="." />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\2115978\PycharmProjects\pythonProject1\TechRx\TechRx-env\Scripts\python.exe" />
+      <option name="SDK_HOME" value="E:\Manpreet's\2023\TechRx\cmd\TechRxNewEnv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.10 (TechRx) (2)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/manage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -156,20 +167,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="update_missing_data (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TechRx" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="connectionString" value="Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxProject/settings.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/update_missing_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="update_missing_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TechRx" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="." />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/disease_data/update_missing_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,19 +212,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.manage" />
-      <item itemvalue="Python.settings" />
-      <item itemvalue="Python.aa" />
-      <item itemvalue="Python.dd" />
+      <item itemvalue="Python.DiseaseData" />
+      <item itemvalue="Python.update_missing_data" />
+      <item itemvalue="Python.update_missing_data (1)" />
       <item itemvalue="Python.asd" />
       <item itemvalue="Python.generate_adsresses" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.update_missing_data (1)" />
+        <item itemvalue="Python.DiseaseData" />
+        <item itemvalue="Python.update_missing_data" />
         <item itemvalue="Python.generate_adsresses" />
         <item itemvalue="Python.asd" />
-        <item itemvalue="Python.dd" />
-        <item itemvalue="Python.aa" />
-        <item itemvalue="Python.settings" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +264,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />

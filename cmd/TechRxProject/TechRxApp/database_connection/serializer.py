@@ -7,10 +7,12 @@ from rest_framework.exceptions import AuthenticationFailed
 
 class UserSerializer():
 	print('in user serializer')
+
 	def __init__(self):
-		with open('TechRxApp/creds.json') as file:
+		with open('./TechRxApp/database_connection/creds.json') as file:
 			json_content = file.read()
 		self.conn_string = (json.loads(json_content))['ConnectionString']
+
 	def create_user(self, **kwargs):
 		print('in create_user')
 
@@ -26,13 +28,13 @@ class UserSerializer():
 		salt = b'$2b$12$HiX2ThoH/7MAOt76qvSjk.'
 		fetched_password = bcrypt.hashpw(password.encode('utf-8'), salt)
 		row = fetchUser(self.conn_string, table_name, f'{email_id}', password)
-		print(email_id, row[0])
+		print(email_id, row[-2])
 		if row:
-			hashed_password = row[1]
+			hashed_password = row[-1]
 			print(fetched_password, hashed_password.encode('utf-8'))
 			if fetched_password == hashed_password.encode('utf-8'):
 				print('found')
-				return row[0]
+				return row
 			else:
 				raise AuthenticationFailed('Incorrect password!')
 		else:
