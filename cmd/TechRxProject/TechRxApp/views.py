@@ -11,6 +11,7 @@ from rest_framework.parsers import MultiPartParser
 
 from TechRxApp.database_connection.insertData import savePrescription
 from TechRxApp.database_connection.serializer import UserSerializer
+from TechRxApp.database_connection.fetchData import FetchData
 
 
 class RegisterView(APIView):
@@ -92,3 +93,11 @@ class LogoutView(APIView):
 		}
 		return response
 
+
+class DownloadPrescription(APIView):
+	def post(self, request):
+		email = request.data['email']
+		result = FetchData('SavePrescription', email)
+		response = Response()
+		response.data = {'result': result}
+		return response
