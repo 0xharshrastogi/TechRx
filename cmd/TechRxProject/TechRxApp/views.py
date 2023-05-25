@@ -97,7 +97,7 @@ class LogoutView(APIView):
 class DownloadPrescription(APIView):
 	def post(self, request):
 		email = request.data['email']
-		result = FetchData('SavePrescription', email)
+		result = FetchData('Prescription', email)
 		response = Response()
 		response.data = {'result': result}
 		return response
