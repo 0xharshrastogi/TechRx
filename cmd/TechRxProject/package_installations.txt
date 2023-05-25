@@ -14,5 +14,3 @@ django_extensions
 Pillow
 bcrypt
 azure-identity
-
-rasa==3.5.6

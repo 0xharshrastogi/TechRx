@@ -20,6 +20,8 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 ENV DJANGO_ENV=production
 
+RUN mkdir shared
+
 # Expose port 8000 for the Django app
 EXPOSE 8000
 
