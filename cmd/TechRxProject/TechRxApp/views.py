@@ -39,8 +39,10 @@ class LoginView(APIView):
 		US = UserSerializer()
 		email_with_single_quotes = json.dumps(email_id_, ensure_ascii=False).replace('"', "'")
 		print(email_with_single_quotes)
-		user = US.check_password(table_name='users', email_id=email_with_single_quotes, password=password)
-		print(user)
+		columns, data = US.check_password(table_name='users', email_id=email_with_single_quotes, password=password)
+		user = {}
+		for column, detail in zip(columns, data):
+			user[column] = detail
 
 		payload = {
 			'id': user,
@@ -55,6 +57,7 @@ class LoginView(APIView):
 		response.data = {
 			'jwt': token
 		}
+		print('response.data', response.data)
 		return response
 
 

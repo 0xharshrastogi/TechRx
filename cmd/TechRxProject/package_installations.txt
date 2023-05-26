@@ -14,3 +14,5 @@ django_extensions
 Pillow
 bcrypt
 azure-identity
+opencv-python
+easyocr
