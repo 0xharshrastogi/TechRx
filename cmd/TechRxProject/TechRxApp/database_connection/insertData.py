@@ -3,6 +3,7 @@ import json
 import os
 from .Connection_making import connectionAzure
 import pandas as pd
+import base64
 
 
 def addUserData(conn_string, table_name, hashed_password, **kwargs):
@@ -51,13 +52,13 @@ def addDiseaseData(conn_string, file):
 
 def savePrescription(email, filename):
 	print('in savePrescription')
-	with open('TechRxApp/creds.json') as file:
+	with open('TechRxApp/database_connection/creds.json') as file:
 		json_content = file.read()
 	conn_string = (json.loads(json_content))['ConnectionString']
 	conn, cursor = connectionAzure(conn_string)
 	binary_data = filename.read()
 	# Encode the binary data as base64
 	encoded_data = base64.b64encode(binary_data)
-	cursor.execute(f"INSERT INTO SavePrescription (email, prescription) VALUES (?, ?)", email, encoded_data)
+	cursor.execute(f"INSERT INTO Prescription (email, prescription) VALUES (?, ?)", email, encoded_data)
 	conn.commit()
-	
+
