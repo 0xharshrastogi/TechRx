@@ -15,4 +15,4 @@ Pillow
 bcrypt
 azure-identity
 opencv-python
-pytesseract
+easyocr

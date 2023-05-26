@@ -39,26 +39,25 @@ class LoginView(APIView):
 		US = UserSerializer()
 		email_with_single_quotes = json.dumps(email_id_, ensure_ascii=False).replace('"', "'")
 		print(email_with_single_quotes)
-		user = US.check_password(table_name='users', email_id=email_with_single_quotes, password=password)
+		columns, data = US.check_password(table_name='users', email_id=email_with_single_quotes, password=password)
+		user = {}
+		for column, detail in zip(columns, data):
+			user[column] = detail
 
-		user[4] = json.loads(user[4].replace("'", '"'))
-		print('abc', user[4] , type(user[4]))  # this is dict
-		print(user)
 		payload = {
-			'id': user[4],
+			'id': user,
 			'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
 			'iat': datetime.datetime.utcnow()
 		}
-		print('payload', payload)
+
 		token = jwt.encode(payload, 'secret', algorithm='HS256')  # .decode('utf-8')
-		print('token', token)
+
 		response = Response()
 		response.set_cookie(key='jwt', value=token, httponly=True)
 		response.data = {
-			'jwt': token,
-			'user': user
+			'jwt': token
 		}
-		print('response', response.data)
+		print('response.data', response.data)
 		return response
 
 
