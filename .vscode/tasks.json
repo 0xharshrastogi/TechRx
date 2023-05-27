@@ -1,76 +1,76 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "options": {
-        "cwd": "ui/web-portal"
-      },
-      "label": "npm start: web-potal",
-      "icon": {
-        "id": "globe",
-        "color": "terminal.ansiCyan"
-      },
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
-    },
-    {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
-    },
-    {
-      "label": "npm install: install ui web-portal dependencies",
-      "icon": {
-        "id": "cloud-download",
-        "color": "terminal.ansiGreen"
-      },
-      "type": "shell",
-      "command": "cd ${cwd}/ui/web-portal && npm install",
-      "group": {
-        "kind": "none",
-        "isDefault": false
-      }
-    },
-    {
-      "label": "npm lint: lint",
-      "icon": {
-        "id": "tools",
-        "color": "terminal.ansiBlue"
-      },
-      "type": "shell",
-      "command": "cd ${cwd}/ui/web-portal && npm run lint",
-      "group": {
-        "kind": "none",
-        "isDefault": false
-      }
-    }
-  ]
+	// For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"isBackground": true,
+			"options": {
+				"cwd": "ui/portal"
+			},
+			"label": "npm start: web portal",
+			"icon": {
+				"id": "globe",
+				"color": "terminal.ansiCyan"
+			},
+			"problemMatcher": {
+				"owner": "typescript",
+				"pattern": "$tsc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": {
+						"regexp": "(.*?)"
+					},
+					"endsPattern": {
+						"regexp": "bundle generation complete"
+					}
+				}
+			}
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "typescript",
+				"pattern": "$tsc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": {
+						"regexp": "(.*?)"
+					},
+					"endsPattern": {
+						"regexp": "bundle generation complete"
+					}
+				}
+			}
+		},
+		{
+			"label": "npm install: install ui web-portal dependencies",
+			"icon": {
+				"id": "cloud-download",
+				"color": "terminal.ansiGreen"
+			},
+			"type": "shell",
+			"command": "cd ${cwd}/ui/portal && npm install",
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "npm lint: lint",
+			"icon": {
+				"id": "tools",
+				"color": "terminal.ansiBlue"
+			},
+			"type": "shell",
+			"command": "cd ${cwd}/ui/portal && npm run lint",
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			}
+		}
+	]
 }
