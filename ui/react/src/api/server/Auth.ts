@@ -24,6 +24,12 @@ export class Authentication {
 		});
 	}
 
+	/**
+	 * Performs an HTTP request using the fetch API.
+	 * @param {Request} request - The Request object representing the HTTP request to be made.
+	 * @returns {Promise<Error | null>} A Promise that resolves to either an Error object or null.
+	 * @throws {Error} If an error occurs during the execution of the HTTP request or if the response is not successful.
+	 */
 	static async do(request: Request): Promise<Error | null> {
 		try {
 			const response = await fetch(request);
