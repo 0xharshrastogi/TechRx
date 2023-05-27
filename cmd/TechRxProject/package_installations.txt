@@ -16,3 +16,4 @@ bcrypt
 azure-identity
 opencv-python
 easyocr
+django-cors-headers
