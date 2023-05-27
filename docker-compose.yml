@@ -1,22 +1,12 @@
 version: "3.9"
 
 services:
-  db:
-    container_name: sqlserverdb
-    image: mcr.microsoft.com/azure-sql-edge:latest
-    environment:
-      - ACCEPT_EULA=Y
-    env_file:
-      - "env/development.env"
-    ports:
-      - 1433:1433
-    volumes:
-      - ./temp/mssqldata:/var/opt/mssql
-
   webportal:
+    depends_on:
+      - backend
     image: webportal
     build:
-      context: ui/web-portal
+      context: ui/react
       dockerfile: ./Dockerfile
     ports:
       - 80:80
@@ -26,8 +16,9 @@ services:
     build:
       context: cmd/TechRxProject
       dockerfile: ./Dockerfile
+    image: techrx-api-service
     ports:
-      - 8080:8080
+      - 8000:8000
 
 volumes:
   mssqldata:
