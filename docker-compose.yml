@@ -1,18 +1,30 @@
-version: "3.9"
+version: "3.8"
 
 services:
+  db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    container_name: sql_server_db
+    ports:
+      - 1433:1433
+    env_file:
+      - env/development.env
+    environment:
+      - ACCEPT_EULA=Y
+    volumes:
+      - ./temp/mssqldata:/var/opt/mssql
+
   webportal:
     depends_on:
       - backend
     image: webportal
     build:
-      context: ui/react
+      context: ui/portal
       dockerfile: ./Dockerfile
     ports:
       - 80:80
 
   backend:
-    container_name: djnago_backend
+    container_name: django_backend
     build:
       context: cmd/TechRxProject
       dockerfile: ./Dockerfile
