@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { type IUser } from '../../common/types';
 import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
 import { useTitle } from '../../hooks';
-import './Dashboard.scss';
+import './dashboard.scss';
 
 const user: IUser = {
 	name: 'Andre Sebastian',

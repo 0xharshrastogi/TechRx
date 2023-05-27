@@ -44,7 +44,7 @@ export const ChatMessageDisplay: FC = () => {
 	};
 
 	useEffect(() => {
-		scrollToEnd('instant');
+		scrollToEnd('instant' as ScrollBehavior);
 	}, []);
 
 	useEffect(() => {
