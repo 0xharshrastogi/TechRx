@@ -211,147 +211,147 @@
   },
 	{
 		"name": "Dr. John Smith",
-		"specialty": "Congenital Heart Disease",
+		"speciality": "Congenital Heart Disease",
 		"address": "123 Main Street, Cityville, USA",
 		"qualification": "MD, Cardiology",
 		"experience": "15 years"
 	},
 	{
 		"name": "Dr. Emily Johnson",
-		"specialty": "Peripheral Vascular Disease",
+		"speciality": "Peripheral Vascular Disease",
 		"address": "456 Elm Street, Townsville, USA",
 		"qualification": "DO, Vascular Surgery",
 		"experience": "10 years"
 	},
 	{
 		"name": "Dr. Sarah Williams",
-		"specialty": "Hepatitis",
+		"speciality": "Hepatitis",
 		"address": "789 Oak Street, Villageland, USA",
 		"qualification": "MD, Gastroenterology",
 		"experience": "12 years"
 	},
 	{
 		"name": "Dr. Michael Davis",
-		"specialty": "Cirrhosis",
+		"speciality": "Cirrhosis",
 		"address": "321 Pine Street, Hamletown, USA",
 		"qualification": "MD, Hepatology",
 		"experience": "8 years"
 	},
 	{
 		"name": "Dr. Jessica Martinez",
-		"specialty": "Polycystic Kidney Disease",
+		"speciality": "Polycystic Kidney Disease",
 		"address": "555 Maple Street, Riverside, USA",
 		"qualification": "MD, Nephrology",
 		"experience": "6 years"
 	},
 	{
 		"name": "Dr. Andrew Thompson",
-		"specialty": "Brain Aneurysm",
+		"speciality": "Brain Aneurysm",
 		"address": "222 Cedar Street, Mountainview, USA",
 		"qualification": "MD, Neurosurgery",
 		"experience": "14 years"
 	},
 	{
 		"name": "Dr. Elizabeth Hall",
-		"specialty": "Schizophrenia",
+		"speciality": "Schizophrenia",
 		"address": "777 Oak Street, Seaside, USA",
 		"qualification": "MD, Psychiatry",
 		"experience": "10 years"
 	},
 	{
 		"name": "Dr. Benjamin Rodriguez",
-		"specialty": "Gastroenteritis",
+		"speciality": "Gastroenteritis",
 		"address": "444 Elm Street, Lakeside, USA",
 		"qualification": "DO, Gastroenterology",
 		"experience": "9 years"
 	},
 	{
 		"name": "Dr. Amanda Lee",
-		"specialty": "Asthma",
+		"speciality": "Asthma",
 		"address": "888 Pine Street, Beachtown, USA",
 		"qualification": "MD, Pulmonology",
 		"experience": "7 years"
 	},
 	{
 		"name": "Dr. Christopher Turner",
-		"specialty": "Pneumonia",
+		"speciality": "Pneumonia",
 		"address": "999 Maple Street, Hillside, USA",
 		"qualification": "MD, Internal Medicine",
 		"experience": "11 years"
 	},
 	{
 		"name": "Dr. Rachel Scott",
-		"specialty": "Tuberculosis",
+		"speciality": "Tuberculosis",
 		"address": "101 Oak Street, Valleyville, USA",
 		"qualification": "MD, Infectious Diseases",
 		"experience": "13 years"
 	},
 	{
 		"name": "Dr. Samantha Reed",
-		"specialty": "Glaucoma",
+		"speciality": "Glaucoma",
 		"address": "111 Elm Street, Meadowville, USA",
 		"qualification": "MD, Ophthalmology",
 		"experience": "5 years"
 	},
 	{
 		"name": "Dr. Daniel Turner",
-		"specialty": "Hyperopia or Farsightedness",
+		"speciality": "Hyperopia or Farsightedness",
 		"address": "222 Maple Street, Countryside, USA",
 		"qualification": "OD, Optometry",
 		"experience": "8 years"
 	},
 	{
 		"name": "Dr. Olivia Baker",
-		"specialty": "Thyroid Disease",
+		"speciality": "Thyroid Disease",
 		"address": "333 Pine Street, Lakeshore, USA",
 		"qualification": "MD, Endocrinology",
 		"experience": "9 years"
 	},
 	{
 		"name": "Dr. William Collins",
-		"specialty": "Diabetic Neuropathy",
+		"speciality": "Diabetic Neuropathy",
 		"address": "444 Elm Street, Riverside, USA",
 		"qualification": "MD, Neurology",
 		"experience": "14 years"
 	},
 	{
 		"name": "Dr. Victoria Turner",
-		"specialty": "Sciatica",
+		"speciality": "Sciatica",
 		"address": "555 Maple Street, Hillcrest, USA",
 		"qualification": "DO, Physical Medicine and Rehabilitation",
 		"experience": "6 years"
 	},
 	{
 		"name": "Dr. Matthew Adams",
-		"specialty": "Aneurysm",
+		"speciality": "Aneurysm",
 		"address": "666 Oak Street, Woodland, USA",
 		"qualification": "MD, Vascular Surgery",
 		"experience": "12 years"
 	},
 	{
 		"name": "Dr. Sophia Wilson",
-		"specialty": "Osteomyelitis",
+		"speciality": "Osteomyelitis",
 		"address": "777 Pine Street, Sunnyville, USA",
 		"qualification": "MD, Orthopedic Surgery",
 		"experience": "10 years"
 	},
 	{
 		"name": "Dr. Ethan Turner",
-		"specialty": "Atopic Dermatitis",
+		"speciality": "Atopic Dermatitis",
 		"address": "888 Elm Street, Oceanview, USA",
 		"qualification": "MD, Dermatology",
 		"experience": "7 years"
 	},
 	{
 		"name": "Dr. Isabella Clark",
-		"specialty": "Eczema",
+		"speciality": "Eczema",
 		"address": "999 Maple Street, Lakeside, USA",
 		"qualification": "MD, Dermatology",
 		"experience": "9 years"
 	},
 	{
 		"name": "Dr. Samuel Allen",
-		"specialty": "Gum Disease",
+		"speciality": "Gum Disease",
 		"address": "101 Oak Street, Riverfront, USA",
 		"qualification": "DDS, Periodontics",
 		"experience": "11 years"

@@ -15,4 +15,5 @@ Pillow
 bcrypt
 azure-identity
 opencv-python
+torch torchvision torchaudio
 easyocr
