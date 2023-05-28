@@ -8,7 +8,7 @@ type Routes = RouteObject[];
 const routes: Routes = [
 	{
 		path: BASE,
-		Component: Dashboard,
+		Component: Login,
 	},
 	{ path: LOGIN, Component: Login },
 	{ path: SIGNUP, Component: Signup },
