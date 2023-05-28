@@ -1,6 +1,6 @@
 import { type FC, type ReactElement, type ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
-import { AuthUtils } from '../../helpers';
+import { useAuth } from '../../hooks/useAuth';
 
 interface PrivateRouteProps {
 	element: ReactNode;
@@ -19,5 +19,7 @@ interface PrivateRouteProps {
  */
 export const PrivateRoute: FC<PrivateRouteProps> = (props) => {
 	const { element, redirect } = props;
-	return AuthUtils.isAuthenticated() ? (element as ReactElement) : <Navigate to={redirect} />;
+	const { isLoggedIn } = useAuth();
+
+	return isLoggedIn() ? (element as ReactElement) : <Navigate to={redirect} />;
 };

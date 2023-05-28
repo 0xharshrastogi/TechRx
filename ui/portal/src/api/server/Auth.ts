@@ -1,5 +1,15 @@
 import * as Endpoint from '../../common/endpoints';
-import { type LoginFormSchema, type SignupFormSchema } from '../../common/types';
+import { type IUser, type LoginFormSchema, type SignupFormSchema } from '../../common/types';
+
+interface RequestResult<T = unknown> {
+	value?: T;
+	error?: Error;
+}
+
+enum ContextType {
+	json = 'application/json',
+	html = 'application/html',
+}
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class Authentication {
@@ -30,27 +40,35 @@ export class Authentication {
 	 * @returns {Promise<Error | null>} A Promise that resolves to either an Error object or null.
 	 * @throws {Error} If an error occurs during the execution of the HTTP request or if the response is not successful.
 	 */
-	static async do(request: Request): Promise<Error | null> {
+	static async do<T>(request: Request): Promise<RequestResult<T>> {
 		try {
 			const response = await fetch(request);
-
-			if (!response.ok) {
-				const errorResponse = await response.json();
-				return new Error(errorResponse);
-			}
-
-			return null;
+			if (!response.ok) return await this.handleFailedResponse(response);
+			return { value: await response.json() };
 		} catch (error) {
 			console.error(error);
-			return new Error('An error occurred while signing up.', { cause: error });
+			return { error: new Error('An error occurred while signing up.', { cause: error }) };
 		}
 	}
 
-	public static async signup(data: SignupFormSchema): Promise<Error | null> {
+	private static async handleFailedResponse<T>(response: Response): Promise<RequestResult<T>> {
+		const failedResult: RequestResult = { value: null };
+		switch (response.headers.get('content-type')) {
+			case ContextType.json:
+				failedResult.error = new Error(await response.json());
+				break;
+			case ContextType.html:
+				failedResult.error = new Error(await response.text());
+				break;
+		}
+		return { error: new Error('something went wrong') };
+	}
+
+	public static async signup(data: SignupFormSchema): Promise<RequestResult<IUser>> {
 		return await this.do(this.buildSignupRequest(data));
 	}
 
-	public static async login(data: LoginFormSchema): Promise<Error | null> {
+	public static async login(data: LoginFormSchema): Promise<RequestResult<IUser>> {
 		return await this.do(this.buildLoginRequest(data));
 	}
 }

@@ -3,8 +3,9 @@ import { Alert, Button, Form, Input, message } from 'antd';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
-import { type LoginFormSchema } from '../../common/types';
+import { type IUser, type LoginFormSchema } from '../../common/types';
 import { AuthUtils, AuthenticationStatus } from '../../helpers';
+import { useAuth } from '../../hooks/useAuth';
 import { DASHBOARD } from '../../paths';
 import { passwordRuleObj, validateEmailRuleObj, validateMessages } from './helper';
 import './loginForm.scss';
@@ -15,24 +16,35 @@ const setDisplayIcon = (visible: boolean): JSX.Element =>
 	visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />;
 
 export const LoginForm: FC = () => {
+	const TIME_SECOND = 1;
 	const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 	const [form] = useForm<LoginFormSchema>();
 	const [error] = useState<Error | null>(null);
+	const auth = useAuth<IUser>();
 	const navigate = useNavigate();
 
+	const onLoginSuccessHandler = (user: IUser): void => {
+		auth.loggedIn(user);
+		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
+		void message.success('Successful', TIME_SECOND);
+		navigate(DASHBOARD);
+	};
+
 	const onLoginSubmit = async (): Promise<void> => {
-		const TIME_SECOND = 1;
 		const value = form.getFieldsValue(true);
-		const error = await Authentication.login(value);
+		const { value: user, error } = await Authentication.login(value);
 
 		if (error != null) {
 			await message.error('Login Failed', TIME_SECOND);
 			return;
 		}
 
-		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
-		void message.success('Successful', TIME_SECOND);
-		navigate(DASHBOARD);
+		if (user == null) {
+			console.error('cannot find user info');
+			return;
+		}
+
+		onLoginSuccessHandler(user);
 	};
 
 	return (
