@@ -4,9 +4,9 @@ import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
 import { Gender } from '../../common/enums';
-import { type SignupFormSchema } from '../../common/types';
+import { type IUser, type SignupFormSchema } from '../../common/types';
 import { AuthUtils, AuthenticationStatus, FormRules } from '../../helpers';
-import { useSteps } from '../../hooks';
+import { useAuth, useSteps } from '../../hooks';
 import { SIGNUP } from '../../paths';
 import './signupForm.scss';
 import { useLanguages } from './useLanguages';
@@ -26,26 +26,33 @@ const stepItems: StepProps[] = [
 ];
 
 export const SignupForm: FC = () => {
+	const TIME_SECOND = 1;
 	const [form] = useForm<SignupFormSchema>();
 	const [languages] = useLanguages();
 	const step = useSteps(0, stepItems.length);
+	const { loggedIn } = useAuth();
 	const navigate = useNavigate();
 
-	const [onNextBtnClick, onPrevBtnClick] = [step.next, step.prev];
-
 	const submitHandler = async (): Promise<void> => {
-		const value = form.getFieldsValue(true);
-		console.log(value);
-		const error = await Authentication.signup(value);
-		const TIME_SECOND = 1;
+		const formValue = form.getFieldsValue(true);
+		console.log(formValue);
+		const { error, value: user } = await Authentication.signup(formValue);
 		if (error != null) {
 			await message.error('Signup Failed', TIME_SECOND);
-			return;
 		}
-		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
-		navigate(SIGNUP);
-		await message.success('Successful', TIME_SECOND);
+
+		if (user == null) return;
+		onSignupSuccess(user);
 	};
+
+	const onSignupSuccess = (user: IUser): void => {
+		loggedIn(user);
+		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
+		void message.success('Successful', TIME_SECOND);
+		navigate(SIGNUP);
+	};
+
+	const [onNextBtnClick, onPrevBtnClick] = [step.next, step.prev];
 
 	return (
 		<>
