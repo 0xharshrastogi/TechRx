@@ -1,5 +1,5 @@
 export interface IUser {
-	headerSrc: string;
+	headerSrc?: string;
 
 	imageSrc: string;
 
