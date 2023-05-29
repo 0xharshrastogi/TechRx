@@ -122,3 +122,6 @@ cmd/TechRxProject/TechRxApp/database_connection/creds.json
 __pycache__/
 .idea/
 .vscode/
+
+__pycache__
+temp/

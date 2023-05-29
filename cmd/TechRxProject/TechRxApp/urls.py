@@ -10,5 +10,5 @@ urlpatterns = [
 	path('upload', UploadImg.as_view(), name='upload'),
 	path('download', DownloadPrescription.as_view(), name='download'),
 	path('diseases', SideViewDiseaseData.as_view(), name='diseases'),
-	path('doctors', )
+	# path('doctors', )
 ]

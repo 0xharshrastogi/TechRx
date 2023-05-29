@@ -1,1 +1,17 @@
 .idea/
+# Exclude common development and unnecessary files
+.dockerignore
+.git
+.gitignore
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*~
+.env
+.env.*
+.dockerignore
+
+# Exclude directories
+node_modules/
+__pycache__/
