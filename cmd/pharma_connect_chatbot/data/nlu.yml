@@ -1,0 +1,17 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+  - intent: goodbye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you later
+  - intent: heath_issues
+    examples: |
+      - heath_issues
+      - I have a heath issues
+      - my health is not well
