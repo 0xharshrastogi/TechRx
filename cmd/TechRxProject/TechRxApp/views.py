@@ -11,7 +11,7 @@ from rest_framework.parsers import MultiPartParser
 
 from TechRxApp.database_connection.insertData import savePrescription
 from TechRxApp.database_connection.serializer import UserSerializer
-from TechRxApp.database_connection.fetchData import FetchData
+from TechRxApp.database_connection.fetchData import FetchData, FetchDiseaseDoctors
 
 
 class RegisterView(APIView):
@@ -76,6 +76,16 @@ class UserView(APIView):
 		return Response(payload)
 
 
+class LogoutView(APIView):
+	def post(self, request):
+		response = Response()
+		response.delete_cookie('jwt')
+		response.data = {
+			'message': 'success'
+		}
+		return response
+
+
 class UploadImg(APIView):
 	parser_classes = [MultiPartParser]
 	def post(self, request):
@@ -88,16 +98,6 @@ class UploadImg(APIView):
 			return Response({"status": 400, "message": "No file provided."})
 
 
-class LogoutView(APIView):
-	def post(self, request):
-		response = Response()
-		response.delete_cookie('jwt')
-		response.data = {
-			'message': 'success'
-		}
-		return response
-
-
 class DownloadPrescription(APIView):
 	def post(self, request):
 		email = request.data['email']
@@ -105,3 +105,24 @@ class DownloadPrescription(APIView):
 		response = Response()
 		response.data = {'result': result}
 		return response
+
+
+class SideViewDiseaseData(APIView):
+	def get(self):
+		diseases = FetchDiseaseDoctors('diseases_data', '')
+		disease_data = {}
+		for disease in diseases:
+			try:
+				disease_split = disease[0].split('or')
+				for i in disease_split:
+					disease_data[i.strip()] = FetchDiseaseDoctors('doctors', i.strip())
+			except:
+				disease_data[disease] = FetchDiseaseDoctors('doctors', disease)
+		print(disease_data)
+		response = Response()
+		response.data = {'result': disease_data}
+		return response
+
+
+# class ChatbotDoctorData(ApiView):
+# 	def get(self, request):

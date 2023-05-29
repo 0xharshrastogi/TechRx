@@ -26,3 +26,5 @@ def createTable(table_name, **kwargs):
 # 												 diagnosis=' VARCHAR(255)', risk_factors=' VARCHAR(255)',
 # 												 prevention= ' VARCHAR(255)')
 #
+# createTable('doctors', name=' Varchar(255)', speciality=' Varchar(255)', address=' NVarchar(MAX)',
+# 						qualification=' Varchar(255)', experience=' INT')
