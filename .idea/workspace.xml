@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdfd91a6-b13e-4d2f-9f6c-21e8841c34e5" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/med_price_compare/medicines_extraction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/actions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/actions/actions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/bot_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/credentials.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/data/nlu.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/data/rules.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/data/stories.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/domain.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/endpoints.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/requirements-linux.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/ipynb/clean_data.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/ipynb/scrape_data.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/logics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/odbc_connect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pharma_connect_chatbot/scripts/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/med_price_compare/medicine_cmparing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/med_price_compare/medicines_extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/TechRxProject/TechRxApp/med_price_compare/medicines_extraction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
