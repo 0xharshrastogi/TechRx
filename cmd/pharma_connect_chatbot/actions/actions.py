@@ -1,4 +1,5 @@
 # Built-in imports
+import ast
 from typing import Any, Dict, List, Text
 
 # Third-party imports
@@ -8,7 +9,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
 # Rule-based imports
-from scripts.fallbackHandler import HandleFallback
+from scripts.logics import Logics
 
 
 class ValidateMedicalForm(FormAction):
@@ -62,9 +63,10 @@ class ValidateMedicalForm(FormAction):
         # Perform your slot validation logic here
         # Return a dictionary with a 'isValid' key and a boolean value
 
-        valid_symptoms = ["headache", "fever", "cough", "sore throat", "fatigue"]
-        if value.lower() in valid_symptoms:
-            return {"symptom": value}
+        words = Logics.get_words(value)
+        symptoms = Logics.get_symptoms(words=words)
+        if symptoms:
+            return {"symptom": str(symptoms)}
         else:
             dispatcher.utter_template(template="utter_ask_symptom", tracker=tracker)
             return {"symptom": None}
@@ -88,7 +90,7 @@ class ValidateMedicalForm(FormAction):
         # Perform your slot validation logic here
         # Return a dictionary with a 'isValid' key and a boolean value
 
-        min_age = 18
+        min_age = 0
         max_age = 100
 
         if isinstance(value, str) and value.isdigit():
@@ -166,22 +168,26 @@ class ValidateMedicalForm(FormAction):
         :param domain: Dict[Text, Any],
         :return:
         """
-        symptom = tracker.get_slot("symptom")
+        symptom = ast.literal_eval(tracker.get_slot("symptom")) or []
         age = tracker.get_slot("age")
         gender = tracker.get_slot("gender")
         location = tracker.get_slot("location")
 
-        result = "\nsymptom={s}\nage={a}\ngender={g}\nlocation={l}".format(
-            s=symptom,
-            a=age,
-            g=gender,
-            l=location,
-        )
-
-        if result:
-            message = f"I found the following healthcare providers that match your search criteria: {result}"
+        message = f"""
+            symptom: {symptom}
+            age: {age}
+            gender: {gender}
+            location: {location}
+        """
+        diseases = Logics.get_disease_by_symptoms(symptoms=symptom)
+        if diseases:
+            message += f"\nI found the following Heath issue that match your symptoms:"
+            for i, d in enumerate(diseases):
+                message += f"\n {i}: {d}"
         else:
-            message = "I'm sorry, I couldn't find any healthcare providers that match your search criteria."
+            message += (
+                "\nI'm sorry, I couldn't find any Heath issue that match your symptoms."
+            )
         dispatcher.utter_message(message)
 
         # Set all slots to None
@@ -229,6 +235,6 @@ class ActionFallback(Action):
         state = tracker.current_state()
         user_message = state["latest_message"]["text"]
 
-        response = HandleFallback.get_response(user_message=user_message)
+        response = Logics.get_fallback_response(user_message=user_message)
         dispatcher.utter_message(text=response)
         return []
