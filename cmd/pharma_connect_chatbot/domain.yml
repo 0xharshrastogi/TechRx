@@ -1,0 +1,54 @@
+version: "2.0"
+intents:
+  - greet
+  - goodbye
+  - health_issues
+
+slots:
+  symptom:
+    type: text
+  age:
+    type: text
+  gender:
+    type: text
+  location:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye!"
+  utter_ask_symptom:
+    - text: "What are your symptoms?"
+  utter_ask_gender:
+    - text: "What is your gender?"
+  utter_ask_age:
+    - text: "What is your age?"
+  utter_ask_location:
+    - text: "Where are you located?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_symptom
+  - utter_ask_age
+  - utter_ask_gender
+  - utter_ask_location
+  - validate_medical_form
+  - action_fallback
+
+forms:
+  medical_form:
+    symptom:
+      - type: from_text
+    gender:
+      - type: from_text
+    age:
+      - type: from_text
+    location:
+      - type: from_text
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

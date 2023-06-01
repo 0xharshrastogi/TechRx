@@ -1,0 +1,40 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - good morning
+      - good afternoon
+      - good evening
+      - hi there
+      - how are you
+      - hello hi
+      - hello, there
+
+  - intent: goodbye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you later
+      - bye bye
+      - good night
+      - it was nice to meet you
+      - nice to meet you
+
+  - intent: heath_issues
+    examples: |
+      - heath_issues
+      - I have a heath issues
+      - my health is not feeling well
+      - i want to diagnose my disease
+      - i am getting sik day by day
+
+  - intent: nlu_fallback
+    examples: |
+      - what is cancer
+      - what is disease
+      - give me a list of disease
+      - when will be next olympics
+      - why RBI stopped making 200 notes
