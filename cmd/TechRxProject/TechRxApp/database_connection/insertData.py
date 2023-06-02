@@ -1,7 +1,7 @@
 # from TechRxApp.Connection_making import connectionAzure
 import json
 import os
-# from .Connection_making import connectionAzure
+from .Connection_making import connectionAzure
 import pandas as pd
 import base64
 
@@ -62,24 +62,10 @@ def savePrescription(email, filename):
 	cursor.execute(f"INSERT INTO Prescription (email, prescription) VALUES (?, ?)", email, encoded_data)
 	conn.commit()
 
-import pyodbc
-from azure.identity import DefaultAzureCredential
-
-
-def connectionAzure(conn_str):
-	print('in connectionAzure')
-	# Azure AD credentials
-	credential = DefaultAzureCredential()
-	# Establish the connection
-	conn = pyodbc.connect(str(conn_str), auth=credential)
-
-	cursor = conn.cursor()
-	return conn, cursor
 
 def addDoctors(conn_string, file):
 	print('in addDiseaseData')
-	conn, cursor = connectionAzure("Driver={ODBC Driver 18 for SQL Server};Server=tcp:pharma-connect-db-server1.database.windows.net,1433;Database=pharma-connect-db1;Uid=TechRx;Pwd=Cognizant@7;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
-
+	conn, cursor = connectionAzure(conn_string)
 	df = pd.read_json(file)
 	for row in df.itertuples(index=False):
 		# if len(str(row.speciality)) < 4:
