@@ -1,9 +1,15 @@
 # from django.shortcuts import render
 # from rest_framework.authtoken.models import Token
-# from django.core.files.storage import FileSystemStorage
+import os
 import datetime
 import json
 import jwt
+
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from django.http import FileResponse, Http404
+
+from rest_framework import status
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -18,6 +24,7 @@ class RegisterView(APIView):
 	def post(self, request):
 		print(request.data)
 		data = {}
+
 		for i, j in (request.data).items():
 			data[i] = ''
 			data[i] = j
@@ -41,6 +48,7 @@ class LoginView(APIView):
 		print(email_with_single_quotes)
 		columns, data = US.check_password(table_name='users', email_id=email_with_single_quotes, password=password)
 		user = {}
+
 		for column, detail in zip(columns, data):
 			user[column] = detail
 
@@ -51,13 +59,14 @@ class LoginView(APIView):
 		}
 
 		token = jwt.encode(payload, 'secret', algorithm='HS256')  # .decode('utf-8')
-
 		response = Response()
 		response.set_cookie(key='jwt', value=token, httponly=True)
+
 		response.data = {
-			'payload':payload,
+			'payload': payload,
 			'jwt': token
 		}
+
 		print('response.data', response.data)
 		return response
 
@@ -92,7 +101,13 @@ class UploadImg(APIView):
 		if request.FILES and 'upload' in request.FILES:
 			image_file = request.FILES['upload']
 			email = request.POST.get('email')
-			savePrescription(email=email, filename=image_file)
+			print(email)
+			current_time = datetime.datetime.now().strftime('%d%M%Y')
+			print(current_time)
+			file_name = f'{email}_{current_time}_{image_file.name}'
+			fs = FileSystemStorage(location=settings.STATIC_ROOT)
+			fs.save(file_name, image_file)
+			# savePrescription(email=email, filename=image_file)
 			return Response({"status": 200})
 		else:
 			return Response({"status": 400, "message": "No file provided."})
@@ -100,29 +115,38 @@ class UploadImg(APIView):
 
 class DownloadPrescription(APIView):
 	def post(self, request):
-		email = request.data['email']
-		result = FetchData('Prescription', email)
-		response = Response()
-		response.data = {'result': result}
-		return response
+
+		try:
+			filename = request.data['filename']
+			file_path = os.path.join(settings.STATIC_ROOT, filename)
+
+			if os.path.exists(file_path):
+				with open(file_path, 'rb') as file:
+					file_contents = file.read()
+					response = FileResponse(file_contents, content_type='application/octet-stream')
+					response['Content-Disposition'] = f'attachment; filename="{filename}"'
+					return response
+			else:
+				error_message = 'File not found'
+				return Response({'error': error_message}, status=status.HTTP_404_NOT_FOUND)
+
+		except KeyError:
+			error_message = 'Invalid request data. Missing filename.'
+			return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
+
+		except Exception as e:
+			error_message = 'An error occurred while processing the request.'
+			return Response({'error': error_message, 'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SideViewDiseaseData(APIView):
-	def get(self):
-		diseases = FetchDiseaseDoctors('diseases_data', '')
-		disease_data = {}
-		for disease in diseases:
-			try:
-				disease_split = disease[0].split('or')
-				for i in disease_split:
-					disease_data[i.strip()] = FetchDiseaseDoctors('doctors', i.strip())
-			except:
-				disease_data[disease] = FetchDiseaseDoctors('doctors', disease)
-		print(disease_data)
+	def get(self, request):
+		disease_data = FetchDiseaseDoctors()
 		response = Response()
-		response.data = {'result': disease_data}
+		response.data = {'result': dict(disease_data)}
 		return response
 
 
+
 # class ChatbotDoctorData(ApiView):
-# 	def get(self, request):
+#  def get(self, request):
