@@ -1,12 +1,12 @@
 import { Layout, Space } from 'antd';
 import { type FC } from 'react';
-import { type IUser } from '../../common/types';
+import { type User } from '../../common/types';
 import { Chatbox, Diseases, Navbar, Prescription, UserProfileView } from '../../containers';
 import { useTitle } from '../../hooks';
 import { useAuth } from '../../hooks/useAuth';
 import './dashboard.scss';
 
-const user: IUser = {
+const user: User = {
 	name: 'Andre Sebastian',
 	email: 'andresebastian@example.com',
 	// headerSrc:
@@ -16,7 +16,7 @@ const user: IUser = {
 };
 
 export const Dashboard: FC = () => {
-	const { user } = useAuth<IUser>();
+	const { user } = useAuth<User>();
 	useTitle('Dashboard');
 
 	return (

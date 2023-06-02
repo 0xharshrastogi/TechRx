@@ -1,12 +1,12 @@
 import { Avatar, Space, Tooltip } from 'antd';
 import { forwardRef, type ForwardRefRenderFunction } from 'react';
-import { type IUser } from '../../common/types';
+import { type User } from '../../common/types';
 import { Logo } from '../../components/Logo';
 import { useAuth } from '../../hooks/useAuth';
 import './Navbar.scss';
 
 const NavbarComponent: ForwardRefRenderFunction<HTMLDivElement | null, object> = (_, ref) => {
-	const { user } = useAuth<IUser>();
+	const { user } = useAuth<User>();
 
 	if (user == null) {
 		console.error('user info not found');

@@ -1,10 +1,10 @@
 import { Avatar } from 'antd';
 import { type FC } from 'react';
-import { type IUser } from '../../common/types';
+import { type User } from '../../common/types';
 import './UserProfileView.scss';
 
 interface UserProfileViewProps {
-	user: IUser;
+	user: User;
 }
 
 const DEFAULT_HEADER_IMAGE =
