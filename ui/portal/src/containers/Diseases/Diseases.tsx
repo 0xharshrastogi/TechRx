@@ -11,9 +11,8 @@ import './Diseases.scss';
 const APIProxy = proxies.local;
 
 export const Diseases: FC = () => {
-	// const [diseases, setDiseases] = useState<IDisease[]>([]);
 	const diseases = useFetch(async (controller) => {
-		return await APIProxy.diseases.getAllDisease(controller);
+		return APIProxy.diseases.getAllDisease(controller);
 	}, []);
 
 	console.log(diseases);
