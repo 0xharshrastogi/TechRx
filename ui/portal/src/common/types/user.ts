@@ -12,6 +12,8 @@ interface User {
 		};
 		email: string;
 		password: string;
+		image?: string;
+		headerImage?: string;
 	};
 	exp: string;
 	iat: string;
