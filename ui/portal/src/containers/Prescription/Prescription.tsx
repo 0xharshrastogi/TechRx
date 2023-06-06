@@ -2,7 +2,9 @@ import { InboxOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Skeleton, Tooltip, Upload } from 'antd';
 import { useEffect, useState, type FC } from 'react';
 import * as Endpoint from '../../common/endpoints';
+import { type IUser } from '../../common/types';
 import { ScrollableContainer } from '../../components';
+import { useAuth } from '../../hooks';
 import { type IPrescription } from './IPrescription';
 import './Prescription.scss';
 import { PrescriptionList } from './PrescriptionList';
@@ -41,6 +43,7 @@ export const Prescription: FC = () => {
 	const [prescriptions, setPrescriptions] = useState<IPrescription[]>([]);
 	const [isVisible, setIsVisible] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const { user } = useAuth<IUser>();
 
 	const modal = {
 		open() {
@@ -62,8 +65,8 @@ export const Prescription: FC = () => {
 	}, [prescriptions]);
 
 	const data = {
-		email: 'john@email.com',
-		filename: 'john@email.com' + ';' + new Date().getTime().toString(),
+		email: user?.payload.id.email,
+		filename: user?.payload.id.name,
 	};
 
 	return (

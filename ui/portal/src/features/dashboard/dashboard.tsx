@@ -6,15 +6,6 @@ import { useTitle } from '../../hooks';
 import { useAuth } from '../../hooks/useAuth';
 import './dashboard.scss';
 
-const user: IUser = {
-	name: 'Andre Sebastian',
-	email: 'andresebastian@example.com',
-	// headerSrc:
-	// 	'https://images.unsplash.com/photo-1604651901258-822bd831b594?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3072&q=80',
-	imageSrc:
-		'https://images.unsplash.com/photo-1611898685192-c504d22b7731?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-};
-
 export const Dashboard: FC = () => {
 	const { user } = useAuth<IUser>();
 	useTitle('Dashboard');
