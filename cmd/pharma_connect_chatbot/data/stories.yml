@@ -1,7 +1,7 @@
 version: "2.0"
 stories:
-  - story: heath_issues
+  - story: health_issues
     steps:
-      - intent: heath_issues
+      - intent: health_issues
       - action: medical_form
       - active_loop: medical_form

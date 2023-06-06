@@ -181,12 +181,12 @@ class ValidateMedicalForm(FormAction):
         """
         diseases = Logics.get_disease_by_symptoms(symptoms=symptom)
         if diseases:
-            message += f"\nI found the following Heath issue that match your symptoms:"
+            message += f"\nI found the following health issue that match your symptoms:"
             for i, d in enumerate(diseases):
                 message += f"\n {i}: {d}"
         else:
             message += (
-                "\nI'm sorry, I couldn't find any Heath issue that match your symptoms."
+                "\nI'm sorry, I couldn't find any health issue that match your symptoms."
             )
         dispatcher.utter_message(message)
 

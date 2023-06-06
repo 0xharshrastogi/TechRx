@@ -23,10 +23,10 @@ nlu:
       - it was nice to meet you
       - nice to meet you
 
-  - intent: heath_issues
+  - intent: health_issues
     examples: |
-      - heath_issues
-      - I have a heath issues
+      - health_issues
+      - I have a health issues
       - my health is not feeling well
       - i want to diagnose my disease
       - i am getting sik day by day
