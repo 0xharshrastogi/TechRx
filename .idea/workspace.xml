@@ -185,12 +185,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.manage" />
-      <item itemvalue="Python.extract_text_from_image" />
-      <item itemvalue="Python.create_tables" />
-      <item itemvalue="Python.insertData" />
       <item itemvalue="Python.create_prescription" />
+      <item itemvalue="Python.create_tables" />
       <item itemvalue="Python.extract_text_from_image (1)" />
+      <item itemvalue="Python.extract_text_from_image" />
+      <item itemvalue="Python.insertData" />
+      <item itemvalue="Python.manage" />
     </list>
     <recent_temporary>
       <list>
