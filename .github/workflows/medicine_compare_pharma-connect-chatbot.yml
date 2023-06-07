@@ -67,6 +67,7 @@ jobs:
       - name: training rasa chatbot
         run: |
           source ./chatbot-env/bin/activate
+          pip install rasa==2.8.0
           rasa train
         working-directory: cmd/pharma_connect_chatbot
         
