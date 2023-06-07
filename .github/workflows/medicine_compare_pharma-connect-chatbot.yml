@@ -26,6 +26,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+        working-directory: cmd/pharma_connect_chatbot
       
       - name: Install dependencies
         run: pip install -r requirements-linux.txt
