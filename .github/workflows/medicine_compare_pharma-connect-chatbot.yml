@@ -55,7 +55,22 @@ jobs:
         with:
           name: python-app
           path: .
-          
+      
+      - name: Set up Python version
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - name: Create and start virtual environment
+        run: |
+          python -m venv chatbot-env
+          source ./chatbot-env/bin/activate
+        working-directory: cmd/pharma_connect_chatbot
+      
+      - name: Install dependencies
+        run: pip install -r requirements-linux.txt
+        working-directory: cmd/pharma_connect_chatbot
+        
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
@@ -66,9 +81,8 @@ jobs:
       
       - name: training rasa chatbot
         run: |
-          source ./chatbot-env/bin/activate
-          python -m rasa train
-        working-directory: cmd/pharma_connect_chatbot
+          rasa train
+          working-directory: cmd/pharma_connect_chatbot
         
       - name: starting action server
         run: rasa run actions --debug --cors "*" --auto-reload
