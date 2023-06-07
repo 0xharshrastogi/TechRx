@@ -82,13 +82,10 @@ jobs:
       - name: training rasa chatbot
         run: |
           rasa train --config cmd/pharma_connect_chatbot/config.yml
-          working-directory: cmd/pharma_connect_chatbot
         
       - name: starting action server
-        run: rasa run actions --debug --cors "*" --auto-reload
-        working-directory: cmd/pharma_connect_chatbot
+        run: rasa run actions --debug --cors "*" --auto-reload cmd/pharma_connect_chatbot/actions/actions.py
         
       - name: starting rasa server
-        run: rasa run --model empty --enable-api --cors "*" --debug
-        working-directory: cmd/pharma_connect_chatbot
+        run: rasa run --model empty --enable-api --cors "*" --debug cmd/pharma_connect_chatbot/models/
         
