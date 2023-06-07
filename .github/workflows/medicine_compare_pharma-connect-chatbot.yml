@@ -62,3 +62,18 @@ jobs:
           app-name: 'pharma-connect-chatbot'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6542EF41BBEB4817AD8610829F756D90 }}
+      
+      - name: training rasa chatbot
+        run: |
+          source venv/bin/activate
+          rasa train
+        working-directory: cmd/pharma_connect_chatbot
+        
+      - name: starting action server
+        run: rasa run actions --debug --cors "*" --auto-reload
+        working-directory: cmd/pharma_connect_chatbot
+        
+      - name: starting rasa server
+        run: rasa run --model empty --enable-api --cors "*" --debug
+        working-directory: cmd/pharma_connect_chatbot
+        
