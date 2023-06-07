@@ -102,8 +102,8 @@ python-engineio==4.4.1
 python-socketio==5.8.0
 pytz==2021.3
 questionary==1.9.0
-rasa==2.8.0
-rasa-sdk==2.8.6
+rasa==2.8
+rasa-sdk
 redis==3.5.3
 regex
 requests==2.30.0
