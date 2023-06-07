@@ -65,7 +65,7 @@ jobs:
       
       - name: training rasa chatbot
         run: |
-          source venv/bin/activate
+          source ./venv/bin/activate
           rasa train
         working-directory: cmd/pharma_connect_chatbot
         
