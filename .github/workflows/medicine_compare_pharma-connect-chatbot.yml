@@ -67,7 +67,7 @@ jobs:
       - name: training rasa chatbot
         run: |
           source ./chatbot-env/bin/activate
-          rasa train
+          python -m rasa train
         working-directory: cmd/pharma_connect_chatbot
         
       - name: starting action server
