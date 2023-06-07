@@ -80,8 +80,7 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6542EF41BBEB4817AD8610829F756D90 }}
       
       - name: training rasa chatbot
-        run: |
-          rasa train --config cmd/pharma_connect_chatbot/config.yml
+        run: rasa train --config cmd/pharma_connect_chatbot/config.yml
         
       - name: starting action server
         run: rasa run actions --debug --cors "*" --auto-reload --actions cmd.pharma_connect_chatbot.actions
