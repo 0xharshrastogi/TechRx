@@ -88,3 +88,6 @@ jobs:
       - name: starting rasa server
         run: rasa run --model empty --enable-api --cors "*" --debug --path cmd.pharma_connect_chatbot
         
+      - name: run chatbot
+        run: http://0.0.0.0:5005/webhooks/bot/response
+        
