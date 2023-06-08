@@ -39,7 +39,7 @@ jobs:
         with:
           name: python-app
           path: |
-            . 
+            cmd/pharma_connect_chatbot 
             !venv/
 
   deploy:
@@ -54,7 +54,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: python-app
-          path: .
+          path: cmd/pharma_connect_chatbot
       
       - name: Set up Python version
         uses: actions/setup-python@v1
