@@ -1,3 +1,4 @@
 rasa==2.8
 pyodbc
 azure-identity
+pandas
