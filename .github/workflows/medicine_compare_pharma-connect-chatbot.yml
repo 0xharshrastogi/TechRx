@@ -83,11 +83,8 @@ jobs:
         run: rasa train --config cmd/pharma_connect_chatbot/config.yml
         
       - name: starting action server
-        run: rasa run actions --debug --cors "*" --auto-reload --actions cmd.pharma_connect_chatbot.actions
+        run: rasa run actions --debug --cors "*" --auto-reload --actions pharma_connect_chatbot.actions
         
       - name: starting rasa server
-        run: rasa run --model empty --enable-api --cors "*" --debug --path cmd.pharma_connect_chatbot
-        
-      - name: run chatbot
-        run: http://0.0.0.0:5005/webhooks/bot/response
+        run: rasa run --model empty --enable-api --cors "*" --debug --path pharma_connect_chatbot
         
