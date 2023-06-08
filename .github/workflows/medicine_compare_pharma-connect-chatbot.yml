@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-        python-version: '3.7'
+          python-version: '3.7'
 
       - name: Create and activate virtual environment
         run: |
@@ -34,9 +34,9 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-        app-name: 'pharma-connect-chatbot'
-        slot-name: 'Production'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6542EF41BBEB4817AD8610829F756D90 }}
+          app-name: 'pharma-connect-chatbot'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6542EF41BBEB4817AD8610829F756D90 }}
 
       - name: Train Rasa chatbot
         run: |
