@@ -74,6 +74,7 @@ oauthlib
 opt-einsum
 packaging
 pamqp
+pandas
 parso
 pathspec
 pexpect
