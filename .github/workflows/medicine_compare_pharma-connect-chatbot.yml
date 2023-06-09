@@ -48,6 +48,25 @@ jobs:
           cd cmd/pharma_connect_chatbot
           rasa run actions --debug --cors "*" --auto-reload
 
+  run-rasa-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Create and activate virtual environment
+        run: |
+          python -m venv chatbot-env
+          source chatbot-env/bin/activate
+
+      - name: Install dependencies
+        run: pip install -r cmd/pharma_connect_chatbot/requirements-linux.txt
+
       - name: Start Rasa server
         run: |
           cd cmd/pharma_connect_chatbot
