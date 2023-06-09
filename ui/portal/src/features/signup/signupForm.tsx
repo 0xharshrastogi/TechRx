@@ -4,7 +4,7 @@ import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
 import { Gender } from '../../common/enums';
-import { type IUser, type SignupFormSchema } from '../../common/types';
+import { type SignupFormSchema, type User } from '../../common/types';
 import { AuthUtils, AuthenticationStatus, FormRules } from '../../helpers';
 import { useAuth, useSteps } from '../../hooks';
 import { SIGNUP } from '../../paths';
@@ -45,7 +45,7 @@ export const SignupForm: FC = () => {
 		onSignupSuccess(user);
 	};
 
-	const onSignupSuccess = (user: IUser): void => {
+	const onSignupSuccess = (user: User): void => {
 		loggedIn(user);
 		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
 		void message.success('Successful', TIME_SECOND);

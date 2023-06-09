@@ -3,7 +3,7 @@ import { Alert, Button, Form, Input, message } from 'antd';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Authentication } from '../../api/server';
-import { type IUser, type LoginFormSchema } from '../../common/types';
+import { type LoginFormSchema, type User } from '../../common/types';
 import { AuthUtils, AuthenticationStatus } from '../../helpers';
 import { useAuth } from '../../hooks/useAuth';
 import { DASHBOARD } from '../../paths';
@@ -20,10 +20,10 @@ export const LoginForm: FC = () => {
 	const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 	const [form] = useForm<LoginFormSchema>();
 	const [error] = useState<Error | null>(null);
-	const auth = useAuth<IUser>();
+	const auth = useAuth<User>();
 	const navigate = useNavigate();
 
-	const onLoginSuccessHandler = (user: IUser): void => {
+	const onLoginSuccessHandler = (user: User): void => {
 		auth.loggedIn(user);
 		AuthUtils.setIsAuthenticated(AuthenticationStatus.Authenticated);
 		void message.success('Successful', TIME_SECOND);

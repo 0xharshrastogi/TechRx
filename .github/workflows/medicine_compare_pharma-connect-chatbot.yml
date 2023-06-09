@@ -1,0 +1,55 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
+
+name: Build and deploy Python app to Azure Web App - pharma-connect-chatbot
+
+on:
+  push:
+    branches:
+      - medicine_compare
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Create and activate virtual environment
+        run: |
+          python -m venv chatbot-env
+          source chatbot-env/bin/activate
+
+      - name: Install dependencies
+        run: pip install -r cmd/pharma_connect_chatbot/requirements-linux.txt
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'pharma-connect-chatbot'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6542EF41BBEB4817AD8610829F756D90 }}
+
+      - name: Train Rasa chatbot
+        run: |
+          cd cmd/pharma_connect_chatbot
+          rasa train --config config.yml
+
+      - name: Start Rasa action server
+        run: |
+          cd cmd/pharma_connect_chatbot
+          rasa run actions --debug --cors "*" --auto-reload
+
+      - name: Start Rasa server
+        run: |
+          cd cmd/pharma_connect_chatbot
+          rasa run --model empty --enable-api --cors "*" --debug
+  

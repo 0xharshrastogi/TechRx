@@ -1,3 +1,4 @@
+import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Space, Tooltip } from 'antd';
 import { forwardRef, type ForwardRefRenderFunction } from 'react';
 import { type IUser } from '../../common/types';
@@ -13,6 +14,8 @@ const NavbarComponent: ForwardRefRenderFunction<HTMLDivElement | null, object> =
 		return null;
 	}
 
+	const { name, image } = user.payload.id;
+
 	return (
 		<div className="navbar" ref={ref}>
 			<div>
@@ -21,8 +24,8 @@ const NavbarComponent: ForwardRefRenderFunction<HTMLDivElement | null, object> =
 
 			<div className="avatar">
 				<Space>
-					<Tooltip title={user.name} className="avatar-tooltip" openClassName="avatar-tooltip-open">
-						<Avatar src={user.imageSrc} size={40} shape="square" />
+					<Tooltip title={name} className="avatar-tooltip" openClassName="avatar-tooltip-open">
+						<Avatar icon={<UserOutlined />} src={image} size={40} shape="circle" />
 					</Tooltip>
 				</Space>
 			</div>

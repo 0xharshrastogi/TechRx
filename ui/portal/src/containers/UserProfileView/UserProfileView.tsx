@@ -1,3 +1,4 @@
+import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { type FC } from 'react';
 import { type IUser } from '../../common/types';
@@ -13,9 +14,10 @@ const DEFAULT_HEADER_IMAGE =
 const AVATAR_SIZE = 50;
 
 export const UserProfileView: FC<UserProfileViewProps> = (props) => {
-	const { name, headerSrc, imageSrc, email } = props.user;
-
-	console.log(`url(${headerSrc ?? DEFAULT_HEADER_IMAGE})`);
+	const {
+		payload: { id: user },
+	} = props.user;
+	const { name, email, headerImage, image } = user;
 
 	return (
 		<section className="user-profile-view">
@@ -23,12 +25,12 @@ export const UserProfileView: FC<UserProfileViewProps> = (props) => {
 				className="user-profile-view-header"
 				style={{
 					height: AVATAR_SIZE + 30,
-					backgroundImage: `url(${headerSrc ?? DEFAULT_HEADER_IMAGE})`,
+					backgroundImage: `url(${headerImage ?? DEFAULT_HEADER_IMAGE})`,
 					marginBottom: `calc(0.75rem + ${AVATAR_SIZE / 2}px)`,
 				}}
 			>
 				<div className="avatar-wrapper">
-					<Avatar src={imageSrc} size={AVATAR_SIZE} />
+					<Avatar src={image} icon={<UserOutlined />} size={AVATAR_SIZE} />
 				</div>
 			</header>
 			<section className="user-profile-view-body user" title={name}>
