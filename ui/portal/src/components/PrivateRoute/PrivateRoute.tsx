@@ -19,7 +19,7 @@ interface PrivateRouteProps {
  */
 export const PrivateRoute: FC<PrivateRouteProps> = (props) => {
 	const { element, redirect } = props;
-	const { isLoggedIn } = useAuth();
+	const { isLoggedIn } = useAuth<never>();
 
 	return isLoggedIn() ? (element as ReactElement) : <Navigate to={redirect} />;
 };

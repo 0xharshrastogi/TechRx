@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { isNotNull } from '../../common/utils';
 import { authContext, type IAuthContext } from './authContext';
 
 interface AuthContextValue<TUser> {
@@ -23,7 +24,7 @@ export const useAuth = <TUser>(): AuthContextValue<TUser> => {
 	return {
 		user,
 
-		isLoggedIn: (): boolean => user != null,
+		isLoggedIn: (): boolean => isNotNull(user),
 
 		loggedIn: (user: TUser): void => {
 			setUser(user);

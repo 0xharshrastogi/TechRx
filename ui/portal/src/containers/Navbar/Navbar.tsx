@@ -2,6 +2,7 @@ import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Space, Tooltip } from 'antd';
 import { forwardRef, type ForwardRefRenderFunction } from 'react';
 import { type IUser } from '../../common/types';
+import { isNull } from '../../common/utils';
 import { Logo } from '../../components/Logo';
 import { useAuth } from '../../hooks/useAuth';
 import './Navbar.scss';
@@ -9,7 +10,7 @@ import './Navbar.scss';
 const NavbarComponent: ForwardRefRenderFunction<HTMLDivElement | null, object> = (_, ref) => {
 	const { user } = useAuth<IUser>();
 
-	if (user == null) {
+	if (isNull(user)) {
 		console.error('user info not found');
 		return null;
 	}
