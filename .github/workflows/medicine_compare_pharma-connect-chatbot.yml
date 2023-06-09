@@ -46,7 +46,7 @@ jobs:
       - name: Start Rasa action server
         run: |
           cd cmd/pharma_connect_chatbot
-          rasa run actions --debug --cors "*" --auto-reload
+          rasa run actions --debug --cors "*" --auto-reload &
 
   run-rasa-server:
     runs-on: ubuntu-latest
