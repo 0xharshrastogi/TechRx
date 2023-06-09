@@ -253,7 +253,7 @@ class ValidateDoctorForm(Action):
 
 			:return: Text
 		"""
-		return "action_find_doctor"
+		return "validate_doctor_form"
 
 	def run(
 		self,
