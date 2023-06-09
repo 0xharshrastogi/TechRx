@@ -71,5 +71,5 @@ jobs:
       - name: Start Rasa server
         run: |
           cd cmd/pharma_connect_chatbot
-          rasa run --model empty --enable-api --cors "*" --debug
+          rasa run --model empty --enable-api --cors "*" --debug &
   
