@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  rasa-run-actions:
     runs-on: ubuntu-latest
 
     steps:
@@ -50,6 +50,7 @@ jobs:
 
   run-rasa-server:
     runs-on: ubuntu-latest
+    needs:   rasa-run-actions
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
