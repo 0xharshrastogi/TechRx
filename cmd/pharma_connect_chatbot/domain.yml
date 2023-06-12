@@ -36,6 +36,7 @@ actions:
   - utter_ask_gender
   - utter_ask_location
   - validate_medical_form
+  - validate_doctor_form
   - action_fallback
 
 forms:
@@ -48,6 +49,13 @@ forms:
       - type: from_text
     location:
       - type: from_text
+  doctor_form:
+    disease:
+      - type: from_text
+#    doctor_location:
+#      - type: from_text
+#    language:
+#      - type: from_text
 
 session_config:
   session_expiration_time: 60

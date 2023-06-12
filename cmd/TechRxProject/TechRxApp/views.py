@@ -4,10 +4,13 @@ import os
 import datetime
 import json
 import jwt
+import time
+
+from http import HTTPStatus
 
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
-from django.http import FileResponse, Http404
+from django.http import FileResponse, Http404, JsonResponse
 
 from rest_framework import status
 from rest_framework.exceptions import AuthenticationFailed
@@ -97,6 +100,7 @@ class LogoutView(APIView):
 
 class UploadImg(APIView):
 	parser_classes = [MultiPartParser]
+
 	def post(self, request):
 		if request.FILES and 'upload' in request.FILES:
 			image_file = request.FILES['upload']
@@ -111,6 +115,33 @@ class UploadImg(APIView):
 			return Response({"status": 200})
 		else:
 			return Response({"status": 400, "message": "No file provided."})
+
+
+class FileListView(APIView):
+	def get(self, request):
+		try:
+			dir_entries = os.scandir(settings.STATIC_ROOT)
+			items = []
+			for entry in dir_entries:
+				if entry.is_file():
+					info = self.get_file_info(entry)
+					items.append(info)
+			json_data = json.dumps(items, default=self.json_serial)
+			return JsonResponse(json_data, safe=False)
+
+		except Exception as e:
+			return JsonResponse(str(e), status=HTTPStatus.INTERNAL_SERVER_ERROR)
+
+	def get_file_info(self, entry):
+		info = entry.stat()
+		created_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(info.st_mtime))
+		return {'name':entry.name, 'size':info.st_size, 'created_at':created_at}
+
+	def json_serial(obj):
+		if isinstance(obj, (datetime, date)):
+			return obj.isoformat()
+
+		raise TypeError("Type not serializable")
 
 
 class DownloadPrescription(APIView):

@@ -5,6 +5,11 @@ rules:
       - intent: health_issues
       - action: medical_form
       - active_loop: medical_form
+  - rule: Activate Doctor form
+    steps:
+      - intent: find_doctor
+      - action: doctor_form
+      - active_loop: doctor_form
 
   - rule: nlu_fallback
     steps:

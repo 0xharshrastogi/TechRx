@@ -35,12 +35,12 @@ def addDiseaseData(conn_string, file):
 	print('in addDiseaseData')
 	conn, cursor = connectionAzure(conn_string)
 
-	df = pd.read_excel(file)
+	df = pd.read_json(file)
 	for row in df.itertuples(index=False):
 		try:
 			cursor.execute(f"INSERT INTO diseases_data (disease_name, symptoms, diagnosis, risk_factors, prevention) "
-										 f"VALUES (?, ?, ?, ?, ?)", row.Diseases, str(row.Symptoms), str(row.Diagnosis),
-										 str(row.RiskFactors), str(row.Prevention))
+										 f"VALUES (?, ?, ?, ?, ?)", row.disease_name, str(row.symptoms), str(row.diagnosis),
+										 str(row.risk_factors), str(row.prevention))
 		except Exception as e:
 			print('Data could not be inserted', e)
 			pass

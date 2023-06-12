@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import RegisterView, LoginView, UserView, LogoutView, UploadImg, DownloadPrescription, SideViewDiseaseData
+from .views import RegisterView, LoginView, UserView, LogoutView, UploadImg, DownloadPrescription, \
+	SideViewDiseaseData, FileListView
 
 urlpatterns = [
 	path('register', RegisterView.as_view(), name='register'),
@@ -10,5 +11,6 @@ urlpatterns = [
 	path('upload', UploadImg.as_view(), name='upload'),
 	path('download', DownloadPrescription.as_view(), name='download'),
 	path('diseases', SideViewDiseaseData.as_view(), name='diseases'),
+	path('files', FileListView.as_view(), name='files'),
 	# path('doctors', )
 ]

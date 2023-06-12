@@ -238,3 +238,38 @@ class ActionFallback(Action):
         response = Logics.get_fallback_response(user_message=user_message)
         dispatcher.utter_message(text=response)
         return []
+
+
+class ValidateDoctorForm(Action):
+	"""
+		Method for ActionFindDoctor
+
+		:param Action:
+		:return:
+	"""
+	def name(self) -> Text:
+		"""
+			Method for name
+
+			:return: Text
+		"""
+		return "validate_doctor_form"
+
+	def run(
+		self,
+		dispatcher: CollectingDispatcher,
+		tracker: Tracker,
+		domain: Dict[Text, Any]
+		) -> List[Dict[Text, Any]]:
+		"""
+			Method for run
+
+			:param dispatcher: CollectingDispatcher,
+			:param tracker: Tracker,
+			:param domain: Dict[Text, Any],
+
+			:return: List[Dict[Text, Any]]
+			"""
+		state = tracker.current_state()
+		user_message = state["latest_message"]["text"]
+		doctors = Logics.get_doctors(user_message=user_message)
