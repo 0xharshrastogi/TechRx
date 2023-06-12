@@ -5,6 +5,7 @@ rules:
       - intent: health_issues
       - action: medical_form
       - active_loop: medical_form
+
   - rule: Activate Doctor form
     steps:
       - intent: find_doctor

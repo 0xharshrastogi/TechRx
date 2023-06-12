@@ -16,12 +16,6 @@
 + then run `rasa run actions --debug --cors "*" --auto-reload` to start action server
 + after stating Action server start bot_api
 + using this command `rasa run --model empty --enable-api --cors "*" --debug`
-
-### Use of BLACK
-
-+ black is used for reformat code
-+ type `black .` in terminal to format all files of existing project
-+ type `black /path/to/folder` for format specific folder
-+ type `black /path/to/folder/file.py` for format specific file
++ go to http://0.0.0.0:5005/webhooks/bot/response
 
 # Thank you

@@ -32,7 +32,7 @@ class Logics(metaclass=Singleton):
 			# remove stopwords from tokenize paragraph
 			stop_words = set(stopwords.words("english"))
 			filtered_tokens = [
-					token for token in tokens if token.lower() not in stop_words
+				token for token in tokens if token.lower() not in stop_words
 			]
 
 			# Lamatize paragraph
@@ -43,6 +43,7 @@ class Logics(metaclass=Singleton):
 			logger.exception(error)
 		finally:
 			return words_list
+
 	@classmethod
 	def get_fallback_response(cls, user_message: str) -> str:
 		"""
@@ -80,7 +81,7 @@ class Logics(metaclass=Singleton):
 
 			df_symptoms = pd.DataFrame(symptoms, columns=["symptom"])
 			logger.info(f"df_symptoms: {df_symptoms}")
-			response = list(set([symptom[0] for symptom in  df_symptoms["symptom"].fillna("").tolist()]))
+			response = list(set([symptom[0] for symptom in df_symptoms["symptom"].fillna("").tolist()]))
 
 		except Exception as error:
 			logger.exception(error)
@@ -113,6 +114,7 @@ class Logics(metaclass=Singleton):
 
 		finally:
 			return response
+
 	@classmethod
 	def get_doctors(cls, diseases: list) -> list:
 		"""
@@ -122,14 +124,30 @@ class Logics(metaclass=Singleton):
 		"""
 		response = []
 		try:
-			logger.info("Methos to get_doctors")
-			query = f"Select name FROM doctors WHERE speciality "
-			query += " OR ".join([f"speciality LIKE '%{disease}%'" for disease in diseases])
-			doctors = cur.execute(query)
+			if type(diseases) is not list:
+				diseases = diseases.split()
 
-			df_doctors = pd.DataFrame(doctors, columns=["doctor_name"])
-			logger.info(f"df_doctors: {df_doctors}")
-			response = list(set(df_doctors["doctor_name"].fillna("").tolist()))
+			logger.info("Method to get_doctors")
+			logger.info(f"diseases: {diseases}")
+
+			# query = f"SELECT name FROM doctors WHERE speciality ILIKE ANY(ARRAY{diseases})"
+			query = f"Select name, speciality FROM doctors WHERE "
+			if diseases and len(diseases) == 1:
+				query += f"speciality LIKE '%{diseases[0]}%'"
+			elif diseases and len(diseases) > 1:
+				query += "speciality LIKE "
+				for disease in diseases:
+					query += f"'%{disease}%' OR speciality LIKE "
+
+				query = query[:-20]
+
+			logger.info(f"query: {query}")
+			cur.execute(query)
+			doctors = cur.fetchall()
+
+			response = [{"name": row.name, "speciality": row.speciality} for row in doctors]
+			logger.info(f"response: {response}")
+
 		except Exception as error:
 			logger.exception(error)
 		finally:
