@@ -3,6 +3,7 @@ intents:
   - greet
   - goodbye
   - health_issues
+  - find_doctor
 
 slots:
   symptom:
@@ -12,6 +13,8 @@ slots:
   gender:
     type: text
   location:
+    type: text
+  disease:
     type: text
 
 responses:
@@ -27,6 +30,8 @@ responses:
     - text: "What is your age?"
   utter_ask_location:
     - text: "Where are you located?"
+  utter_ask_disease:
+    - text: "what is you disease"
 
 actions:
   - utter_greet
@@ -49,6 +54,7 @@ forms:
       - type: from_text
     location:
       - type: from_text
+
   doctor_form:
     disease:
       - type: from_text

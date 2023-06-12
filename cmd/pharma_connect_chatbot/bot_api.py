@@ -243,6 +243,7 @@ class RestInputBot(InputChannel):
                 status_code = 500
 
             result = dict(result=resp_data)
+
             if type(result["result"]) == list:
                 result["result"] = result["result"][0]
             resp = response.json(result, content_type="application/json")
