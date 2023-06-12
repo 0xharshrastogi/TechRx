@@ -6,33 +6,41 @@ import { loadArrayFromFile, random } from './src/utils';
 
 const config = {
 	tableName: 'Doctors',
-	count: 10,
+	count: 90,
 };
 
 const generator = new SqlQueryGenerator(
 	new SqlTableBuilder(config.tableName, {
-		id: 'string',
 		name: 'string',
 		specialty: 'string',
 		experience: 'number',
 		diseases: 'string',
+		qualification: 'string',
+		address: 'string',
 	})
 );
 
 const filepath = 'generated/' + `${config.tableName}.sql`;
 
 async function main() {
-	const [specialties, diseases] = await Promise.all([
+	const [specialties, diseases, qualification] = await Promise.all([
 		loadArrayFromFile('specialization.json'),
 		loadArrayFromFile('diseases.json'),
+		loadArrayFromFile('qualifications.json'),
 	]);
 
 	const result = generator.generate(config.count, {
-		id: () => faker.number.hex({ min: 100000, max: 999999 }),
 		name: () => `${faker.person.firstName()} ${faker.person.lastName()}`,
-		diseases: () => random({ items: diseases, max: 3 }).join(', '),
+		diseases: () => random({ items: diseases, max: 3 }).join(' '),
 		experience: () => random(0, 20),
-		specialty: () => random({ items: specialties, max: 2 }).join(', '),
+		specialty: () => random({ items: specialties, max: random(1, 3) }).join(' '),
+		qualification: () => random({ items: qualification, max: 1 }).join(' '),
+		address: () =>
+			JSON.stringify({
+				city: faker.location.city(),
+				state: faker.location.state(),
+				country: faker.location.country(),
+			}),
 	});
 	random;
 	await writeFile(filepath, result);

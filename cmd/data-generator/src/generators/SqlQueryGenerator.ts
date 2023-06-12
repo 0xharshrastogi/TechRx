@@ -33,8 +33,11 @@ export class SqlQueryGenerator<T extends TableSchema> extends QueryGenerator<T> 
 		}
 
 		const builder = this.builder as SqlTableBuilder<T>;
+		const columns = `(${this.getColumns()
+			.map((col) => `[${col}]`)
+			.join(', ')})`;
 
-		return `INSERT INTO [${builder.getTableName()}]\nVALUES\n` + rows.join(',\n');
+		return `INSERT INTO [${builder.getTableName()}]\n\t${columns}\nVALUES\n` + rows.join(',\n');
 	}
 	generateRow(generators: TDataGenerator<T>): string {
 		const columns = this.getColumns();
