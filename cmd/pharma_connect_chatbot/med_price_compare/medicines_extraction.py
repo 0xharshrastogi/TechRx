@@ -37,8 +37,9 @@ class MedicineDataExtraction:
 			if flag == True:
 				logger.info("Medicine Found")
 				price = element.find_element(By.XPATH, element_price)
-				medicine_details[url.split('.')[1]]['Name'] = price.text.strip()
+				medicine_details[url.split('.')[1]]['Name'] = element.text.strip()[0]
 				medicine_details[url.split('.')[1]]['Price'] = price.text.strip()
+				medicine_details[url.split('.')[1]]['link'] = '' # need to get url of the medicine
 				logger.info(f"Medicine_details: {medicine_details}")
 
 		return medicine_details
@@ -71,6 +72,7 @@ class MedicineDataExtraction:
 				price = element.find_element(By.XPATH, element_price)
 				medicine_details[url.split('.')[1]]['Name'] = price.text.strip()
 				medicine_details[url.split('.')[1]]['Price'] = price.text.strip()
+				medicine_details[url.split('.')[1]]['link'] = ''  # need to get url of the medicine
 
 		return medicine_details
 
@@ -104,6 +106,7 @@ class MedicineDataExtraction:
 				price = element.find_element(By.XPATH, element_price)
 				medicine_details[url.split('.')[1]]['Name'] = price.text.strip()
 				medicine_details[url.split('.')[1]]['Price'] = price.text.strip()
+				medicine_details[url.split('.')[1]]['link'] = ''  # need to get url of the medicine
 
 		return medicine_details
 
@@ -143,6 +146,7 @@ class MedicineDataExtraction:
 				price = element.find_element(By.CLASS_NAME, element_price)
 				medicine_details[url.split('.')[1]]['Name'] = price.text.strip()
 				medicine_details[url.split('.')[1]]['Price'] = price.text.strip()
+				medicine_details[url.split('.')[1]]['link'] = ''  # need to get url of the medicine
 
 		return medicine_details
 
