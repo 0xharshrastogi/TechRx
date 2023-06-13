@@ -48,12 +48,11 @@ nlu:
   - intent: find_medicine
     examples: |
       - find_medicine
-      - want to search medicine prices
+      - want to search medicine
       - compare medicine websites
 
   - intent: find_medicine_prices
     examples: |
-      - Tab
-      - Cap
-      - Cream
-      - Syrup
+      - compare medicine price
+      - see price of medicines
+      

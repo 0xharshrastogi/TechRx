@@ -22,5 +22,5 @@ stories:
   - story: find_medicine_prices
     steps:
       - intent: find_medicine_prices
-      - action: prices_form
-      - active_loop: prices_form
+      - action: price_form
+      - active_loop: price_form
