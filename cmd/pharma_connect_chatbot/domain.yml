@@ -4,6 +4,8 @@ intents:
   - goodbye
   - health_issues
   - find_doctor
+  - find_medicine
+  - find_medicine_prices
 
 slots:
   symptom:
@@ -15,6 +17,10 @@ slots:
   location:
     type: text
   disease:
+    type: text
+  prescription:
+    type: text
+  medicine_name:
     type: text
 
 responses:
@@ -31,7 +37,11 @@ responses:
   utter_ask_location:
     - text: "Where are you located?"
   utter_ask_disease:
-    - text: "what is you disease"
+    - text: "What is you disease"
+  utter_ask_prescription:
+    - text: "Please enter prescription file name"
+  utter_ask_medicine_name:
+    - text: 'Enter the name of the medicine (with prefix [Tab, Cap, Cream or Syrup] for searching least price'
 
 actions:
   - utter_greet
@@ -40,8 +50,12 @@ actions:
   - utter_ask_age
   - utter_ask_gender
   - utter_ask_location
+  - utter_ask_disease
+  - utter_ask_prescription
   - validate_medical_form
   - validate_doctor_form
+  - validate_medicine_form
+  - validate_price_form
   - action_fallback
 
 forms:
@@ -62,6 +76,14 @@ forms:
 #      - type: from_text
 #    language:
 #      - type: from_text
+
+  medicine_form:
+    prescription:
+      - type: from_text
+
+  price_form:
+    medicine_name:
+      - type: from_text
 
 session_config:
   session_expiration_time: 60

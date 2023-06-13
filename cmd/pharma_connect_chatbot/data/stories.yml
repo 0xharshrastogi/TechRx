@@ -12,3 +12,15 @@ stories:
       - intent: find_doctor
       - action: doctor_form
       - active_loop: doctor_form
+
+  - story: find_medicine
+    steps:
+      - intent: find_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+
+  - story: find_medicine_prices
+    steps:
+      - intent: find_medicine_prices
+      - action: prices_form
+      - active_loop: prices_form

@@ -27,6 +27,8 @@ policies:
 forms:
   - medical_form
   - doctor_form
+  - medicine_form
+  - price_form
 
 action_fallback:
   - action_fallback

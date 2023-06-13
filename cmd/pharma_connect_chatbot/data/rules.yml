@@ -12,6 +12,12 @@ rules:
       - action: doctor_form
       - active_loop: doctor_form
 
+  - rule: Activate Medicine Form
+    steps:
+      - intent: find_medicine
+      - action: medicine_form
+      - active_loop: medicine_form
+
   - rule: nlu_fallback
     steps:
       - intent: nlu_fallback
