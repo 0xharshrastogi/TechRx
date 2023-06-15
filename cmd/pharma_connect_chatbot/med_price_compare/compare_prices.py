@@ -63,51 +63,85 @@ class ComparePrices:
 		return driver
 
 	@staticmethod
-	def compare_prices_func(medicine_name):
+	def get_medicine_data(medicine_name):
 		logger = getLogger(__name__)
 		driver = ComparePrices.launchBrowser()
-		compared_prices_list = []
+		medicine_data_list = []
 		website_n_elements = ComparePrices.WebsiteElements(medicine_name)
 		print('here', website_n_elements)
 		for website in website_n_elements.keys():
 			print('here1', website)
 			if website.split('.')[1] == '1mg':
-				medicine_details = MedicineDataExtraction.Scrape1mg(driver, website, medicine_name,
-																														website_n_elements[website]['text_input'],
-																														website_n_elements[website]['med_data'],
-																														website_n_elements[website]['wrapper'],
-																														website_n_elements[website]['drug_name'],
-																														website_n_elements[website]['drug_manufacturer'],
-																														website_n_elements[website]['price'])
-				compared_prices_list.append(medicine_details)
+				try:
+					medicine_details = MedicineDataExtraction.Scrape1mg(driver, website, medicine_name,
+																															website_n_elements[website]['text_input'],
+																															website_n_elements[website]['med_data'],
+																															website_n_elements[website]['wrapper'],
+																															website_n_elements[website]['drug_name'],
+																															website_n_elements[website]['drug_manufacturer'],
+																															website_n_elements[website]['price'])
+					medicine_data_list.append(medicine_details)
+				except:
+					pass
 			elif website.split('.')[1] == 'netmeds':
-				medicine_details = MedicineDataExtraction.ScrapeNetmeds(driver, website, medicine_name,
+				try:
+					medicine_details = MedicineDataExtraction.ScrapeNetmeds(driver, website, medicine_name,
 																															website_n_elements[website]['text_input'],
 																															website_n_elements[website]['med_data'],
 																															website_n_elements[website]['wrapper'],
 																															website_n_elements[website]['drug_name'],
 																															website_n_elements[website]['drug_manufacturer'],
 																															website_n_elements[website]['price'])
-				compared_prices_list.append(medicine_details)
+					medicine_data_list.append(medicine_details)
+				except:
+					pass
 			elif website.split('.')[1] == 'pharmeasy':
-				medicine_details = MedicineDataExtraction.ScrapePharmeasy(driver, website, medicine_name,
+				try:
+					medicine_details = MedicineDataExtraction.ScrapePharmeasy(driver, website, medicine_name,
 																															website_n_elements[website]['text_input'],
 																															website_n_elements[website]['med_data'],
 																															website_n_elements[website]['wrapper'],
 																															website_n_elements[website]['drug_name'],
 																															website_n_elements[website]['drug_manufacturer'],
 																															website_n_elements[website]['price'])
-				compared_prices_list.append(medicine_details)
-
+					medicine_data_list.append(medicine_details)
+				except:
+					pass
 			elif website.split('.')[1] == 'practo':
-				medicine_details = MedicineDataExtraction.ScrapePracto(driver, website, medicine_name,
+				try:
+					medicine_details = MedicineDataExtraction.ScrapePracto(driver, website, medicine_name,
 																															 website_n_elements[website]['text_input'],
 																															 website_n_elements[website]['med_data'],
 																															 website_n_elements[website]['wrapper'],
 																															 website_n_elements[website]['drug_name'],
 																															 website_n_elements[website]['drug_manufacturer'],
 																															 website_n_elements[website]['price'])
-				compared_prices_list.append(medicine_details)
-		compared_prices = {medicine_name: compared_prices_list}
-		print(f"compared_prices: {compared_prices}")
-		return compared_prices
+					medicine_data_list.append(medicine_details)
+				except:
+					pass
+		print(medicine_data_list)
+		medicine_data = {medicine_name: {}}
+		for item in medicine_data_list:
+			medicine_data.setdefault(medicine_name, {}).update(item)
+		return medicine_data
+
+	def compare_prices(medicine_name):
+		medicine_data = ComparePrices.get_medicine_data(medicine_name)
+		print(medicine_data)
+		medicine_prices = {medicine_name: {}}
+		for website, details in medicine_data[medicine_name].items():
+				price = re.sub(r'\d+% off|₹|Best Price\*?|\n', '', details['Price'], flags=re.I)
+				medicine_prices[medicine_name][website] = float(price)
+				medicine_data[medicine_name][website]['Price'] = price
+		try:
+			top_results = sorted(medicine_prices[medicine_name].items(), key=lambda x: x[1])[:3]
+		except:
+			top_results = sorted(medicine_prices[medicine_name].items(), key=lambda x: x[1])
+		result = {}
+		for website, price in top_results:
+			if website in medicine_data[medicine_name]:
+				result[website] = medicine_data[medicine_name][website]
+
+		print(result)
+
+		return result

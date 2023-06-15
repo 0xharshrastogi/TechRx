@@ -55,7 +55,4 @@ nlu:
     examples: |
       - compare medicine price
       - see price of medicines
-      - Tab
-      - Cap
-      - Cream
-      - Syrup
+      - search medicine price

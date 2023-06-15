@@ -524,16 +524,13 @@ class ValidateMedicineForm(FormAction):
 			state = tracker.current_state()
 			medicine_name =  re.sub(r"[.,-]", "", state["latest_message"]["text"]) or []
 
-			compared_prices = ComparePrices.compare_prices_func(medicine_name)
+			compared_prices = ComparePrices.compare_prices(medicine_name)
 
 			message = ''
 			if compared_prices:
-				message += f"\nI found the following following medicines in your prescription {compared_prices}"
+				message += f"\nI found the following medicines in your prescription"
 				for d in compared_prices:
 					message += f"\n {d} = {compared_prices[d]}"
-
-				# for i in compared_prices:
-				# 	message += f"\n  {i}"
 			else:
 				message += (
 					"\nI'm sorry, I couldn't find any medicines in your prescription. Please enter manually."

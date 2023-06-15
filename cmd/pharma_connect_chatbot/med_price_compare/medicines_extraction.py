@@ -20,7 +20,6 @@ class MedicineDataExtraction:
 								element_manufacturer, element_price):
 		print('in Scrape1mg')
 
-		# driver.get(url)
 		WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
 		text_box = driver.find_element(By.XPATH, element_search)
 
@@ -52,8 +51,10 @@ class MedicineDataExtraction:
 					print(drug_name.text)
 					drug_manufacturer = (wrapper.find_elements(By.XPATH, element_manufacturer))[0]
 					print(drug_manufacturer.text)
-					price = wrapper.find_element(By.XPATH, element_price)
-
+					try:
+						price = wrapper.find_element(By.XPATH, element_price)
+					except:
+						price = wrapper.find_element(By.XPATH, "//*[contains(@class, 'PriceBoxPlanOption__offer-price___')]")
 					medicine_details[url.split('.')[1]] = {}
 					medicine_details[url.split('.')[1]]['Name'] = drug_name.text.strip()
 					medicine_details[url.split('.')[1]]['Manufacturer'] = drug_manufacturer.text.strip()
@@ -131,6 +132,7 @@ class MedicineDataExtraction:
 		text_box.send_keys(medicine, Keys.ENTER)
 		elements = driver.find_elements(By.XPATH, element_result)
 		elements_text = [i.text for i in elements]
+		print(elements, elements_text)
 		medicine_details = {}
 		flag = False
 		for element, text in zip(elements, elements_text):
