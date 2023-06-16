@@ -1,7 +1,7 @@
 export abstract class AbstractProxyHandler {
 	protected readonly basePath: string;
 
-	protected constructor(basePath: string) {
+	constructor(basePath: string) {
 		this.basePath = basePath;
 	}
 

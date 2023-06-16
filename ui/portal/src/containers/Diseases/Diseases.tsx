@@ -12,7 +12,7 @@ const APIProxy = proxies.local;
 
 export const Diseases: FC = () => {
 	const diseases = useFetch(async (controller) => {
-		return APIProxy.diseases.getAllDisease(controller);
+		return await APIProxy.diseases.getAllDisease(controller);
 	}, []);
 
 	console.log(diseases);
