@@ -76,12 +76,14 @@ class Logics(metaclass=Singleton):
 		response = []
 		try:
 			logger.info("Method to get_symptoms for Logics")
-			query = f"SELECT SUBSTRING(symptoms, CHARINDEX('{words[0]}', symptoms), LEN({len(words[0])} + 50000)) FROM diseases_data WHERE symptoms LIKE '%{words[0]}%';"
-			symptoms = cur.execute(query)
+			query = f"SELECT word FROM (SELECT "
+			query = f"SELECT symptoms FROM diseases_data WHERE symptoms LIKE '%{words[0]}%';"
+			cur.execute(query)
+			symptoms = words
 
-			df_symptoms = pd.DataFrame(symptoms, columns=["symptom"])
+			df_symptoms = pd.DataFrame(words, columns=["symptom"])
 			logger.info(f"df_symptoms: {df_symptoms}")
-			response = list(set([symptom[0] for symptom in df_symptoms["symptom"].fillna("").tolist()]))
+			response = [symptom for symptom in df_symptoms["symptom"].fillna("").tolist()]
 
 		except Exception as error:
 			logger.exception(error)
@@ -100,14 +102,16 @@ class Logics(metaclass=Singleton):
 
 		response = []
 		try:
-			logger.info(f"symptoms[0]: {type(symptoms[0]), symptoms[0]}")
-			query = "SELECT disease_name FROM diseases_data WHERE symptoms "
-			query += " OR ".join([f"speciality LIKE '%{symptom}%'" for symptom in symptoms])
+			# logger.info(f"symptoms[0]: {type(symptoms[0]), symptoms[0]}")
+			query = "SELECT disease_name FROM diseases_data WHERE "
+			query += " OR ".join([f" symptoms LIKE '%{symptom}%'" for symptom in symptoms])
+			logger.info(query)
 			diseases = cur.execute(query)
 
 			df_diseases = pd.DataFrame(diseases, columns=["disease_name"])
 			logger.info(f"df_diseases: {df_diseases}")
-			response = list(set(df_diseases["disease_name"].fillna("").tolist()))
+			response = [i[0] for i in df_diseases["disease_name"].fillna("").tolist()]
+
 
 		except Exception as error:
 			logger.exception(error)
@@ -152,3 +156,4 @@ class Logics(metaclass=Singleton):
 			logger.exception(error)
 		finally:
 			return response
+

@@ -44,3 +44,15 @@ nlu:
       - I want to find doctor for cancer
       - Show me doctors list
       - Show me doctor for my location
+
+  - intent: find_medicine
+    examples: |
+      - find_medicine
+      - want to search medicine
+      - compare medicine websites
+
+  - intent: find_medicine_prices
+    examples: |
+      - compare medicine price
+      - see price of medicines
+      - search medicine price

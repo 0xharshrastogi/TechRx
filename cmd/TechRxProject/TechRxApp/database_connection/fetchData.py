@@ -37,5 +37,4 @@ def FetchDiseaseDoctors():
 			data[d] = []
 			data[d].append(doc)
 			print(data)
-			conn.close()
 	return data

@@ -1,5 +1,5 @@
 # Built-in imports
-import ast, re
+import ast, re, os
 from logging import getLogger
 # Third-party imports
 from rasa_sdk import Action, Tracker
@@ -8,6 +8,8 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 # Rule-based imports
 from scripts.logics import Logics
+from medicines.extract_text import MedicineListExtractor
+from med_price_compare.compare_prices import ComparePrices
 from typing import Any, Dict, List, Text
 
 logger = getLogger(__name__)
@@ -145,9 +147,7 @@ class ValidateMedicalForm(FormAction):
 		# Perform your slot validation logic here
 		# Return a dictionary with a 'isValid' key and a boolean value
 
-		valid_locations = ["new york", "london", "paris"]
-
-		if isinstance(value, str) and value.lower() in valid_locations:
+		if isinstance(value, str):
 			return {"location": value}
 		else:
 			dispatcher.utter_template(template="utter_ask_location", tracker=tracker)
@@ -300,7 +300,7 @@ class ValidateDoctorForm(FormAction):
 			return {"doctors": f"'str(doctors)'"}
 		else:
 			dispatcher.utter_template(template="utter_ask_disease", tracker=tracker)
-		return {"symptom": None}
+		return {"doctors": None}
 
 	def submit(
 		self,
@@ -318,7 +318,6 @@ class ValidateDoctorForm(FormAction):
 		:return: List[Dict[Text, Any]]
 		"""
 		state = tracker.current_state()
-		disease = tracker.get_slot("disease") or []
 		user_message = state["latest_message"]["text"]
 
 		message = ""
@@ -329,7 +328,7 @@ class ValidateDoctorForm(FormAction):
 				message += f"\n {i+1}: {d}"
 		else:
 			message += (
-				"\nI'm sorry, I couldn't fgind any doctors that match your disease."
+				"\nI'm sorry, I couldn't find any doctors that match your disease."
 			)
 
 		dispatcher.utter_message(message)
@@ -340,3 +339,208 @@ class ValidateDoctorForm(FormAction):
 			slots.append(SlotSet(slot_name, None))
 
 		return slots
+
+
+class ValidateMedicineForm(FormAction):
+	"""
+	Method for ActionFindMedicine
+
+	:param Action:
+	:return:
+	"""
+
+	def name(self) -> Text:
+		"""
+		Method for name
+
+		:return: Text
+		"""
+		return "validate_medicine_form"
+
+	@staticmethod
+	def required_slots(tracker: Tracker) -> List[Text]:
+		"""
+		Method for required_slots
+
+		:param tracker: Tracker
+		:return: List[Text]
+		"""
+		return ["prescription"]
+
+	def slot_mappings(self) -> Dict[Text, Any]:
+		"""
+		Method for slot_mappings
+
+		:return: Dict[Text, Any]
+		"""
+		return {
+			"prescription": self.from_text()
+		}
+
+	def validate_prescription(
+		self,
+		value: Any,
+		dispatcher: CollectingDispatcher,
+		tracker: Tracker,
+		domain: Dict[Text, Any],
+	) -> Dict[Text, Any]:
+		"""
+		Method for validate_prescription
+
+		:param value: Any
+		:param dispatcher: CollectingDispatcher
+		:param tracker: Tracker
+		:param domain: Dict[Text, Any]
+		:return: Dict[Text, Any]
+		"""
+		# Perform your slot validation logic here
+		# Return a dictionary with a 'isValid' key and a boolean value
+		state = tracker.current_state()
+		prescription_filename = state["latest_message"]["text"] or []
+		message = ''
+		medicine_names = MedicineListExtractor.final_text(prescription_filename)
+		if medicine_names:
+			message += 'File found! extracting medicine names'
+			dispatcher.utter_message(message)
+			return medicine_names
+		else:
+			message += 'File not found please recheck the filename'
+			dispatcher.utter_message(message)
+			return {"medicine_names": None}
+
+	def submit(
+		self,
+		dispatcher: CollectingDispatcher,
+		tracker: Tracker,
+		domain: Dict[Text, Any]
+	) -> List[Dict[Text, Any]]:
+		"""
+		Method for run
+
+		:param dispatcher: CollectingDispatcher,
+		:param tracker: Tracker,
+		:param domain: Dict[Text, Any],
+
+		:return: List[Dict[Text, Any]]
+		"""
+		state = tracker.current_state()
+		prescription_filename = state["latest_message"]["text"]
+
+		medicine_names = MedicineListExtractor.final_text(prescription_filename)
+
+		message = ''
+
+		if medicine_names:
+			message += f"\nI found the following following medicines in your prescription"
+
+			for i, d in enumerate(medicine_names):
+				message += f"\n {i+1}: {d}"
+		else:
+			message += (
+				"\nI'm sorry, I couldn't find any medicines in your prescription. Please enter manually."
+			)
+
+		dispatcher.utter_message(message)
+		# Set all slots to None
+		slots = []
+		for slot_name in tracker.slots.keys():
+			slots.append(SlotSet(slot_name, None))
+
+		return slots
+
+	class ValidatePriceForm(FormAction):
+		"""
+		Method for ActionMedicinePrice
+
+		:param Action:
+		:return:
+		"""
+
+		def name(self) -> Text:
+			"""
+			Method for name
+
+			:return: Text
+			"""
+			return "validate_price_form"
+
+		@staticmethod
+		def required_slots(tracker: Tracker) -> List[Text]:
+			"""
+			Method for required_slots
+
+			:param tracker: Tracker
+			:return: List[Text]
+			"""
+			return ["medicine_name"]
+
+		def slot_mappings(self) -> Dict[Text, Any]:
+			"""
+			Method for slot_mappings
+
+			:return: Dict[Text, Any]
+			"""
+			return {
+				"medicine_name": self.from_text()
+			}
+
+		def validate_medicine_name(
+			self,
+			value: Any,
+			dispatcher: CollectingDispatcher,
+			tracker: Tracker,
+			domain: Dict[Text, Any],
+		) -> Dict[Text, Any]:
+			"""
+			Method for validate_medicine_name
+
+			:param value: Any
+			:param dispatcher: CollectingDispatcher
+			:param tracker: Tracker
+			:param domain: Dict[Text, Any]
+			:return: Dict[Text, Any]
+			"""
+			# Perform your slot validation logic here
+			# Return a dictionary with a 'isValid' key and a boolean value
+			state = tracker.current_state()
+			medicine_name = re.sub(r"[.,-]", "", state["latest_message"]["text"]) or []
+
+			return {"medicine_name": medicine_name}
+		def submit(
+			self,
+			dispatcher: CollectingDispatcher,
+			tracker: Tracker,
+			domain: Dict[Text, Any]
+		) -> List[Dict[Text, Any]]:
+			"""
+			Method for run
+
+			:param dispatcher: CollectingDispatcher,
+			:param tracker: Tracker,
+			:param domain: Dict[Text, Any],
+
+			:return: List[Dict[Text, Any]]
+			"""
+			state = tracker.current_state()
+			medicine_name =  re.sub(r"[.,-]", "", state["latest_message"]["text"]) or []
+
+			compared_prices = ComparePrices.compare_prices(medicine_name)
+
+			message = ''
+			if compared_prices:
+				message += f"\nI found the following medicines in your prescription"
+				for d in compared_prices:
+					message += f"\n {d} = {compared_prices[d]}"
+			else:
+				message += (
+					"\nI'm sorry, I couldn't find any medicines in your prescription. Please enter manually."
+				)
+
+			dispatcher.utter_message(message)
+			# Set all slots to None
+			slots = []
+			for slot_name in tracker.slots.keys():
+				slots.append(SlotSet(slot_name, None))
+
+			return slots
+
