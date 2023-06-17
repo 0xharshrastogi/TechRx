@@ -11,7 +11,8 @@ def connection():
 	return conn, cursor
 
 def FetchData(table_name,email=''):
-	conn, cursor = connection()
+	conn_string = (json.loads(json_content))['ConnectionString']
+	conn, cursor = connectionAzure(conn_string)
 	if table_name == 'Prescription':
 		cursor.execute(f"SELECT * FROM {table_name} WHERE email='{email}'")
 		result = cursor.fetchone()
@@ -26,7 +27,8 @@ def FetchData(table_name,email=''):
 
 
 def FetchDiseaseDoctors():
-	conn, cursor = connection()
+	conn_string = (json.loads(json_content))['ConnectionString']
+	conn, cursor = connectionAzure(conn_string)
 	cursor.execute("""SELECT di.disease_name, do.name FROM diseases_data di
                                        LEFT JOIN doctors do ON di.disease_name
                                        LIKE CONCAT('%', do.speciality, '%')""")

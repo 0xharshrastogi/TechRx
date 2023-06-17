@@ -12,4 +12,23 @@ export class PrescriptionProxyHandler extends AbstractProxyHandler {
 		const response = await this.do<string>(request);
 		return JSON.parse(response);
 	}
+
+	async downloadPrescription(filename: string): Promise<void> {
+		const response = await fetch(
+			new Request('http://localhost:8000/api/download', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json', // Set the content type to JSON
+				},
+				body: JSON.stringify({ filename, email: 'harsh@email.com' }),
+			})
+		);
+		const blob = await response.blob();
+		const url = URL.createObjectURL(blob);
+		const elm = document.createElement('a');
+		elm.href = url;
+		elm.download = filename;
+		elm.click();
+		URL.revokeObjectURL(url);
+	}
 }

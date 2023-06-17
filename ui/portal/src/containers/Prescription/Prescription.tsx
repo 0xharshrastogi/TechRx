@@ -39,7 +39,6 @@ export const Prescription: FC = () => {
 	};
 
 	const onFileChange = (info: UploadChangeParam<UploadFile>): void => {
-		console.log(info.file.status);
 		if (info.file.status === 'done') {
 			onUploadSuccess(info.file);
 		}
