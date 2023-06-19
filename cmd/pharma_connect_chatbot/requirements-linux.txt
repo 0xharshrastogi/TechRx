@@ -104,8 +104,8 @@ python-engineio
 python-socketio
 pytz
 questionary
-rasa==2.8.0
-rasa-sdk==2.8.6
+rasa
+rasa-sdk
 redis
 regex
 requests

@@ -32,5 +32,14 @@ services:
     ports:
       - 8000:8000
 
+  chat:
+    container_name: chat
+    build:
+      context: cmd/pharma_connect_chatbot
+      dockerfile: ./Dockerfile
+    image: pharma_chatbot
+    ports:
+      - 5005:5005
+
 volumes:
   mssqldata:

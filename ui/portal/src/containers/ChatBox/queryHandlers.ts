@@ -1,4 +1,4 @@
-import { OpenApi } from '../../common/utils';
+import { OpenApi, proxies } from '../../common/utils';
 import { Message, MessageType } from './Message';
 
 export type QueryHandlerFn = (text: string) => Message | Promise<Message>;
@@ -23,7 +23,8 @@ export const queryHandler: QueryHandlers = {
 		);
 	},
 
-	text: async (_text: string) => {
-		return new Message('Text Message', MessageType.receive);
+	text: async (text: string) => {
+		const message = await proxies.local.chat.send(text);
+		return new Message(message, MessageType.receive);
 	},
 };

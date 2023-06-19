@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FC } from 'react';
-import { Message, MessageType, type IMessage } from './Message';
+import { MessageType, type IMessage } from './Message';
 import { useChatbot } from './useChatbox';
 
 import { proxies } from '../../common/utils';
@@ -29,10 +29,6 @@ export const ChatMessageDisplay: FC = () => {
 	useChatbot({
 		onMessage: async (message) => {
 			setMessages((messages) => [...messages, message]);
-
-			if (message.type !== MessageType.emit) return;
-			const response = await ApiProxy.chat.send(message.text);
-			setMessages((messages) => [...messages, new Message(response, MessageType.receive)]);
 		},
 	});
 
