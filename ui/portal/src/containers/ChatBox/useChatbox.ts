@@ -3,7 +3,7 @@ import { ChatBoxCtx, type ChatboxHandler } from './ChatBoxCtx';
 import { type IMessage } from './Message';
 
 interface IChatbotConfig<T> {
-	onMessage?: (message: T) => void;
+	onMessage?: (message: T) => void | Promise<void>;
 }
 
 interface IChatbotAPI<T> {
@@ -18,7 +18,12 @@ export const useChatbot = <T extends IMessage>(config?: IChatbotConfig<T>): ICha
 
 	useEffect(() => {
 		const { onMessage } = config ?? {};
-		const unsubscribe = onMessage != null ? handler.subscribe(onMessage) : undefined;
+		const unsubscribe =
+			onMessage != null
+				? handler.subscribe((message) => {
+						void onMessage(message);
+				  })
+				: undefined;
 		return () => {
 			unsubscribe?.();
 		};

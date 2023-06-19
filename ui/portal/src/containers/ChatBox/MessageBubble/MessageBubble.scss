@@ -14,4 +14,27 @@
 		flex: 1;
 		white-space: nowrap;
 	}
+
+	.option-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.25rem;
+		margin-right: 0.5rem;
+		overflow: hidden;
+
+		> * {
+			width: min-content;
+			padding: 0.25rem;
+			border-radius: 0.5rem;
+			box-shadow: 0 2px 4px 0 #d8d8d8;
+			cursor: pointer;
+			transition: all 150ms ease;
+			overflow: hidden;
+			white-space: nowrap;
+
+			&:is(:active) {
+				box-shadow: none;
+			}
+		}
+	}
 }
